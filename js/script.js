@@ -125,4 +125,5 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.location.hash) {
         history.replaceState('', document.title, window.location.pathname + window.location.search);
     }
+    window.scrollTo(0, 0); // 페이지 상단으로 스크롤
 });
