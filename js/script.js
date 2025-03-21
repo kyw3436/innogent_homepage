@@ -128,4 +128,3 @@ if (window.location.hash) {
   // 스크롤을 상단으로 이동
   window.scrollTo(0, 0);
 }
-});
