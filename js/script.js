@@ -120,3 +120,12 @@ style.textContent = `
     .faq-item:nth-child(3) { --i: 3; }
 `;
 document.head.appendChild(style);
+
+window.addEventListener('load', function() {
+// URL에 해시가 있으면 제거
+if (window.location.hash) {
+  history.replaceState(null, null, window.location.href.split('#')[0]);
+  // 스크롤을 상단으로 이동
+  window.scrollTo(0, 0);
+}
+});
