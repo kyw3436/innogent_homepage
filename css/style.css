@@ -530,6 +530,12 @@ img {
 
 .footer-contact {
     font-size: 1rem;
+    color: rgba(238, 240, 242, 0.7);
+}
+
+.footer-address {
+    font-size: 1rem;
+    color: rgba(238, 240, 242, 0.7);
 }
 
 .footer-copyright {
