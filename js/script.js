@@ -120,3 +120,12 @@ style.textContent = `
     .faq-item:nth-child(3) { --i: 3; }
 `;
 document.head.appendChild(style);
+
+// 브라우저의 스크롤 복원 기능을 수동 모드로 설정
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+// 페이지 언로드 시 스크롤 위치를 상단으로 설정
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
