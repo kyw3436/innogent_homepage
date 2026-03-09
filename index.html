@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innogent</title>
-    <meta name="description" content="AI와 첨단 기술을 기반으로 혁신적인 솔루션을 제공하며 데이터와 자동화를 통해 기업과 사회의 가치를 극대화합니다. 고객 맞춤형 AI 솔루션으로 더 나은 미래를 함께 만들어갑니다.">
+    <title data-i18n="title">Innogent</title>
+    <meta name="description" data-i18n-content="meta_description"
+        content="AI와 첨단 기술을 기반으로 혁신적인 솔루션을 제공하며 데이터와 자동화를 통해 기업과 사회의 가치를 극대화합니다. 고객 맞춤형 AI 솔루션으로 더 나은 미래를 함께 만들어갑니다.">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+
+<body data-lang="ko">
+    <!-- Language Switcher -->
+    <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ko" data-i18n="nav_ko">Ko</button>
+        <button class="lang-btn" data-lang="en" data-i18n="nav_en">En</button>
+    </div>
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">미래를 설계하는 AI 전문가 그룹, 이노젠트</h1>
-            <p class="hero-description">AI와 첨단 기술을 기반으로 혁신적인 솔루션을 제공하며 데이터와 자동화를 통해 기업과 사회의 가치를 극대화합니다. 고객 맞춤형 AI 솔루션으로 더 나은 미래를 함께 만들어갑니다.</p>
+            <h1 class="hero-title" data-i18n="hero_title">미래를 설계하는 AI 전문가 그룹, 이노젠트</h1>
+            <p class="hero-description" data-i18n="hero_description">AI와 첨단 기술을 기반으로 혁신적인 솔루션을 제공하며 데이터와 자동화를 통해 기업과 사회의
+                가치를 극대화합니다. 고객 맞춤형 AI 솔루션으로 더 나은 미래를 함께 만들어갑니다.</p>
             <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="window.open('https://forms.gle/EQoF4aKhrZdGcUrK8', '_blank')">상담 문의하기</button>
-                <button class="btn btn-outline" onclick="window.location.href='#services'">서비스 살펴보기</button>
+                <button class="btn btn-primary" data-i18n="hero_btn_consult"
+                    onclick="window.open('https://forms.gle/EQoF4aKhrZdGcUrK8', '_blank')">상담 문의하기</button>
+                <button class="btn btn-outline" data-i18n="hero_btn_officegpt"
+                    onclick="window.location.href='officegpt.html'">OfficeGPT</button>
+                <button class="btn btn-outline" data-i18n="hero_btn_services"
+                    onclick="window.location.href='#services'">서비스 살펴보기</button>
             </div>
         </div>
     </section>
@@ -26,51 +39,64 @@
         <div class="container">
             <div class="ai-foundry-grid">
                 <div class="ai-foundry-content">
-                    <h2 class="section-title">AI Foundry</h2>
-                    <h2 class="section-title">맞춤형 AI 솔루션의 시작</h2>
-                    <p class="section-description">이노젠트는 고객의 비즈니스에 맞춰 최적화된 AI 솔루션을 제공합니다.</p>
+                    <h2 class="section-title" data-i18n="ai_foundry_title">AI Foundry</h2>
+                    <h2 class="section-title" data-i18n="ai_foundry_subtitle">맞춤형 AI 솔루션의 시작</h2>
+                    <p class="section-description" data-i18n="ai_foundry_desc">이노젠트는 고객의 비즈니스에 맞춰 최적화된 AI 솔루션을 제공합니다.
+                    </p>
 
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                             </svg>
                         </div>
                         <div class="feature-content">
-                            <h3 class="feature-title">맞춤형 AI 개발</h3>
-                            <p class="feature-description">귀사의 데이터와 요구에 맞춘 맞춤형 AI 솔루션을 개발합니다.</p>
+                            <h3 class="feature-title" data-i18n="feature_custom_title">맞춤형 AI 개발</h3>
+                            <p class="feature-description" data-i18n="feature_custom_desc">귀사의 데이터와 요구에 맞춘 맞춤형 AI 솔루션을
+                                개발합니다.</p>
                         </div>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                             </svg>
                         </div>
                         <div class="feature-content">
-                            <h3 class="feature-title">안정적인 시스템</h3>
-                            <p class="feature-description">엔터프라이즈급 안정성과 성능을 갖춘 AI 시스템을 구축합니다.</p>
+                            <h3 class="feature-title" data-i18n="feature_stable_title">안정적인 시스템</h3>
+                            <p class="feature-description" data-i18n="feature_stable_desc">엔터프라이즈급 안정성과 성능을 갖춘 AI 시스템을
+                                구축합니다.</p>
                         </div>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                         </div>
                         <div class="feature-content">
-                            <h3 class="feature-title">지속적인 업데이트</h3>
-                            <p class="feature-description">최신 AI 기술을 적용한 지속적인 개선과 업데이트를 제공합니다.</p>
+                            <h3 class="feature-title" data-i18n="feature_update_title">지속적인 업데이트</h3>
+                            <p class="feature-description" data-i18n="feature_update_desc">최신 AI 기술을 적용한 지속적인 개선과 업데이트를
+                                제공합니다.</p>
                         </div>
                     </div>
                 </div>
                 <div class="ai-foundry-image">
-                    <video autoplay loop muted playsinline poster="./images/homepage_main_250911.jpg" style="max-width:100%; height:auto; object-fit:cover; display:block; margin:0 auto;">
+                    <video autoplay loop muted playsinline poster="./images/homepage_main_250911.jpg"
+                        style="max-width:100%; height:auto; object-fit:cover; display:block; margin:0 auto;">
                         <source src="./images/homepage_main_video.mp4" type="video/mp4">
-                        <img src="./images/homepage_main_250911.jpg" alt="AI Foundry" style="max-width:100%; height:auto; display:block; margin:0 auto;"/>
+                        <img src="./images/homepage_main_250911.jpg" alt="AI Foundry"
+                            style="max-width:100%; height:auto; display:block; margin:0 auto;" />
                     </video>
                 </div>
             </div>
@@ -80,34 +106,40 @@
     <!-- Core Values Section -->
     <section class="core-values">
         <div class="container">
-            <h2 class="section-title">핵심 기업 가치</h2>
+            <h2 class="section-title" data-i18n="core_values_title">핵심 기업 가치</h2>
             <div class="values-grid">
                 <div class="value-card">
                     <div class="value-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                     </div>
-                    <h3 class="value-title">혁신적 사고(Innovation)</h3>
-                    <p class="value-description">최신 기술 도입과 지속적인 연구를 통해 혁신적인 솔루션을 개발합니다.</p>
+                    <h3 class="value-title" data-i18n="value_innovation_title">혁신적 사고(Innovation)</h3>
+                    <p class="value-description" data-i18n="value_innovation_desc">최신 기술 도입과 지속적인 연구를 통해 혁신적인 솔루션을
+                        개발합니다.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                     </div>
-                    <h3 class="value-title">지능적 전문성(Intelligent Expertise)</h3>
-                    <p class="value-description">AI, 데이터 과학 등 각 분야 최고의 전문가들로 구성되어 있습니다.</p>
+                    <h3 class="value-title" data-i18n="value_expertise_title">지능적 전문성(Intelligent Expertise)</h3>
+                    <p class="value-description" data-i18n="value_expertise_desc">AI, 데이터 과학 등 각 분야 최고의 전문가들로 구성되어 있습니다.
+                    </p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                     </div>
-                    <h3 class="value-title">신뢰와 책임(Integrity)</h3>
-                    <p class="value-description">고객과의 투명한 소통과 신뢰를 바탕으로 약속을 지키는 기업이 되겠습니다. 모든 업무에 있어 정직과 신뢰를 최우선으로 생각하며, 고객의 이익을 위해 항상 최선을 다합니다.</p>
+                    <h3 class="value-title" data-i18n="value_integrity_title">신뢰와 책임(Integrity)</h3>
+                    <p class="value-description" data-i18n="value_integrity_desc">고객과의 투명한 소통과 신뢰를 바탕으로 약속을 지키는 기업이
+                        되겠습니다. 모든 업무에 있어 정직과 신뢰를 최우선으로 생각하며, 고객의 이익을 위해 항상 최선을 다합니다.</p>
                 </div>
             </div>
         </div>
@@ -116,30 +148,30 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">AI 서비스</h2>
+            <h2 class="section-title" data-i18n="services_title">AI 서비스</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3 class="service-title">맞춤형 AI 개발</h3>
+                    <h3 class="service-title" data-i18n="service_custom_dev_title">맞춤형 AI 개발</h3>
                     <ul class="service-list">
-                        <li>LLM, SLLM 및 RAG</li>
-                        <li>상황인식 데이터 분석</li>
-                        <li>고성능 AI 추론 엔진</li>
+                        <li data-i18n="service_custom_dev_item1">LLM, SLLM 및 RAG</li>
+                        <li data-i18n="service_custom_dev_item2">상황인식 데이터 분석</li>
+                        <li data-i18n="service_custom_dev_item3">고성능 AI 추론 엔진</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3 class="service-title">인공지능 AI 서비스</h3>
+                    <h3 class="service-title" data-i18n="service_ai_service_title">인공지능 AI 서비스</h3>
                     <ul class="service-list">
-                        <li>텍스트 생성 및 분석</li>
-                        <li>이미지 및 동영상 처리</li>
-                        <li>음성 인식 및 합성</li>
+                        <li data-i18n="service_ai_service_item1">텍스트 생성 및 분석</li>
+                        <li data-i18n="service_ai_service_item2">이미지 및 동영상 처리</li>
+                        <li data-i18n="service_ai_service_item3">음성 인식 및 합성</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3 class="service-title">ERP·MES 고도화</h3>
+                    <h3 class="service-title" data-i18n="service_erp_title">ERP·MES 고도화</h3>
                     <ul class="service-list">
-                        <li>ERP, MES 솔루션</li>
-                        <li>스마트 AI 기반 최적화</li>
-                        <li>데이터 통합 연계</li>
+                        <li data-i18n="service_erp_item1">ERP, MES 솔루션</li>
+                        <li data-i18n="service_erp_item2">스마트 AI 기반 최적화</li>
+                        <li data-i18n="service_erp_item3">데이터 통합 연계</li>
                     </ul>
                 </div>
             </div>
@@ -149,23 +181,25 @@
     <!-- Technology Stack Section -->
     <section class="tech-stack">
         <div class="container">
-            <h2 class="section-title">최신 기술로 함께 나아갑니다</h2>
+            <h2 class="section-title" data-i18n="tech_stack_title">최신 기술로 함께 나아갑니다</h2>
             <div class="tech-circle">
                 <div class="tech-segment segment-1">
-                    <h3 class="tech-title">개발 언어</h3>
-                    <p class="tech-description">Java, Python 등 최신 개발언어를 활용한 솔루션</p>
+                    <h3 class="tech-title" data-i18n="tech_lang_title">개발 언어</h3>
+                    <p class="tech-description" data-i18n="tech_lang_desc">Java, Python 등 최신 개발언어를 활용한 솔루션</p>
                 </div>
                 <div class="tech-segment segment-2">
-                    <h3 class="tech-title">AI 프레임워크</h3>
-                    <p class="tech-description">Gemma, LLaMa, FAISS, HuggingFace 등을 활용한 AI 시스템 구축</p>
+                    <h3 class="tech-title" data-i18n="tech_framework_title">AI 프레임워크</h3>
+                    <p class="tech-description" data-i18n="tech_framework_desc">Gemma, LLaMa, FAISS, HuggingFace 등을 활용한
+                        AI 시스템 구축</p>
                 </div>
                 <div class="tech-segment segment-3">
-                    <h3 class="tech-title">검색 엔진</h3>
-                    <p class="tech-description">Elasticsearch, Milvus, Chroma 등을 이용한 고성능 검색 솔루션</p>
+                    <h3 class="tech-title" data-i18n="tech_search_title">검색 엔진</h3>
+                    <p class="tech-description" data-i18n="tech_search_desc">Elasticsearch, Milvus, Chroma 등을 이용한 고성능 검색
+                        솔루션</p>
                 </div>
                 <div class="tech-segment segment-4">
-                    <h3 class="tech-title">인프라 환경</h3>
-                    <p class="tech-description">Docker, Kubernetes 등을 활용한 클라우드 환경</p>
+                    <h3 class="tech-title" data-i18n="tech_infra_title">인프라 환경</h3>
+                    <p class="tech-description" data-i18n="tech_infra_desc">Docker, Kubernetes 등을 활용한 클라우드 환경</p>
                 </div>
             </div>
         </div>
@@ -174,64 +208,73 @@
     <!-- AI Development Process Section -->
     <section class="ai-process">
         <div class="container">
-            <h2 class="section-title">맞춤형 AI 개발 과정</h2>
+            <h2 class="section-title" data-i18n="process_title">맞춤형 AI 개발 과정</h2>
             <div class="process-timeline">
                 <div class="process-step">
                     <div class="process-icon">1</div>
                     <div class="process-content">
-                        <h3 class="process-title">AI 기반 데이터 기초 모델 구축</h3>
-                        <p class="process-description">고객사의 핵심 데이터를 수집하고 분석하여 맞춤형 기초 AI 모델을 구축합니다.</p>
+                        <h3 class="process-title" data-i18n="process_step1_title">AI 기반 데이터 기초 모델 구축</h3>
+                        <p class="process-description" data-i18n="process_step1_desc">고객사의 핵심 데이터를 수집하고 분석하여 맞춤형 기초 AI
+                            모델을 구축합니다.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="process-icon">2</div>
                     <div class="process-content">
-                        <h3 class="process-title">다목적 인텔리전스 AI 시스템 구축</h3>
-                        <p class="process-description">멀티모달 기술로 이미지, 오디오, 영상 데이터를 분석하며, 데이터 시각화 및 차트 기능을 통해 인사이트를 제공합니다.</p>
+                        <h3 class="process-title" data-i18n="process_step2_title">다목적 인텔리전스 AI 시스템 구축</h3>
+                        <p class="process-description" data-i18n="process_step2_desc">멀티모달 기술로 이미지, 오디오, 영상 데이터를 분석하며,
+                            데이터 시각화 및 차트 기능을 통해 인사이트를 제공합니다.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="process-icon">3</div>
                     <div class="process-content">
-                        <h3 class="process-title">고객 맞춤형 AI 서비스 솔루션 구현</h3>
-                        <p class="process-description">고객의 비즈니스 목표에 최적화된 맞춤형 AI 서비스를 개발하여 실제 성과를 지원합니다.</p>
+                        <h3 class="process-title" data-i18n="process_step3_title">고객 맞춤형 AI 서비스 솔루션 구현</h3>
+                        <p class="process-description" data-i18n="process_step3_desc">고객의 비즈니스 목표에 최적화된 맞춤형 AI 서비스를 개발하여
+                            실제 성과를 지원합니다.</p>
                     </div>
                 </div>
             </div>
         </div>
-</section>
+    </section>
 
     <!-- VMS Solutions Section -->
     <section class="vms-solutions">
         <div class="container">
-            <h2 class="section-title">AI 서비스 솔루션</h2>
+            <h2 class="section-title" data-i18n="solutions_title">AI 서비스 솔루션</h2>
             <div class="solutions-grid">
                 <div class="solution-card">
                     <div class="solution-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         </svg>
                     </div>
-                    <h3 class="solution-title">기업용 AI 솔루션 개발 플랫폼</h3>
-                    <p class="solution-description">업 맞춤형 AI 모델을 구축하고 기존 시스템과의 통합을 지원하는 기업용 AI 솔루션 개발 플랫폼을 제공합니다.</p>
+                    <h3 class="solution-title" data-i18n="solution_platform_title">기업용 AI 솔루션 개발 플랫폼</h3>
+                    <p class="solution-description" data-i18n="solution_platform_desc">업 맞춤형 AI 모델을 구축하고 기존 시스템과의 통합을
+                        지원하는 기업용 AI 솔루션 개발 플랫폼을 제공합니다.</p>
                 </div>
                 <div class="solution-card">
                     <div class="solution-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
                     </div>
-                    <h3 class="solution-title">AI 기술 통합 및 시스템 연계 지원</h3>
-                    <p class="solution-description">기존 솔루션과 AI 기술 간의 원활한 통합 및 연계를 지원하는 AI 통합 미들웨어를 제공합니다.</p>
+                    <h3 class="solution-title" data-i18n="solution_integration_title">AI 기술 통합 및 시스템 연계 지원</h3>
+                    <p class="solution-description" data-i18n="solution_integration_desc">기존 솔루션과 AI 기술 간의 원활한 통합 및 연계를
+                        지원하는 AI 통합 미들웨어를 제공합니다.</p>
                 </div>
                 <div class="solution-card">
                     <div class="solution-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                     </div>
-                    <h3 class="solution-title">기술 협력 및 역량 지원</h3>
-                    <p class="solution-description">지속 가능한 AI 기술 역량 확보를 목표로 AI 기술 교육 및 컨설팅 서비스를 제공합니다.</p>
+                    <h3 class="solution-title" data-i18n="solution_collaboration_title">기술 협력 및 역량 지원</h3>
+                    <p class="solution-description" data-i18n="solution_collaboration_desc">지속 가능한 AI 기술 역량 확보를 목표로 AI
+                        기술 교육 및 컨설팅 서비스를 제공합니다.</p>
                 </div>
             </div>
         </div>
@@ -240,24 +283,27 @@
     <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
-            <h2 class="section-title">자주 묻는 질문 AI 서비스에 대하여</h2>
+            <h2 class="section-title" data-i18n="faq_title">자주 묻는 질문 AI 서비스에 대하여</h2>
             <div class="faq-list">
                 <div class="faq-item">
-                    <h3 class="faq-question">인공지능 서비스가 필요한 시점은 언제인가요?</h3>
+                    <h3 class="faq-question" data-i18n="faq_q1">인공지능 서비스가 필요한 시점은 언제인가요?</h3>
                     <div class="faq-answer">
-                        <p>생산성, 효율성, 정확성, 경쟁력, 혁신을 향상시키고자 할 때 필요합니다. 대량의 데이터를 처리하거나 반복적인 업무를 자동화하고 싶을 때 AI가 도움이 됩니다.</p>
+                        <p data-i18n="faq_a1">생산성, 효율성, 정확성, 경쟁력, 혁신을 향상시키고자 할 때 필요합니다. 대량의 데이터를 처리하거나 반복적인 업무를 자동화하고 싶을
+                            때 AI가 도움이 됩니다.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <h3 class="faq-question">AI 솔루션 도입 방법은 무엇인가요?</h3>
+                    <h3 class="faq-question" data-i18n="faq_q2">AI 솔루션 도입 방법은 무엇인가요?</h3>
                     <div class="faq-answer">
-                        <p>상담을 통해, 귀사의 비즈니스 니즈를 파악하고 AI 기술 도입 방안을 제안해 드립니다. 기존 시스템과의 통합(API, SDK 등)을 포함한 맞춤형 솔루션을 제공하며, 단계적인 도입을 통해 리스크를 최소화합니다.</p>
+                        <p data-i18n="faq_a2">상담을 통해, 귀사의 비즈니스 니즈를 파악하고 AI 기술 도입 방안을 제안해 드립니다. 기존 시스템과의 통합(API, SDK 등)을
+                            포함한 맞춤형 솔루션을 제공하며, 단계적인 도입을 통해 리스크를 최소화합니다.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <h3 class="faq-question">AI 솔루션 구현 기간은 얼마나 걸리나요?</h3>
+                    <h3 class="faq-question" data-i18n="faq_q3">AI 솔루션 구현 기간은 얼마나 걸리나요?</h3>
                     <div class="faq-answer">
-                        <p>AI 솔루션의 복잡성, 데이터 가용성, 목표 정확도에 따라 달라집니다. 일반적으로 기본적인 AI 솔루션은 몇 주에서 몇 개월이 소요될 수 있으며, 상세한 타임라인은 상담을 통해 제공해 드립니다.</p>
+                        <p data-i18n="faq_a3">AI 솔루션의 복잡성, 데이터 가용성, 목표 정확도에 따라 달라집니다. 일반적으로 기본적인 AI 솔루션은 몇 주에서 몇 개월이 소요될
+                            수 있으며, 상세한 타임라인은 상담을 통해 제공해 드립니다.</p>
                     </div>
                 </div>
             </div>
@@ -268,12 +314,16 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p class="footer-address"><a href="https://naver.me/GFBv8kGL" target="_blank">주소 : 서울 금천구 범안로 1126 대륭21차 719호</a></p>
-                <p class="footer-copyright">Copyright ⓒ Innogent Inc. All rights Reserved.</p>
+                <p class="footer-address"><a href="https://naver.me/GFBv8kGL" target="_blank"
+                        data-i18n="footer_address">주소 : 서울 금천구 범안로 1126 대륭21차 719호</a></p>
+                <p class="footer-copyright" data-i18n="footer_copyright">Copyright ⓒ Innogent Co., Ltd. All rights
+                    Reserved.
+                </p>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
 </body>
+
 </html>

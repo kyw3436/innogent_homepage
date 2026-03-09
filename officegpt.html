@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">OfficeGPT - Innogent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #FFFFFF;
+            color: #333;
+        }
+
+        .text-deep-blue {
+            color: #003B91;
+        }
+
+        .bg-deep-blue {
+            background-color: #003B91;
+        }
+
+        .bg-silver-gray {
+            background-color: #F8F9FA;
+        }
+
+        .border-light-blue {
+            border-color: #0056D2;
+        }
+
+        .text-light-blue {
+            color: #0056D2;
+        }
+
+        /* Hero Section Gradient Background */
+        .hero-bg {
+            background: linear-gradient(180deg, #F0F4F8 0%, #FFFFFF 100%);
+        }
+
+        .agent-card {
+            background-color: #FFFFFF;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #E5E7EB;
+        }
+
+        .agent-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            border-color: #003B91;
+        }
+
+        /* Language Switcher Upgraded Styles */
+        .lang-switch-og {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 2000;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4px;
+            border-radius: 9999px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 59, 145, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 59, 145, 0.1);
+        }
+
+        .lang-btn {
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background-color: #003B91;
+            color: #FFFFFF;
+            border-color: #003B91;
+            font-weight: 700;
+        }
+
+        .lang-btn:not(.active) {
+            color: #003B91;
+            border-color: transparent;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: rgba(0, 59, 145, 0.05);
+        }
+
+        .home-btn-og {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 50;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #003B91;
+            text-decoration: none;
+            letter-spacing: -0.025em;
+            transition: opacity 0.3s;
+        }
+
+        .home-btn-og:hover {
+            opacity: 0.8;
+        }
+
+        /* Glassmorphism Section */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body data-lang="ko" class="overflow-x-hidden">
+
+    <!-- Header / Navigation -->
+    <header class="relative w-full h-24 hero-bg">
+        <a href="index.html" class="home-btn-og" data-i18n="og_home_btn">HOME</a>
+        <div class="lang-switch-og">
+            <button class="lang-btn active px-5 py-1.5 rounded-full text-sm" data-lang="ko"
+                data-i18n="nav_ko">Ko</button>
+            <button class="lang-btn px-5 py-1.5 rounded-full text-sm" data-lang="en" data-i18n="nav_en">En</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 lg:py-32 bg-white overflow-hidden hero-bg">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-xl md:text-2xl font-bold text-cyan-600 mb-6 tracking-wide animate-fade-in"
+                    data-i18n="og_hero_ax_title">
+                    DX를 넘어 AX(AI Transformation) 전환의 시대로
+                </p>
+                <h1 class="text-4xl lg:text-6xl font-bold text-deep-blue mb-8 leading-tight animate-fade-in"
+                    data-i18n="og_hero_m_title">
+                    글로벌 비즈니스의 미래, 데이터의 언어를 이해하는 OfficeGPT
+                </h1>
+                <p class="text-xl text-gray-600 mb-12 leading-relaxed" data-i18n="og_hero_s_title">
+                    수많은 언어를 유연하게 수용하고 확장할 수 있는 다국어 지원과 산업 특화 에이전트로<br>세계 지사를 하나로 연결하는 지능형 협업 인프라를 구축하십시오.
+                </p>
+            </div>
+
+            <div
+                class="mt-8 md:mt-12 bg-white/70 backdrop-blur-md rounded-2xl shadow-[0_4px_30px_rgba(0,10,30,0.06)] border border-blue-50/60 p-6 lg:p-10 animate-fade-in w-full">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
+                    <!-- Item 1 -->
+                    <div
+                        class="bg-white p-6 md:p-8 rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100/60 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,50,150,0.08)] transition-all duration-300 flex flex-col h-full text-left">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div
+                                class="w-16 h-16 bg-deep-blue text-white rounded-2xl flex items-center justify-center text-3xl shadow-sm flex-shrink-0">
+                                <i class="fas fa-file-signature"></i>
+                            </div>
+                            <h4 class="font-bold text-[1.35rem] text-deep-blue leading-snug tracking-tight"
+                                data-i18n="og_ax_item1_title">지능형 자산화</h4>
+                        </div>
+                        <p class="text-gray-600 leading-[1.8] text-[15px] font-medium tracking-tight break-keep"
+                            data-i18n="og_hero_ax_item1">방대한 기술 문서 및 설계 도면을 살아있는 지능형 에이전트로 변환하여 기업 자산을 극대화합니다.</p>
+                    </div>
+                    <!-- Item 2 -->
+                    <div
+                        class="bg-white p-6 md:p-8 rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100/60 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,50,150,0.08)] transition-all duration-300 flex flex-col h-full text-left">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div
+                                class="w-16 h-16 bg-deep-blue text-white rounded-2xl flex items-center justify-center text-3xl shadow-sm flex-shrink-0">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <h4 class="font-bold text-[1.35rem] text-deep-blue leading-snug tracking-tight"
+                                data-i18n="og_ax_item2_title">다국어 의사결정</h4>
+                        </div>
+                        <p class="text-gray-600 leading-[1.8] text-[15px] font-medium tracking-tight break-keep"
+                            data-i18n="og_hero_ax_item2">언어 장벽을 허무는 다국어 검색으로 전 세계 어디서나 실시간 의사결정을 지원합니다.</p>
+                    </div>
+                    <!-- Item 3 -->
+                    <div
+                        class="bg-white p-6 md:p-8 rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100/60 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,50,150,0.08)] transition-all duration-300 flex flex-col h-full text-left">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div
+                                class="w-16 h-16 bg-deep-blue text-white rounded-2xl flex items-center justify-center text-2xl shadow-sm flex-shrink-0">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h4 class="font-bold text-[1.35rem] text-deep-blue leading-snug tracking-tight"
+                                data-i18n="og_ax_item3_title">글로벌 통합<br>인프라</h4>
+                        </div>
+                        <p class="text-gray-600 leading-[1.8] text-[15px] font-medium tracking-tight break-keep"
+                            data-i18n="og_hero_ax_item3">파편화된 전 세계 지사 데이터를 하나로 연결하여 본사와 지사 간 완벽한 동기화를 이룹니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative blob elements -->
+        <div class="absolute top-0 right-0 -mr-32 -mt-32 w-128 h-128 bg-blue-100 rounded-full opacity-30 blur-3xl">
+        </div>
+        <div class="absolute bottom-0 left-0 -ml-32 -mb-32 w-128 h-128 bg-cyan-100 rounded-full opacity-30 blur-3xl">
+        </div>
+    </section>
+
+    <!-- Professional AI Agents Section -->
+    <section class="py-24 bg-silver-gray">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-center text-deep-blue mb-20 tracking-tight"
+                data-i18n="og_features_title">Professional AI Agents</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Agent Card 1 -->
+                <div class="agent-card p-10 rounded-sm border-t-8 border-deep-blue shadow-lg">
+                    <div class="text-light-blue text-4xl mb-8"><i class="fas fa-drafting-compass"></i></div>
+                    <h3 class="text-2xl font-bold mb-5 text-gray-800" data-i18n="og_agent1_title">CAD Compare Agent</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="og_agent1_desc">설계 도면 변경 사항 정밀 분석 및 시각화.</p>
+                </div>
+                <!-- Agent Card 2 -->
+                <div class="agent-card p-10 rounded-sm border-t-8 border-deep-blue shadow-lg">
+                    <div class="text-light-blue text-4xl mb-8"><i class="fas fa-list-ol"></i></div>
+                    <h3 class="text-2xl font-bold mb-5 text-gray-800" data-i18n="og_agent2_title">CAD BOM Agent</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="og_agent2_desc">도면 내 복잡한 부품 리스트(BOM) 자동 추출 및
+                        정규화.</p>
+                </div>
+                <!-- Agent Card 3 -->
+                <div class="agent-card p-10 rounded-sm border-t-8 border-deep-blue shadow-lg">
+                    <div class="text-light-blue text-4xl mb-8"><i class="fas fa-database"></i></div>
+                    <h3 class="text-2xl font-bold mb-5 text-gray-800" data-i18n="og_agent3_title">SQL Agent</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="og_agent3_desc">자연어 질문을 통한 실시간 데이터베이스 쿼리 및 분석.
+                    </p>
+                </div>
+                <!-- Agent Card 4 -->
+                <div class="agent-card p-10 rounded-sm border-t-8 border-deep-blue shadow-lg">
+                    <div class="text-light-blue text-4xl mb-8"><i class="fas fa-file-alt"></i></div>
+                    <h3 class="text-2xl font-bold mb-5 text-gray-800" data-i18n="og_agent4_title">Document Summary Agent
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="og_agent4_desc">방대한 외국어 기술 문서를 핵심 위주로 즉각 요약.</p>
+                </div>
+                <!-- Agent Card 5 -->
+                <div class="agent-card p-10 rounded-sm border-t-8 border-deep-blue shadow-lg">
+                    <div class="text-light-blue text-4xl mb-8"><i class="fas fa-copy"></i></div>
+                    <h3 class="text-2xl font-bold mb-5 text-gray-800" data-i18n="og_agent5_title">Document Compare Agent
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="og_agent5_desc">계약서 및 규정집의 버전별 의미적 차이점 대조.</p>
+                </div>
+                <!-- Agent Card 6 -->
+                <div class="agent-card p-10 rounded-sm border-t-8 border-deep-blue shadow-lg">
+                    <div class="text-light-blue text-4xl mb-8"><i class="fas fa-language"></i></div>
+                    <h3 class="text-2xl font-bold mb-5 text-gray-800" data-i18n="og_agent6_title">Document Translation
+                        Agent
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="og_agent6_desc">다국어 문서를 원하는 언어로 정확하고 자연스럽게 번역.
+                    </p>
+                </div>
+                <!-- Agent Card 7 -->
+                <div class="agent-card p-10 rounded-sm border-t-8 border-deep-blue shadow-lg">
+                    <div class="text-light-blue text-4xl mb-8"><i class="fas fa-spell-check"></i></div>
+                    <h3 class="text-2xl font-bold mb-5 text-gray-800" data-i18n="og_agent7_title">Document Grammar Agent
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="og_agent7_desc">작성된 문서의 문법, 철자 및 맥락 오류를 검토하고 교정.
+                    </p>
+                </div>
+                <!-- Agent Card 8 -->
+                <div class="agent-card p-10 rounded-sm border-t-8 border-deep-blue shadow-lg">
+                    <div class="text-light-blue text-4xl mb-8"><i class="fas fa-balance-scale"></i></div>
+                    <h3 class="text-2xl font-bold mb-5 text-gray-800" data-i18n="og_agent8_title">Compliance Agent
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="og_agent8_desc">기업 규정 및 법적 요건 준수 여부를 자동으로 검토.
+                    </p>
+                </div>
+                <!-- Agent Card 9 -->
+                <div class="agent-card p-10 rounded-sm border-t-8 border-deep-blue shadow-lg">
+                    <div class="text-light-blue text-4xl mb-8"><i class="fas fa-chart-pie"></i></div>
+                    <h3 class="text-2xl font-bold mb-5 text-gray-800" data-i18n="og_agent9_title">BizInsight Agent
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="og_agent9_desc">방대한 비즈니스 데이터에서 유의미한 시사점과 동향 제안.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Multi-language Support Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap items-center -mx-10">
+                <div class="w-full lg:w-1/2 px-10 mb-16 lg:mb-0">
+                    <h2 class="text-4xl lg:text-5xl font-extrabold text-deep-blue mb-10 tracking-tight"
+                        data-i18n="og_multi_title">Global Multi-language Support</h2>
+                    <ul class="space-y-8">
+                        <li class="flex items-start">
+                            <span class="text-light-blue text-2xl mr-5 mt-1"><i class="fas fa-check-circle"></i></span>
+                            <div>
+                                <h4 class="font-bold text-xl mb-2 text-gray-800" data-i18n="og_func1_title">
+                                    Cross-lingual RAG</h4>
+                                <p class="text-gray-600 text-lg leading-relaxed" data-i18n="og_func1_desc">한국어로 질문하고
+                                    영어/중국어 문서에서 답을 찾는 언어 교차 검색.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-light-blue text-2xl mr-5 mt-1"><i class="fas fa-check-circle"></i></span>
+                            <div>
+                                <h4 class="font-bold text-xl mb-2 text-gray-800" data-i18n="og_func2_title">Native
+                                    Localization</h4>
+                                <p class="text-gray-600 text-lg leading-relaxed" data-i18n="og_func2_desc">국가별 날짜, 숫자
+                                    표기, 통화 단위를 반영한 하이퍼 로컬라이제이션.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-light-blue text-2xl mr-5 mt-1"><i class="fas fa-check-circle"></i></span>
+                            <div>
+                                <h4 class="font-bold text-xl mb-2 text-gray-800" data-i18n="og_func3_title">50+
+                                    Supported Languages</h4>
+                                <p class="text-gray-600 text-lg leading-relaxed" data-i18n="og_func3_desc">KR, EN, JP,
+                                    CN, DE, FR 등 50개 이상의 다국어 및 글로벌 연결 지원.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full lg:w-1/2 px-10">
+                    <div
+                        class="bg-gradient-to-br from-blue-50 to-white p-16 rounded-sm text-center relative overflow-hidden border border-blue-100">
+                        <i class="fas fa-globe-americas text-9xl text-blue-100"></i>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="glass-card p-8 rounded-sm shadow-2xl max-w-sm">
+                                <p class="text-xs font-bold text-deep-blue uppercase tracking-widest mb-4">Connected
+                                    Global Infrastructure</p>
+                                <div class="flex flex-wrap justify-center gap-3">
+                                    <span
+                                        class="px-3 py-1.5 bg-white rounded-sm text-xs font-bold shadow-sm border border-gray-100">KR</span>
+                                    <span
+                                        class="px-3 py-1.5 bg-white rounded-sm text-xs font-bold shadow-sm border border-gray-100">EN</span>
+                                    <span
+                                        class="px-3 py-1.5 bg-white rounded-sm text-xs font-bold shadow-sm border border-gray-100">JP</span>
+                                    <span
+                                        class="px-3 py-1.5 bg-white rounded-sm text-xs font-bold shadow-sm border border-gray-100">CN</span>
+                                    <span
+                                        class="px-3 py-1.5 bg-white rounded-sm text-xs font-bold shadow-sm border border-gray-100">DE</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Expansion Advantages Section -->
+    <section class="py-24 bg-deep-blue text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div
+                class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+            </div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-center mb-20 tracking-tight" data-i18n="og_adv_title">
+                Global Expansion Advantages</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="adv-card group p-6 rounded-sm hover:bg-white/5 transition-colors">
+                    <div class="text-5xl mb-8 text-cyan-400 group-hover:scale-110 transition-transform"><i
+                            class="fas fa-bolt"></i></div>
+                    <h3 class="text-2xl font-bold mb-5" data-i18n="og_adv1_title">빠른 현지화</h3>
+                    <p class="text-blue-100 text-lg leading-relaxed opacity-90" data-i18n="og_adv1_desc">본사 지식 자산을 현지어로
+                        즉시 학습시켜 지사 인프라 구축 가속화.</p>
+                </div>
+                <div class="adv-card group p-6 rounded-sm hover:bg-white/5 transition-colors">
+                    <div class="text-5xl mb-8 text-cyan-400 group-hover:scale-110 transition-transform"><i
+                            class="fas fa-chart-line"></i></div>
+                    <h3 class="text-2xl font-bold mb-5" data-i18n="og_adv2_title">운영 비용 절감</h3>
+                    <p class="text-blue-100 text-lg leading-relaxed opacity-90" data-i18n="og_adv2_desc">고비용 현지 전문 인력을
+                        AI 에이전트로 보완.</p>
+                </div>
+                <div class="adv-card group p-6 rounded-sm hover:bg-white/5 transition-colors">
+                    <div class="text-5xl mb-8 text-cyan-400 group-hover:scale-110 transition-transform"><i
+                            class="fas fa-shield-alt"></i></div>
+                    <h3 class="text-2xl font-bold mb-5" data-i18n="og_adv3_title">운영 표준(SOP) 준수</h3>
+                    <p class="text-blue-100 text-lg leading-relaxed opacity-90" data-i18n="og_adv3_desc">전 세계 지사가 동일한
+                        데이터를 기반으로 일관된 품질 유지.</p>
+                </div>
+                <div class="adv-card group p-6 rounded-sm hover:bg-white/5 transition-colors">
+                    <div class="text-5xl mb-8 text-cyan-400 group-hover:scale-110 transition-transform"><i
+                            class="fas fa-sync-alt"></i></div>
+                    <h3 class="text-2xl font-bold mb-5" data-i18n="og_adv4_title">실시간 동기화</h3>
+                    <p class="text-blue-100 text-lg leading-relaxed opacity-90" data-i18n="og_adv4_desc">해외 현장 이슈를 본사에서
+                        실시간 한국어로 파악 및 대응.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="py-10 bg-gray-50 text-center text-gray-400 text-sm">
+        <p data-i18n="footer_copyright">Copyright ⓒ Innogent Co., Ltd. All rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
