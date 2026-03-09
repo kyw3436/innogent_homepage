@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title">OfficeGPT - Innogent</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -391,7 +392,10 @@
         <p data-i18n="footer_copyright">Copyright ⓒ Innogent Co., Ltd. All rights Reserved.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+
+    <script>
+        document.write('<script src="js/script.js?t=' + new Date().getTime() + '"><\/script>');
+    </script>
 </body>
 
 </html>
