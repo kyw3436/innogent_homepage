@@ -126,8 +126,8 @@ const translations = {
         "og_info_title": "Innogent Information",
     },
     en: {
-        "nav_ko": "KR",
-        "nav_en": "EN",
+        "nav_ko": "Ko",
+        "nav_en": "En",
         "title": "Innogent",
         "meta_description": "We provide innovative solutions based on AI and advanced technology, maximizing the value of businesses and society through data and automation. We create a better future together with customized AI solutions.",
         "hero_title": "Innogent, An AI Expert Group Designing the Future",
