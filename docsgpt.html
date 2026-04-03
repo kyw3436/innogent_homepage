@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OfficeGPT</title>
+  <link rel="icon" href="images/favicon.ico" type="image/png">
+  <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/vendor/all.min.css" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+<section class="officegpt-doc-section py-5">
+  <div class="container">
+ 	<div class="breadcrumb-wrap">
+	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="#">홈</a></li>
+		<li class="breadcrumb-item"><a href="#">OfficeGPT (Engineering)</a></li>
+		<li class="breadcrumb-item"><a href="#">Document Summary</a></li>
+		<li class="breadcrumb-item active" aria-current="page">Document Summary Agent</li>
+	  </ol>
+	</nav>
+	</div>   
+    <!-- 타이틀 -->
+    <div class="row mb-4 mb-lg-5">
+      <div class="col-12">
+        <div class="section-title-wrap">
+          <h2 class="office-title mb-3">
+            <span class="title-bar"></span>OfficeGPT Document Summary Agent
+          </h2>
+          <p class="office-desc mb-0">
+            <strong>Document Summary Agent</strong>는 기존 RAG 시스템의 한계인
+            <span class="text-primary fw-bold">‘정보 파편화’ 문제를 해결</span>합니다.
+            대용량 문서 내용을 전수 조사와 비전 AI를 결합하여
+            <span class="text-primary fw-bold">기업의 의사결정을 지원하는 구조화된 리포트를 신속하게 생성</span>합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 본문 -->
+    <div class="row align-items-stretch g-4">
+      <!-- 왼쪽 설명 박스 -->
+      <div class="col-12 col-lg-5">
+        <div class="feature-panel h-100">
+          <div class="feature-card mb-4">
+            <div class="icon-box">
+              <i class="fa-regular fa-file-lines"></i>
+            </div>
+            <div class="feature-content">
+              <h4>전수 조사 기반의 완벽한 요약 (Full-Context)</h4>
+              <p class="mb-0">
+                부분 검색 방식인 RAG를 탈피하여 문서의 모든 텍스트를 전수 분석합니다.
+                정보의 누락 없이 문서 본연의 흐름과 핵심 논리를 정확하게 파악하여
+                결과의 무결성을 보장합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon-box">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <div class="feature-content">
+              <h4>병렬 가속 및 지능형 요약 전략</h4>
+              <p class="mb-0">
+                문서 규모에 따라 최적의 알고리즘을 자동 선택하고
+                섹션별 병렬 처리를 수행합니다. 대용량 문서도
+                지연 없이 처리하며 업무 목적에 맞는 맞춤형 분석 모드를 지원합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 오른쪽 미리보기 -->
+      <div class="col-12 col-lg-7">
+        <div class="preview-wrap h-100">
+          <div class="preview-topbar"></div>
+
+          <div class="preview-window">
+            <div class="preview-toolbar">
+              <div class="toolbar-left">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <div class="toolbar-title">Document Summary Agent</div>
+              <div class="toolbar-right">
+                <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+
+            <div class="preview-body">
+              <div class="report-area">
+                <div class="report-header">
+                  <div>
+                    <small class="report-label">요약 및 시사점</small>
+                    <h5 class="fw-bold mb-2">문서 핵심 분석 리포트</h5>
+                  </div>
+                  <div class="file-badge">
+                    <i class="fa-regular fa-file-pdf"></i>
+                    <span>보고서.pdf</span>
+                  </div>
+                </div>
+
+                <div class="report-text">
+                  <p>
+                    스캔본·계약서·제안서·리서치 자료 등 모든 문서를 전수 분석하여,
+                    핵심 논점과 리스크, 주요 수치, 의사결정 포인트를 빠르게 정리합니다.
+                    단순 발췌가 아닌 문맥 기반 구조화 요약으로 실무 활용도를 높입니다.
+                  </p>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table summary-table align-middle mb-0">
+                    <thead>
+                      <tr>
+                        <th>구분</th>
+                        <th>핵심 내용</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>문서 개요</td>
+                        <td>문서 목적, 배경, 주요 대상, 작성 의도 분석</td>
+                      </tr>
+                      <tr>
+                        <td>핵심 이슈</td>
+                        <td>반복 언급 주제, 주요 쟁점, 검토 포인트 식별</td>
+                      </tr>
+                      <tr>
+                        <td>리스크 요소</td>
+                        <td>누락 가능성, 조건 불명확성, 잠재적 위험 정리</td>
+                      </tr>
+                      <tr>
+                        <td>정량 정보</td>
+                        <td>수치, 일정, 금액, 비율, 성과지표 자동 정리</td>
+                      </tr>
+                      <tr>
+                        <td>의사결정 포인트</td>
+                        <td>실행 가능 항목과 우선순위 기반 액션 제안</td>
+                      </tr>
+                      <tr>
+                        <td>활용 결과</td>
+                        <td>보고서형 요약, 부서 공유용 정리본, 회의용 핵심 문안 생성</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="preview-footer">
+                <span class="preview-badge">Full Context</span>
+                <span class="preview-badge">병렬 분석</span>
+                <span class="preview-badge">리포트 생성</span>
+                <span class="preview-badge">의사결정 지원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+  <div id="footer-placeholder"></div>
+  <script src="./js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="./js/load_includes.js"></script>
+</body>
+</html>

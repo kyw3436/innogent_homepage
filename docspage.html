@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OfficeGPT</title>
+  <link rel="icon" href="images/favicon.ico" type="image/png">
+  <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/vendor/all.min.css" />
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+  <div class="container mt-4 mb-2 breadcrumb-infused">
+    <div class="breadcrumb-wrap">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">홈</a></li>
+          <li class="breadcrumb-item"><a href="#">OfficeGPT (Engineering)</a></li>
+          <li class="breadcrumb-item"><a href="#">Document Summary</a></li>
+          <li class="breadcrumb-item active" aria-current="page">주요핵심 기능</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <section class="docsum-page">
+
+    <!-- 1. HERO -->
+    <section class="docsum-hero py-5 py-lg-6">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-lg-6">
+            <div class="hero-copy">
+              <span class="eyebrow">OfficeGPT</span>
+              <h2 class="hero-title">
+                Document Summary Agent
+              </h2>
+              <p class="hero-desc">
+                대용량 문서를 단순 검색이 아닌 <strong>전수 조사 기반 구조화 분석</strong>으로 처리하여,
+                정보 파편화 없이 핵심 요약·리스크 포인트·표 기반 인사이트까지 빠르게 정리하는
+                지능형 문서 분석 에이전트입니다.
+              </p>
+
+              <div class="hero-badges">
+                <span>Full Context</span>
+                <span>Vision Multimodal</span>
+                <span>Map-Reduce</span>
+                <span>Structured Report</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <div class="hero-preview">
+              <div class="preview-topbar"></div>
+              <div class="preview-window">
+                <div class="preview-toolbar">
+                  <div class="toolbar-left">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </div>
+                  <div class="toolbar-title">Document Summary Agent</div>
+                  <div class="toolbar-right">
+                    <i class="fa-solid fa-ellipsis"></i>
+                  </div>
+                </div>
+
+                <div class="preview-body">
+                  <div class="mock-report">
+                    <div class="mock-file">
+                      <i class="fa-regular fa-file-pdf"></i>
+                      <span>스캔문서_요약리포트.pdf</span>
+                    </div>
+
+                    <div class="mock-lines mb-3">
+                      <span style="width:88%"></span>
+                      <span style="width:80%"></span>
+                      <span style="width:92%"></span>
+                      <span style="width:70%"></span>
+                    </div>
+
+                    <div class="mock-card mb-3">
+                      <div class="mock-card-title">요약 및 시사점</div>
+                      <div class="mock-lines">
+                        <span style="width:92%"></span>
+                        <span style="width:86%"></span>
+                        <span style="width:90%"></span>
+                        <span style="width:72%"></span>
+                      </div>
+                    </div>
+
+                    <div class="mock-table">
+                      <div class="table-row head">
+                        <span>구분</span>
+                        <span>핵심 내용</span>
+                      </div>
+                      <div class="table-row">
+                        <span>핵심 개념</span>
+                        <span>문맥 단위 요약 및 의미 구조화</span>
+                      </div>
+                      <div class="table-row">
+                        <span>RCS 전술 분석</span>
+                        <span>표·그래프·도표 포함 통합 해석</span>
+                      </div>
+                      <div class="table-row">
+                        <span>활용 결과</span>
+                        <span>의사결정 지원형 구조화 리포트 생성</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="preview-footer">
+                    <span class="preview-badge">Full Context</span>
+                    <span class="preview-badge">병렬 분석</span>
+                    <span class="preview-badge">표/도표 이해</span>
+                    <span class="preview-badge">리포트 자동화</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 핵심 기능 상세소개 A -->
+    <section class="feature-section py-5" id="feature-a">
+      <div class="container">
+        <div class="section-heading mb-4 mb-lg-5">
+          <h3><span class="title-stick"></span>핵심 기능 상세소개</h3>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <div class="col-12 col-lg-5">
+            <div class="feature-panel h-100">
+              <div class="feature-item">
+                <div class="icon-box">
+                  <i class="fa-solid fa-brain"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>지능형 Tiered 분석 전략</h4>
+                  <p>
+                    입력된 문서의 분량을 사전에 계산하여 Lite, Single-Report,
+                    또는 대용량용 Map-Reduce 프로세스를 자동 할당합니다.
+                    리소스 효율을 최적화하여 최상의 분석 품질을 도출합니다.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="icon-box">
+                  <i class="fa-solid fa-crosshairs"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>고속 병렬 Map-Reduce 엔진</h4>
+                  <p>
+                    설정한 단위로 분할된 문서를 최대 10개 섹션까지 동시에 병렬 처리합니다.
+                    비동기 스레드 파이프라인을 통해 분석 대기 시간을 최소화하고
+                    전체 맥락이 반영된 리포트로 합성합니다.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item mb-0">
+                <div class="icon-box">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>스마트 컨텍스트 격리 알고리즘</h4>
+                  <p>
+                    Turn 기반 파일 매핑 기술을 적용하여, 다중 파일 업로드나
+                    분석 옵션 변경 시에도 이전 히스토리와 혼선 없이
+                    현재 시점의 타깃 자료만 정확히 격리하여 정밀 분석을 수행합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-7">
+            <div class="ui-shot">
+              <div class="ui-shot-window">
+                <div class="ui-shot-toolbar">
+                  <span class="ui-pill">Document Summary Agent</span>
+                  <span class="ui-mini-dot"></span>
+                  <span class="ui-mini-dot"></span>
+                </div>
+
+                <div class="analysis-screen">
+                  <div class="analysis-log">
+                    <div class="log-line w-70"></div>
+                    <div class="log-line w-84"></div>
+                    <div class="log-line w-76"></div>
+                    <div class="log-line w-80"></div>
+                    <div class="log-line w-66"></div>
+                    <div class="log-line w-74"></div>
+                    <div class="log-line w-62"></div>
+                    <div class="log-line w-78"></div>
+                  </div>
+
+                  <div class="analysis-section">
+                    <div class="section-block">
+                      <h5>Section 1</h5>
+                      <div class="para-line w-90"></div>
+                      <div class="para-line w-85"></div>
+                      <div class="para-line w-88"></div>
+                      <div class="para-line w-70"></div>
+                    </div>
+
+                    <div class="section-block">
+                      <h5>Section 2</h5>
+                      <div class="para-line w-92"></div>
+                      <div class="para-line w-86"></div>
+                      <div class="para-line w-79"></div>
+                    </div>
+
+                    <div class="section-block">
+                      <h5>Section 3</h5>
+                      <div class="para-line w-88"></div>
+                      <div class="para-line w-83"></div>
+                      <div class="para-line w-72"></div>
+                    </div>
+                  </div>
+
+                  <div class="callout callout-top">단계별 분석 정보</div>
+                  <div class="callout callout-mid">섹션별 분석</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 핵심 기능 상세소개 B -->
+    <section class="feature-section alt py-5" id="feature-b">
+      <div class="container">
+        <div class="section-heading mb-4 mb-lg-5">
+          <h3><span class="title-stick"></span>핵심 기능 상세소개</h3>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <div class="col-12 col-lg-5">
+            <div class="feature-panel h-100">
+              <div class="feature-item">
+                <div class="icon-box">
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>Vision 통합 멀티모달 분석</h4>
+                  <p>
+                    최신 비전 모델을 활용하여 문서 내 포함된 복잡한 도표, 그래프, 수식 및 현장 사진을 분석합니다.
+                    시각 데이터가 텍스트 요약에 반영되어 완결성 높은 리포트를 생성합니다.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="icon-box">
+                  <i class="fa-regular fa-rectangle-list"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>의도 기반 필터링</h4>
+                  <p>
+                    사용자 발화 의도를 사전 분석하여 요약이나 정밀 분석이 필요한 경우
+                    RAG 검색을 자동으로 바이패스합니다. 불필요한 검색 지연을 없애고
+                    업로드된 자료 자체에만 집중하도록 강제합니다.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item mb-0">
+                <div class="icon-box">
+                  <i class="fa-regular fa-file-lines"></i>
+                </div>
+                <div class="feature-text">
+                  <h4>맞춤 분석 및 출력 모드</h4>
+                  <p>
+                    사용자 요구에 맞춰 Standard(기본), Audit(사실), Detailed(상세), Brief(간략) 모드를 지원합니다.
+                    단순 요약을 넘어 표와 마크다운 기반의 구조화된 비즈니스형 데이터를 생성합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-7">
+            <div class="ui-shot">
+              <div class="ui-shot-window">
+                <div class="ui-shot-toolbar">
+                  <span class="ui-pill">Document Summary Agent</span>
+                  <span class="ui-mini-dot"></span>
+                  <span class="ui-mini-dot"></span>
+                </div>
+
+                <div class="report-screen">
+                  <div class="report-header-line"></div>
+                  <div class="report-box">
+                    <div class="report-lines">
+                      <span style="width:90%"></span>
+                      <span style="width:86%"></span>
+                      <span style="width:80%"></span>
+                    </div>
+                  </div>
+
+                  <div class="report-table-box">
+                    <div class="report-table-head">
+                      <span>항목</span>
+                      <span>내용</span>
+                    </div>
+                    <div class="report-table-row">
+                      <span>핵심 개념</span>
+                      <span>레이더·적외선·탐지 등 핵심 개념 도출</span>
+                    </div>
+                    <div class="report-table-row">
+                      <span>전술 개념</span>
+                      <span>비행 특성, 회피, 저피탐 성능 요약</span>
+                    </div>
+                    <div class="report-table-row">
+                      <span>적용 결과</span>
+                      <span>구조화된 표 중심 보고서 생성</span>
+                    </div>
+                  </div>
+
+                  <div class="long-content">
+                    <div class="content-line w-93"></div>
+                    <div class="content-line w-87"></div>
+                    <div class="content-line w-91"></div>
+                    <div class="content-line w-76"></div>
+                    <div class="content-line w-89"></div>
+                    <div class="content-line w-80"></div>
+                    <div class="content-line w-84"></div>
+                    <div class="content-line w-72"></div>
+                  </div>
+
+                  <div class="callout callout-table">주요 개념 항목</div>
+                  <div class="callout callout-content">세부 분석 내용</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 병렬 아키텍처 -->
+    <section class="architecture-section py-5 py-lg-6" id="architecture">
+      <div class="container">
+        <div class="section-heading mb-4">
+          <h3><span class="title-stick"></span>고속 분석을 위한 병렬 아키텍처</h3>
+        </div>
+
+        <div class="arch-copy mb-4 mb-lg-5">
+          <p>
+            방대한 문서를 정교한 섹션 단위로 분할하여 데이터 처리의 병목 현상을 원천적으로 제거하며,
+            <strong>최대 10개의 섹션을 동시 분석하는 비동기 병렬 Map-Reduce 엔진</strong>을 통해
+            대규모 전수 조사를 단 몇 분 내에 완수합니다. 이후 분산 처리된 개별 결과를 지능적으로 합성하고
+            중복을 제거함으로써, 문서 전체의 맥락이 긴밀하게 반영된
+            <strong>최적의 구조화된 리포트</strong>를 최종적으로 생성합니다.
+          </p>
+        </div>
+
+        <div class="arch-flow-wrap">
+          <div class="arch-flow">
+            <div class="flow-step">
+              <div class="flow-box">
+                <strong>Chunking</strong>
+              </div>
+              <p>사용자가 설정한<br>단위의 섹션 분할</p>
+            </div>
+
+            <div class="flow-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+            <div class="flow-step active">
+              <div class="flow-box">
+                <strong>Parallel Map</strong>
+              </div>
+              <p>최대 10개 섹션<br>비동기 동시 분석</p>
+            </div>
+
+            <div class="flow-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+            <div class="flow-step dark">
+              <div class="flow-box">
+                <strong>Reduce</strong>
+              </div>
+              <p>중복 통합 및<br>통합 리포트 합성</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-12 col-lg-6">
+            <div class="arch-card">
+              <h4>비동기 스레드 처리</h4>
+              <p class="mb-0">
+                소스 코드의 비동기 처리 기법을 통해 CPU 및 네트워크 대기 시간을 효율적으로 활용하여
+                응답 속도를 극대화합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <div class="arch-card">
+              <h4>데이터 무결성 검증</h4>
+              <p class="mb-0">
+                응답 유효성 실시간 체크 및 비정상 문자 감지 시 자동 폴백 로직을 통한
+                결과 안정성 확보 체계를 적용합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <div id="footer-placeholder"></div>
+  <script src="./js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="./js/load_includes.js"></script>
+</body>
+
+</html>
