@@ -1404,7 +1404,7 @@
       }
 
       .hero-mobile-node-dx {
-        top: 92px;
+        top: 82px;
         left: 22px;
         opacity: 0.92;
         min-width: 156px;
@@ -1414,7 +1414,7 @@
       }
 
       .hero-mobile-node-ax {
-        top: 170px;
+        top: 160px;
         right: 22px;
         min-width: 206px;
         min-height: 122px;
@@ -1454,7 +1454,7 @@
 
       .hero-mobile-flow {
         position: absolute;
-        top: 152px;
+        top: 142px;
         left: 130px;
         width: 108px;
         height: 48px;
