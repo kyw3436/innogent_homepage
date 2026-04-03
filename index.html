@@ -7,8 +7,9 @@
   <title>이노젠트</title>
   <link rel="icon" href="images/favicon.ico" type="image/png">
   <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
   <link href="./css/style.css" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/vendor/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 
 <body>
@@ -16,7 +17,81 @@
   <!-- HERO -->
   <section class="hero-section">
     <div class="container">
-      <div class="row align-items-center g-4">
+      <div class="hero-mobile-intro d-lg-none">
+        <div class="hero-mobile-backdrop"></div>
+        <div class="hero-mobile-clouds" aria-hidden="true">
+          <span class="hero-mobile-cloud hero-mobile-cloud-1"></span>
+          <span class="hero-mobile-cloud hero-mobile-cloud-2"></span>
+          <span class="hero-mobile-cloud hero-mobile-cloud-3"></span>
+          <span class="hero-mobile-cloud hero-mobile-cloud-4"></span>
+        </div>
+        <div class="hero-mobile-keywords" aria-hidden="true">
+          <div class="hero-mobile-keyword-row hero-mobile-keyword-row-a">
+            <span>OfficeERP</span>
+            <span>DX</span>
+            <span>RAG</span>
+            <span>Enterprise Data</span>
+            <span>OfficeERP</span>
+            <span>DX</span>
+          </div>
+          <div class="hero-mobile-keyword-row hero-mobile-keyword-row-b">
+            <span>OfficeGPT</span>
+            <span>AX</span>
+            <span>Multi-Agent</span>
+            <span>Autonomous AI</span>
+            <span>OfficeGPT</span>
+            <span>AX</span>
+          </div>
+          <div class="hero-mobile-keyword-row hero-mobile-keyword-row-c">
+            <span>Workflow</span>
+            <span>ReAct</span>
+            <span>On-Premise</span>
+            <span>Security</span>
+            <span>Workflow</span>
+            <span>ReAct</span>
+          </div>
+        </div>
+        <div class="hero-mobile-visual" aria-hidden="true">
+          <div class="hero-mobile-node hero-mobile-node-dx">
+            <span class="hero-mobile-node-label">DX</span>
+            <strong>OfficeERP</strong>
+            <small>Enterprise Data Core</small>
+          </div>
+          <div class="hero-mobile-flow">
+            <span class="hero-mobile-flow-line"></span>
+            <span class="hero-mobile-flow-plus" aria-hidden="true">
+              <span class="hero-mobile-flow-track"></span>
+              <span class="hero-mobile-flow-knob">
+                <span class="hero-mobile-flow-knob-label hero-mobile-flow-knob-label-dx">DX</span>
+                <span class="hero-mobile-flow-knob-label hero-mobile-flow-knob-label-ax">AX</span>
+                <span class="hero-mobile-flow-knob-label hero-mobile-flow-knob-label-ai">AI</span>
+              </span>
+            </span>
+          </div>
+          <div class="hero-mobile-node hero-mobile-node-ax">
+            <span class="hero-mobile-node-label">AX</span>
+            <strong>OfficeGPT</strong>
+            <small>Autonomous AI Execution</small>
+          </div>
+        </div>
+        <div class="hero-mobile-copy">
+          <span class="hero-mobile-eyebrow">Enterprise Data Meets Autonomous AI</span>
+          <h1 class="hero-mobile-title">
+            DX를 넘어 AX로 실행하는 지능형 비즈니스의 시작
+          </h1>
+          <p class="hero-mobile-desc">
+            OfficeERP 데이터와 OfficeGPT 실행을 연결해
+            업무가 스스로 흐르도록 만듭니다.
+          </p>
+          <div class="hero-mobile-actions">
+            <a href="#hero-detail" class="hero-mobile-link">
+              자세히 보기 <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="hero-detail" class="row align-items-center g-4 hero-main-row">
         <div class="col-lg-7">
           <span class="section-badge">
             <i class="fa-solid fa-link me-2"></i>DX에서 AX로, 데이터의 가치를 깨우는 지능형 전환
@@ -55,34 +130,57 @@
 
         <div class="col-lg-5">
           <div class="hero-visual">
-            <div class="visual-header mb-4">
-              <div class="hero-chip-wrap">
-                <span class="hero-chip"><i class="fa-solid fa-database"></i>DX (ERP)</span>
-                <span class="hero-chip"><i class="fa-solid fa-share-nodes"></i>Integration</span>
-                <span class="hero-chip"><i class="fa-solid fa-brain"></i>AX (AI)</span>
-              </div>
-
-              <div class="hero-panel text-center py-4" style="background: rgba(255,255,255,0.08);">
-                <div class="d-flex align-items-center justify-content-center gap-4">
-                  <div class="erp-icon"><i class="fa-solid fa-server fa-2x"></i>
-                    <div class="small mt-1 text-uppercase">ERP Data</div>
-                  </div>
-                  <div class="connector-animation"><i class="fa-solid fa-chevron-right fa-fade"></i><i
-                      class="fa-solid fa-chevron-right fa-fade" style="animation-delay: 0.2s;"></i></div>
-                  <div class="gpt-icon text-warning"><i class="fa-solid fa-brain fa-2x"></i>
-                    <div class="small mt-1 text-uppercase">AI Agent</div>
-                  </div>
-                </div>
-              </div>
+            <div class="hero-chip-wrap">
+              <span class="hero-chip"><i class="fa-solid fa-database"></i>DX (ERP)</span>
+              <span class="hero-chip"><i class="fa-solid fa-share-nodes"></i>Integration</span>
+              <span class="hero-chip"><i class="fa-solid fa-brain"></i>AX (AI)</span>
             </div>
 
-            <div class="hero-panel">
-              <h4><i class="fa-solid fa-code-branch me-2"></i>통합 지능의 가치</h4>
-              <ul>
-                <li><i class="fa-solid fa-check"></i><span>지식 자산화: 파편화된 ERP 데이터를 통합 지능체로 전환</span></li>
-                <li><i class="fa-solid fa-check"></i><span>실시간 데이터 기반 추론: RAG를 통한 압도적 정확도 확보</span></li>
-                <li><i class="fa-solid fa-check"></i><span>엔터프라이즈 보안: 100% 오프라인 & 폐쇄망 구축</span></li>
-              </ul>
+            <div class="hero-desktop-fusion">
+              <div class="hero-desktop-keywords" aria-hidden="true">
+                <div class="hero-desktop-keyword-row hero-desktop-keyword-row-a">
+                  <span>OfficeERP</span>
+                  <span>DX</span>
+                  <span>Enterprise Data</span>
+                  <span>RAG</span>
+                </div>
+                <div class="hero-desktop-keyword-row hero-desktop-keyword-row-b">
+                  <span>OfficeGPT</span>
+                  <span>AX</span>
+                  <span>Autonomous AI</span>
+                  <span>Multi-Agent</span>
+                </div>
+              </div>
+
+              <div class="hero-desktop-node hero-desktop-node-dx">
+                <span class="hero-desktop-node-label">DX</span>
+                <strong>OfficeERP</strong>
+                <small>Enterprise Data Core</small>
+              </div>
+
+              <div class="hero-desktop-switch" aria-hidden="true">
+                <span class="hero-desktop-switch-track"></span>
+                <span class="hero-desktop-switch-knob">
+                  <span class="hero-desktop-switch-label hero-desktop-switch-label-dx">DX</span>
+                  <span class="hero-desktop-switch-label hero-desktop-switch-label-ax">AX</span>
+                  <span class="hero-desktop-switch-label hero-desktop-switch-label-ai">AI</span>
+                </span>
+              </div>
+
+              <div class="hero-desktop-node hero-desktop-node-ax">
+                <span class="hero-desktop-node-label">AX</span>
+                <strong>OfficeGPT</strong>
+                <small>Autonomous AI Execution</small>
+              </div>
+
+              <div class="hero-desktop-note">
+                <h4><i class="fa-solid fa-code-branch me-2"></i>통합 지능의 가치</h4>
+                <ul>
+                  <li><i class="fa-solid fa-check"></i><span>ERP 데이터를 AI 실행 레이어로 전환</span></li>
+                  <li><i class="fa-solid fa-check"></i><span>RAG 기반 추론과 멀티 에이전트 자동화</span></li>
+                  <li><i class="fa-solid fa-check"></i><span>온프레미스 보안과 실무형 워크플로우 통합</span></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
