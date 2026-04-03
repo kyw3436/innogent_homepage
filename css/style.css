@@ -1135,7 +1135,7 @@
       .hero-mobile-intro {
         position: relative;
         display: grid;
-        grid-template-rows: clamp(270px, 38svh, 330px) auto;
+        grid-template-rows: clamp(240px, 34svh, 300px) auto;
         align-content: start;
         min-height: calc(100svh - 83px);
         padding: 28px 0 28px;
@@ -1158,7 +1158,7 @@
       .hero-mobile-stage {
         position: relative;
         width: min(390px, calc(100vw - 24px));
-        height: clamp(270px, 38svh, 330px);
+        height: clamp(240px, 34svh, 300px);
       }
 
       .hero-mobile-copy {
@@ -1171,7 +1171,7 @@
       }
 
       .hero-mobile-keywords {
-        height: clamp(220px, 30svh, 280px);
+        height: clamp(200px, 28svh, 250px);
       }
 
       .hero-visual {
@@ -1199,7 +1199,7 @@
       }
 
       .hero-mobile-intro {
-        grid-template-rows: 330px auto;
+        grid-template-rows: 300px auto;
       }
 
       .hero-mobile-backdrop {
@@ -1333,7 +1333,7 @@
 
       .hero-mobile-keyword-row-a {
         top: 22px;
-        font-size: 3rem;
+        font-size: 2.8rem;
         animation: hero-mobile-keyword-drift-left 26s linear infinite;
       }
 
@@ -1352,11 +1352,11 @@
       }
 
       .hero-mobile-visual {
-        min-height: 330px;
+        min-height: 300px;
       }
 
       .hero-mobile-stage {
-        height: 330px;
+        height: 300px;
       }
 
       .hero-mobile-node {
@@ -1431,7 +1431,7 @@
       }
 
       .hero-mobile-node-dx {
-        top: 46px;
+        top: 28px;
         left: 10px;
         opacity: 0.92;
         min-width: 156px;
@@ -1441,7 +1441,7 @@
       }
 
       .hero-mobile-node-ax {
-        top: 118px;
+        top: 98px;
         right: 10px;
         min-width: 206px;
         min-height: 122px;
@@ -1481,8 +1481,8 @@
 
       .hero-mobile-flow {
         position: absolute;
-        top: 80px;
-        left: 136px;
+        top: 56px;
+        left: 142px;
         width: 108px;
         height: 48px;
         display: flex;
@@ -1649,15 +1649,15 @@
       }
 
       .hero-mobile-keyword-row-a {
-        top: 20px;
+        top: 12px;
       }
 
       .hero-mobile-keyword-row-b {
-        top: 160px;
+        top: 140px;
       }
 
       .hero-mobile-keyword-row-c {
-        top: 250px;
+        top: 240px;
       }
     
       .hero-mobile-link {
