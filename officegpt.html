@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OfficeGPT</title>
+  <link rel="icon" href="images/favicon.ico" type="image/png">
+  <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/vendor/all.min.css" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+<section class="officegpt-bom-section py-5">
+
+  <div class="container">
+	<div class="breadcrumb-wrap">
+	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="#">홈</a></li>
+		<li class="breadcrumb-item"><a href="#">OfficeGPT (Engineering)</a></li>
+		<li class="breadcrumb-item"><a href="#">CAD BOM</a></li>
+		<li class="breadcrumb-item active" aria-current="page">CAD BOM Agent</li>
+	  </ol>
+	</nav>
+	</div>  
+    <!-- 타이틀 -->
+    <div class="row mb-4 mb-lg-5">
+      <div class="col-12">
+        <div class="section-title-wrap">
+          <h2 class="office-title mb-3">
+            <span class="title-bar"></span>OfficeGPT CAD BOM Agent
+          </h2>
+          <p class="office-desc mb-0">
+            <strong>OfficeGPT BOM Agent</strong>는 단순한 문자 인식(OCR)을 수행하는 것을 넘어,
+            <span class="text-primary fw-bold">도면의 전체적인 맥락과 복잡한 표 구조를 이해하는 Vision LLM(Visual Language Model) 기반</span>으로
+            합니다. 비정형화된 도면 양식 내에서도 BOM 영역을 스스로 탐색하며, 각 텍스트가 품번인지, 품명인지,
+            혹은 제조사인지에 대한 속성 정보를 지능적으로 분류합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 본문 -->
+    <div class="row align-items-stretch g-4">
+      <!-- 왼쪽 설명 박스 -->
+      <div class="col-12 col-lg-5">
+        <div class="feature-panel h-100">
+          <div class="feature-card mb-4">
+            <div class="icon-box">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div class="feature-content">
+              <h4>시각 지능(VLM) 기반의 맥락 이해</h4>
+              <p class="mb-0">
+                기존 OCR이 개별 문자를 단순 판독하는 수준이라면, VLM은 도면 전체의 레이아웃과
+                복잡한 표 구조 간의 상관관계를 파악합니다. 도면의 ‘맥락’을 이해하여 선과 글자가 겹친
+                상황에서도 보다 정확한 의미를 도출합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon-box">
+              <i class="fa-regular fa-rectangle-list"></i>
+            </div>
+            <div class="feature-content">
+              <h4>비정형 데이터 분류 및 범용성</h4>
+              <p class="mb-0">
+                규격화되지 않은 다양한 도면 양식에서도 BOM 영역을 스스로 탐지하고, 추출된 텍스트를
+                품번, 품명, 제조사 등의 속성 정보로 지능적으로 분류하여 정보를 구조화합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 오른쪽 이미지/미리보기 -->
+      <div class="col-12 col-lg-7">
+        <div class="preview-wrap h-100">
+          <div class="preview-topbar"></div>
+
+          <div class="preview-window">
+            <div class="preview-toolbar">
+              <div class="toolbar-left">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <div class="toolbar-title">CAD BOM Agent</div>
+              <div class="toolbar-right">
+                <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+
+            <div class="preview-body">
+              <div class="drawing-area">
+                <div class="drawing-sheet">
+                                  <img src="images/sam01.png" width="100%">
+
+                </div>
+              </div>
+
+              <div class="preview-text">
+                <small class="text-muted d-block mb-2">
+                  CAD BOM Agent
+                </small>
+                <h5 class="fw-bold mb-3">1. BOM 품목 목록</h5>
+
+                <div class="table-responsive">
+                  <table class="table bom-table align-middle mb-0">
+                    <thead>
+                      <tr>
+                        <th>번호</th>
+                        <th>품명</th>
+                        <th>수량</th>
+                        <th>부품번호</th>
+                        <th>제조사</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>케이블브라켓</td>
+                        <td>1</td>
+                        <td>SJ-N5001-064</td>
+                        <td>SJ-N5001-064</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>케이블클램프</td>
+                        <td>2</td>
+                        <td>SJ-N5001-065</td>
+                        <td>SJ-N5001-065</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>케이블브라켓3</td>
+                        <td>1</td>
+                        <td>SJ-N5001-066</td>
+                        <td>SJ-N5001-066</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>케이블브라켓4</td>
+                        <td>1</td>
+                        <td>SJ-N5001-067</td>
+                        <td>SJ-N5001-067</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>케이블부품</td>
+                        <td>1</td>
+                        <td>SJ-N5001-068</td>
+                        <td>SJ-N5001-068</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>케이블, 브라켓</td>
+                        <td>1</td>
+                        <td>SJ-N5001-070</td>
+                        <td>SJ-N5001-070</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="preview-footer">
+                <span class="preview-badge">Deep RAG</span>
+                <span class="preview-badge">BOM 추출</span>
+                <span class="preview-badge">VLM 분석</span>
+                <span class="preview-badge">분류 자동화</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+  <div id="footer-placeholder"></div>
+  <script src="./js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="./js/load_includes.js"></script>
+</body>
+</html>

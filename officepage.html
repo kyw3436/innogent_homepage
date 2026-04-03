@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OfficeGPT</title>
+  <link rel="icon" href="images/favicon.ico" type="image/png">
+  <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/vendor/all.min.css" />
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+  <div class="container mt-4 mb-2 breadcrumb-infused">
+    <div class="breadcrumb-wrap">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">홈</a></li>
+          <li class="breadcrumb-item"><a href="#">OfficeGPT (Engineering)</a></li>
+          <li class="breadcrumb-item"><a href="#">CAD BOM</a></li>
+          <li class="breadcrumb-item active" aria-current="page">주요핵심 기능</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <section class="cadbom-extra-page">
+
+    <!-- 1. 정밀 영역 탐지 및 데이터 식별 -->
+    <section class="cad-section py-5" id="cad-detect">
+      <div class="container">
+        <div class="section-heading mb-4 mb-lg-5">
+          <h3><span class="title-stick"></span>정밀 영역 탐지 및 데이터 식별</h3>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-lg-6">
+            <div class="info-card h-100">
+              <div class="info-head">
+                <div class="icon-circle">
+                  <i class="fa-solid fa-scissors"></i>
+                </div>
+                <h4>지능형 영역 탐지 및 정밀 크롭</h4>
+              </div>
+
+              <div class="info-body">
+                <p class="lead-text">시각적 노이즈 제거를 통한 분석 효율 극대화</p>
+                <p>
+                  방대한 도면 데이터 중에서 실제 분석이 필요한 BOM 영역만을
+                  AI가 스스로 찾아내어 정밀하게 크롭(Crop)합니다.
+                </p>
+
+                <ul class="bullet-list">
+                  <li>
+                    <strong>해상도 독립적 처리 :</strong> 도면의 크기나 화질에 관계없이
+                    안정적으로 표 영역을 타기팅합니다.
+                  </li>
+                  <li>
+                    <strong>분석 부하 최적화 :</strong> 전체 도면이 아닌 핵심 영역만 분석함으로써
+                    서버 리소스를 절약하고 처리 속도를 비약적으로 높입니다.
+                  </li>
+                  <li>
+                    <strong>정확도 향상 :</strong> 주변 설계 기호나 주석 등의 간섭을 원천 차단하여
+                    오인식률을 최소화합니다.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <div class="info-card h-100">
+              <div class="info-head">
+                <div class="icon-circle">
+                  <i class="fa-solid fa-diagram-project"></i>
+                </div>
+                <h4>NED 기반 데이터 식별 및 정합성</h4>
+              </div>
+
+              <div class="info-body">
+                <p class="lead-text">지능형 엔티티 인식을 통한 데이터 신뢰도 확보</p>
+                <p>
+                  단순히 글자를 읽는 수준을 넘어, “NED (Named Entity Detection)” 기술을 통해
+                  추출된 데이터의 속성을 명확히 정의합니다.
+                </p>
+
+                <div class="highlight-box">
+                  <strong>SJN6004-064</strong>와 같은 유사한 형식의 코드라도 문맥을 분석하여
+                  <strong>[품번]</strong>인지 <strong>[도면번호]</strong>인지 구분해냅니다.
+                </div>
+
+                <ul class="bullet-list">
+                  <li>
+                    <strong>정합성 보장 :</strong> 비즈니스 로직에 기반한 검증으로
+                    데이터 무결성을 유지합니다.
+                  </li>
+                  <li>
+                    <strong>프로세스 투명성 :</strong> 분석 과정의 Base64 처리 로그와
+                    디버깅 정보를 제공하여 시스템 신뢰도를 높입니다.
+                  </li>
+                  <li>
+                    <strong>오류 자가 진단 :</strong> 유효하지 않은 항목 추출 시
+                    즉각적인 디버그 피드백을 생성합니다.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 도면 데이터 지능형 추출 프로세스 -->
+    <section class="cad-section process-section py-5" id="cad-process">
+      <div class="container">
+        <div class="section-heading mb-4 mb-lg-5">
+          <h3><span class="title-stick"></span>도면 데이터 지능형 추출 프로세스</h3>
+        </div>
+
+        <div class="process-wrap">
+          <div class="process-line"></div>
+
+          <div class="row g-4 process-row">
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="process-step">
+                <div class="diamond"><span>01</span></div>
+                <div class="step-title">도면 업로드</div>
+                <div class="step-desc">
+                  이미지(JPG/PNG) 또는 PDF 형태의 원본 도면을 시스템에 입력
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="process-step">
+                <div class="diamond"><span>02</span></div>
+                <div class="step-title">영역 자동 탐지</div>
+                <div class="step-desc">
+                  AI 에이전트가 도면 내 BOM 표의 위치를 1초 내에 정밀 식별
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="process-step">
+                <div class="diamond"><span>03</span></div>
+                <div class="step-title">지능형 추출</div>
+                <div class="step-desc">
+                  VLM이 표 안의 텍스트와 구조를 해석하여 정형 데이터로 변환
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="process-step">
+                <div class="diamond"><span>04</span></div>
+                <div class="step-title">검증 및 연동</div>
+                <div class="step-desc">
+                  추출 데이터 정제 후 ERP/PLM 시스템으로 자동 전송
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-banner mt-4 mt-lg-5">
+            <i class="fa-regular fa-lightbulb"></i>
+            <span>이 모든 과정은 단 수초 만에 수행되며, 사용자 확인을 거친 후 즉시 자산화 시킬 수 있습니다.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 실제 BOM 품목 추출 데이터 분석 -->
+    <section class="cad-section py-5" id="cad-table">
+      <div class="container">
+        <div class="section-heading mb-4">
+          <h3><span class="title-stick"></span>실제 BOM 품목 추출 데이터 분석</h3>
+        </div>
+
+        <div class="data-table-card">
+          <div class="table-responsive">
+            <table class="table cad-bom-table align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>품번</th>
+                  <th>품명</th>
+                  <th>수량</th>
+                  <th>부품번호</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>케이블조립체5</td>
+                  <td>1</td>
+                  <td>SJN6004-064</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>케이블조립체6</td>
+                  <td>1</td>
+                  <td>SJN6004-065</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>케이블조립체7</td>
+                  <td>1</td>
+                  <td>SJN6006-066</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>케이블조립체13</td>
+                  <td>1</td>
+                  <td>SJN6004-067</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>케이블조립체9</td>
+                  <td>1</td>
+                  <td>SJN6004-068</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>케이블, 코일용</td>
+                  <td>1</td>
+                  <td>SJN6004-069</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>케이블, D-sub용</td>
+                  <td>1</td>
+                  <td>SJN6004-070</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>코일</td>
+                  <td>1</td>
+                  <td>CC-2160V-9R0</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>D-sub 25pin Female</td>
+                  <td>1</td>
+                  <td>15-000633</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-note">
+            OfficeGPT CAD BOM Agent는 한국어, 영어, 특수 기호 및 숫자가 복합하게 결합된
+            비정형 문자열 환경에서도 품번, 품명, 수량, 부품번호 등 핵심 엔티티를 정밀하게 식별합니다.
+            특히 다국어 혼용 및 제조사별 고유 코드 체계를 완벽하게 이해하여, 수작업 시 발생하기 쉬운
+            오타와 누락을 원천 차단하고 기업의 도면 데이터 자산화를 가속합니다.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 시스템 확장성 및 보안 강화 -->
+    <section class="cad-section py-5" id="cad-security">
+      <div class="container">
+        <div class="section-heading mb-4 mb-lg-5">
+          <h3><span class="title-stick"></span>시스템 확장성 및 보안 강화</h3>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-lg-6">
+            <div class="info-card h-100">
+              <div class="info-head">
+                <div class="icon-circle">
+                  <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <h4>Enterprise 연동</h4>
+              </div>
+
+              <div class="info-body">
+                <p>
+                  추출된 BOM 데이터는 사내 ERP, PLM, MES 시스템과 API를 통해 실시간 연동됩니다.
+                  더 이상 엑셀 파일 업로드 과정조차 필요하지 않은 완전 자동화된 데이터 파이프라인을
+                  구축할 수 있습니다.
+                </p>
+
+                <div class="mock-integration-shot">
+                  <div class="mock-app">
+                    <div class="mock-app-top"></div>
+                    <div class="mock-app-body">
+                      <div class="mini-grid">
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
+                      </div>
+                      <div class="mini-table">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="integration-badge">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>추출 BOM 정보 -> MES 연동</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <div class="info-card h-100">
+              <div class="info-head">
+                <div class="icon-circle">
+                  <i class="fa-solid fa-lock"></i>
+                </div>
+                <h4>로컬 VLLM 기반의 완전 보안</h4>
+              </div>
+
+              <div class="info-body">
+                <p>
+                  OfficeGPT는 외부 API를 전혀 활용하지 않는 로컬 VLLM(On-Premise) 엔진으로 동작합니다.
+                  모든 도면 분석과 데이터 처리가 기업 내부 네트워크 내에서 완료되는 구조이므로,
+                  민감한 설계 자산이 외부로 노출될 위험을 원천 차단합니다.
+                </p>
+
+                <div class="security-visual">
+                  <div class="server-room">
+                    <div class="rack rack-1"></div>
+                    <div class="rack rack-2"></div>
+                    <div class="rack rack-3"></div>
+                    <div class="monitor-glow"></div>
+                    <div class="desk-line"></div>
+                    <div class="security-label">Local VLLM Server</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <div id="footer-placeholder"></div>
+  <script src="./js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="./js/load_includes.js"></script>
+</body>
+
+</html>

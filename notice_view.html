@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OfficeGPT</title>
+  <link rel="icon" href="images/favicon.ico" type="image/png">
+  <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/vendor/all.min.css" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+<section class="erp-notice-detail-wrap">
+  <div class="erp-notice-detail container-fluid">
+
+    <!-- 상단 소개 -->
+    <div class="notice-detail-intro">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <span class="notice-detail-chip">Innogent Notice</span>
+          <h2 class="notice-detail-title">공지사항 상세</h2>
+          <p class="notice-detail-text">
+            서비스 운영과 관련된 주요 안내 사항을 상세하게 확인할 수 있는 페이지입니다.
+            점검 일정, 기능 업데이트, 정책 변경 등 중요한 내용을 명확하게 전달할 수 있도록 구성되어 있습니다.
+          </p>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="notice-detail-side-box">
+            <div class="notice-detail-mini">
+              <i class="fa-solid fa-circle-info"></i>
+              <div>
+                <strong>상세 내용 확인</strong>
+                <p>공지 제목, 등록일, 본문, 첨부파일까지 한 번에 확인</p>
+              </div>
+            </div>
+
+            <div class="notice-detail-mini">
+              <i class="fa-solid fa-paperclip"></i>
+              <div>
+                <strong>첨부파일 제공</strong>
+                <p>안내문, 매뉴얼, 관련 자료를 함께 제공 가능</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 상세 본문 -->
+    <div class="notice-detail-content">
+      <div class="notice-detail-head">
+        <div class="notice-detail-badges">
+          <span class="notice-detail-badge notice-detail-badge-important">중요</span>
+          <span class="notice-detail-badge notice-detail-badge-category">점검 안내</span>
+        </div>
+
+        <h3 class="notice-detail-subject">서비스 안정화를 위한 시스템 점검 안내</h3>
+
+        <div class="notice-detail-meta">
+          <span><i class="fa-regular fa-calendar"></i> 등록일 : 2026.03.18</span>
+          <span><i class="fa-regular fa-eye"></i> 조회수 : 1,284</span>
+          <span><i class="fa-regular fa-user"></i> 작성자 : 관리자</span>
+        </div>
+      </div>
+
+      <div class="notice-detail-body">
+        <p>안녕하세요. Innogent입니다.</p>
+
+        <p>
+          보다 안정적인 서비스 제공과 시스템 성능 개선을 위해 아래와 같이 정기 점검이 진행될 예정입니다.
+          점검 시간 동안 일부 서비스 이용이 일시적으로 제한될 수 있으니 참고 부탁드립니다.
+        </p>
+
+        <h4>점검 일정</h4>
+        <ul>
+          <li>점검 일시 : 2026년 3월 20일(금) 오전 02:00 ~ 05:00</li>
+          <li>대상 서비스 : ERP 웹 서비스 및 일부 API 기능</li>
+          <li>점검 내용 : 서버 안정화, 성능 최적화, 보안 패치 적용</li>
+        </ul>
+
+        <h4>이용 안내</h4>
+        <p>
+          점검 시간 중에는 서비스 접속이 원활하지 않을 수 있으며, 일부 기능은 일시적으로 제한될 수 있습니다.
+          작업 상황에 따라 점검 시간이 단축되거나 연장될 수 있습니다.
+        </p>
+
+        <p>
+          이용에 불편을 드려 죄송하며, 더 안정적인 서비스를 제공할 수 있도록 최선을 다하겠습니다.
+          감사합니다.
+        </p>
+      </div>
+
+      <!-- 첨부파일 -->
+      <div class="notice-attach-box">
+        <h5><i class="fa-solid fa-paperclip"></i> 첨부파일</h5>
+
+        <a href="#" class="notice-attach-item">
+          <div class="notice-attach-left">
+            <i class="fa-regular fa-file-lines"></i>
+            <span>시스템_점검_안내문.pdf</span>
+          </div>
+          <span class="notice-attach-size">245KB</span>
+        </a>
+
+        <a href="#" class="notice-attach-item">
+          <div class="notice-attach-left">
+            <i class="fa-regular fa-file-word"></i>
+            <span>서비스_변경_요약.docx</span>
+          </div>
+          <span class="notice-attach-size">118KB</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 이전글 / 다음글 -->
+    <div class="notice-detail-nav">
+      <a href="#" class="notice-detail-nav-item">
+        <span class="notice-nav-label"><i class="fa-solid fa-angle-up"></i> 이전글</span>
+        <strong>개인정보 처리방침 및 서비스 이용약관 개정 안내</strong>
+      </a>
+
+      <a href="#" class="notice-detail-nav-item">
+        <span class="notice-nav-label"><i class="fa-solid fa-angle-down"></i> 다음글</span>
+        <strong>대시보드 통계 시각화 기능 개선 업데이트</strong>
+      </a>
+    </div>
+
+    <!-- 하단 버튼 -->
+    <div class="notice-detail-btns">
+      <a href="#" class="btn notice-detail-btn-list">
+        <i class="fa-solid fa-list"></i> 목록으로
+      </a>
+    </div>
+
+  </div>
+</section>
+  <div id="footer-placeholder"></div>
+  <script src="./js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="./js/load_includes.js"></script>
+</body>
+</html>

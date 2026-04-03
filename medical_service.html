@@ -1,0 +1,1150 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OfficeGPT</title>
+  <link rel="icon" href="images/favicon.ico" type="image/png">
+  <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/vendor/all.min.css" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>병원 전용 오프라인 GPT 제안 랜딩페이지</title>
+</head>
+<body>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+  :root{
+    --medical-blue:#0f4c81;
+    --medical-blue-deep:#0b3b64;
+    --medical-blue-soft:#edf6ff;
+    --medical-sky:#dceeff;
+    --medical-yellow:#f4c542;
+    --medical-yellow-soft:#fff7da;
+    --text-main:#18324a;
+    --text-sub:#5e7288;
+    --line:#d7e6f3;
+    --white:#ffffff;
+    --bg:#f7fbff;
+  }
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+  .hospital-ai-page{
+    background: linear-gradient(180deg,#f7fbff 0%, #eef7ff 100%);
+    color: var(--text-main);
+    overflow: hidden;
+	font-family: 'Pretendard';
+	word-break:keep-all
+  }
+
+  .hospital-ai-page .container-xxl{
+    max-width: 1400px;
+  }
+
+  .section-space{
+    padding: 90px 0;
+  }
+
+  .hero-section{
+    position: relative;
+    padding: 90px 0 70px;
+    background:
+      radial-gradient(circle at top right, rgba(244,197,66,.18), transparent 22%),
+      radial-gradient(circle at top left, rgba(15,76,129,.12), transparent 28%),
+      linear-gradient(135deg,#f8fcff 0%, #eef6ff 100%);
+  }
+
+  .hero-badge,
+  .mini-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 16px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:800;
+  }
+
+  .hero-badge{
+    background:var(--medical-yellow-soft);
+    color:var(--medical-blue-deep);
+    border:1px solid rgba(244,197,66,.45);
+    margin-bottom:22px;
+  }
+
+  .mini-badge{
+    background:#eef7ff;
+    color:var(--medical-blue);
+    border:1px solid #d6e9fb;
+    margin-bottom:18px;
+  }
+
+  .hero-title{
+    font-size: clamp(2.2rem, 4vw, 4.2rem);
+    line-height:1.15;
+    font-weight:900;
+    color:var(--medical-blue-deep);
+    margin-bottom:24px;
+    word-break:keep-all;
+  }
+
+  .hero-title .point{
+    color:var(--medical-yellow);
+  }
+
+  .hero-desc,
+  .section-desc,
+  .card-desc,
+  .hero-side-text,
+  .form-note{
+    color:var(--text-sub);
+    line-height:1.9;
+    word-break:keep-all;
+  }
+
+  .hero-desc{
+    font-size:1.08rem;
+    max-width:760px;
+    margin-bottom:32px;
+  }
+
+  .hero-btn-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  .btn-medical-primary,
+  .btn-medical-outline{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    min-height:56px;
+    padding:0 28px;
+    border-radius:16px;
+    font-weight:800;
+    text-decoration:none;
+    transition:.2s ease;
+  }
+
+  .btn-medical-primary{
+    background:linear-gradient(135deg,var(--medical-blue) 0%, #1560a3 100%);
+    color:#fff;
+    border:none;
+    box-shadow:0 16px 28px rgba(15,76,129,.18);
+  }
+
+  .btn-medical-primary:hover{
+    color:#fff;
+    background:linear-gradient(135deg,#0d446f 0%, #13558f 100%);
+  }
+
+  .btn-medical-outline{
+    background:#fff;
+    color:var(--medical-blue);
+    border:1px solid #bfd8ef;
+  }
+
+  .btn-medical-outline:hover{
+    background:var(--medical-blue-soft);
+    color:var(--medical-blue-deep);
+  }
+
+  .hero-card,
+  .problem-card,
+  .benefit-card,
+  .feature-card,
+  .process-card,
+  .price-card,
+  .faq-wrap,
+  .form-card,
+  .image-info-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:28px;
+    padding:28px;
+    box-shadow:0 14px 34px rgba(14,63,106,.05);
+    height:100%;
+  }
+
+  .hero-card{
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(4px);
+  }
+
+  .hero-side-box{
+    display:flex;
+    gap:16px;
+    padding:18px 10px;
+    border-bottom:1px solid #e7f1fa;
+  }
+
+  .hero-side-box:last-child{
+    border-bottom:none;
+  }
+
+  .hero-icon,
+  .card-icon{
+    width:60px;
+    height:60px;
+    min-width:60px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#edf7ff 0%, #fff5d6 100%);
+    color:var(--medical-blue);
+    font-size:24px;
+    margin-bottom:18px;
+  }
+
+  .hero-side-title,
+  .card-title-lg{
+    font-size:1.2rem;
+    font-weight:900;
+    color:var(--medical-blue-deep);
+    margin-bottom:10px;
+  }
+
+  .section-title-wrap{
+    text-align:center;
+    max-width:880px;
+    margin:0 auto 52px;
+  }
+
+  .section-title{
+    font-size:clamp(1.8rem, 3vw, 3rem);
+    line-height:1.28;
+    font-weight:900;
+    color:var(--medical-blue-deep);
+    margin-bottom:16px;
+    word-break:keep-all;
+  }
+
+  .image-banner{
+    position:relative;
+    overflow:hidden;
+    border-radius:34px;
+    min-height:380px;
+    background:
+      linear-gradient(rgba(11,59,100,.48), rgba(11,59,100,.48)),
+      url('images/local/unsplash_22f4f0ab36badd0e147df2e8dc196e3d.jpg') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    box-shadow:0 20px 50px rgba(11,59,100,.12);
+	margin-bottom:30px
+  }
+
+  .image-banner-content{
+    padding:42px;
+    color:#fff;
+    max-width:760px;
+  }
+
+  .image-banner-content h3{
+    font-size:clamp(1.6rem, 2.8vw, 2.7rem);
+    font-weight:900;
+    line-height:1.3;
+    margin-bottom:16px;
+  }
+
+  .image-banner-content p{
+    margin:0;
+    color:rgba(255,255,255,.9);
+    line-height:1.9;
+  }
+
+  .highlight-section{
+    background:linear-gradient(135deg,var(--medical-blue) 0%, #165f9f 100%);
+    position:relative;
+  }
+
+  .highlight-section:before{
+    content:'';
+    position:absolute;
+    right:-120px;
+    top:-80px;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+  }
+
+  .highlight-box{
+    position:relative;
+    z-index:1;
+    color:#fff;
+  }
+
+  .highlight-box .section-title,
+  .highlight-box .section-desc{
+    color:#fff;
+  }
+
+  .highlight-item{
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:22px;
+    padding:24px;
+    height:100%;
+    backdrop-filter: blur(5px);
+  }
+
+  .highlight-item h4{
+    font-size:1.1rem;
+    font-weight:900;
+    margin-bottom:12px;
+  }
+
+  .highlight-item p{
+    margin:0;
+    color:rgba(255,255,255,.88);
+    line-height:1.8;
+  }
+
+  .split-image{
+    width:100%;
+    height:100%;
+    min-height:420px;
+    object-fit:cover;
+    border-radius:28px;
+    box-shadow:0 16px 36px rgba(11,59,100,.08);
+  }
+
+  .feature-list,
+  .price-list,
+  .contact-info-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+
+  .feature-list li,
+  .price-list li,
+  .contact-info-list li{
+    display:flex;
+    gap:12px;
+    padding:12px 0;
+    border-bottom:1px dashed #dbe8f5;
+    color:var(--text-sub);
+    line-height:1.8;
+  }
+
+  .feature-list li:last-child,
+  .price-list li:last-child,
+  .contact-info-list li:last-child{
+    border-bottom:none;
+  }
+
+  .feature-list i,
+  .price-list i,
+  .contact-info-list i{
+    margin-top:5px;
+    color:var(--medical-blue);
+  }
+
+  .pricing-wrap{
+    border:2px solid #d8e8f8;
+    background:linear-gradient(135deg,#ffffff 0%, #f3f9ff 100%);
+    position:relative;
+    overflow:hidden;
+  }
+
+  .pricing-wrap:after{
+    content:'OFFLINE GPT';
+    position:absolute;
+    top:20px;
+    right:-45px;
+    transform:rotate(40deg);
+    background:var(--medical-yellow);
+    color:#24384d;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:1px;
+    padding:8px 60px;
+  }
+
+  .price-top{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:flex-start;
+    margin-bottom:20px;
+  }
+
+  .price-title{
+    font-size:1.45rem;
+    font-weight:900;
+    color:var(--medical-blue-deep);
+    margin-bottom:10px;
+  }
+
+  .price-amount strong{
+    display:block;
+    font-size:clamp(2rem,3vw,3rem);
+    line-height:1;
+    color:var(--medical-blue-deep);
+  }
+
+  .price-amount span{
+    color:var(--text-sub);
+    font-weight:700;
+  }
+
+  .contact-section{
+    background:
+      radial-gradient(circle at top left, rgba(244,197,66,.12), transparent 25%),
+      linear-gradient(180deg,#f8fcff 0%, #eef6ff 100%);
+  }
+
+  .form-card{
+    padding:34px;
+  }
+
+  .form-card .form-label{
+    font-weight:800;
+    color:var(--medical-blue-deep);
+    margin-bottom:8px;
+  }
+
+  .form-card .form-control,
+  .form-card .form-select{
+    min-height:56px;
+    border-radius:15px;
+    border:1px solid #cfe0ee;
+    box-shadow:none !important;
+  }
+
+  .form-card textarea.form-control{
+    min-height:180px;
+    resize:none;
+  }
+
+  .form-card .form-control:focus,
+  .form-card .form-select:focus{
+    border-color:#86b8e7;
+  }
+
+  .contact-side-box{
+    background:linear-gradient(135deg,var(--medical-blue-deep) 0%, var(--medical-blue) 100%);
+    border-radius:28px;
+    padding:32px;
+    color:#fff;
+    height:100%;
+  }
+
+  .contact-side-box h3{
+    font-size:1.8rem;
+    font-weight:900;
+    margin-bottom:14px;
+  }
+
+  .contact-side-box p{
+    color:rgba(255,255,255,.88);
+    line-height:1.9;
+  }
+
+  .contact-side-box .contact-info-list li{
+    color:rgba(255,255,255,.92);
+    border-bottom:1px solid rgba(255,255,255,.14);
+  }
+
+  .contact-side-box .contact-info-list i{
+    color:var(--medical-yellow);
+  }
+
+  .contact-mini-image{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:22px;
+    margin-top:24px;
+    border:1px solid rgba(255,255,255,.12);
+  }
+
+  .accordion-item{
+    border:none;
+    background:transparent;
+  }
+
+  .accordion-button{
+    border-radius:18px !important;
+    box-shadow:none !important;
+    background:#fff;
+    color:var(--medical-blue-deep);
+    font-weight:800;
+    border:1px solid #dbe8f6;
+    padding:20px 22px;
+  }
+
+  .accordion-button:not(.collapsed){
+    background:#eef6ff;
+  }
+
+  .accordion-body{
+    color:var(--text-sub);
+    line-height:1.85;
+    background:#fff;
+    border:1px solid #dbe8f6;
+    border-top:none;
+    border-radius:0 0 18px 18px;
+  }
+
+  .cta-box{
+    background:linear-gradient(135deg,var(--medical-blue-deep) 0%, var(--medical-blue) 100%);
+    border-radius:34px;
+    padding:42px;
+    color:#fff;
+    box-shadow:0 20px 50px rgba(11,59,100,.18);
+  }
+
+  .cta-title{
+    font-size:clamp(1.8rem, 3vw, 2.8rem);
+    font-weight:900;
+    line-height:1.3;
+    margin-bottom:16px;
+  }
+
+  .cta-desc{
+    color:rgba(255,255,255,.88);
+    line-height:1.9;
+    margin-bottom:24px;
+    max-width:820px;
+  }
+
+  @media (max-width: 991.98px){
+    .section-space{ padding:70px 0; }
+    .hero-section{ padding:70px 0 50px; }
+    .cta-box{ padding:30px; }
+    .form-card{ padding:24px; }
+  }
+
+  @media (max-width: 767.98px){
+    .section-space{ padding:56px 0; }
+    .hero-btn-group{ flex-direction:column; }
+    .btn-medical-primary,
+    .btn-medical-outline{ width:100%; }
+    .hero-card,
+    .problem-card,
+    .benefit-card,
+    .feature-card,
+    .process-card,
+    .price-card,
+    .faq-wrap,
+    .form-card,
+    .image-info-card{ padding:22px; border-radius:22px; }
+    .split-image{ min-height:280px; }
+    .image-banner{ min-height:300px; border-radius:24px; }
+    .image-banner-content{ padding:24px; }
+    .cta-box{ padding:24px; border-radius:24px; }
+    .price-top{ flex-direction:column; }
+  }
+</style>
+
+<section class="hospital-ai-page">
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="container-xxl">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <div class="hero-badge">
+            <i class="fa-solid fa-hospital"></i>
+            병원 전용 오프라인 GPT
+          </div>
+
+          <h1 class="hero-title">
+            내부 서버 기반으로 구축하는<br>
+            <span class="point">병원 맞춤형 오프라인 GPT</span>
+          </h1>
+
+          <p class="hero-desc">
+            병원 내부 기록 자료, 상담 내용, 운영 문서, 각종 안내문과 보고 문서까지
+            외부 노출 없이 안전하게 처리할 수 있는 병원 전용 AI 솔루션입니다.
+            반복적인 문서 업무를 줄이고 처리 속도를 높여, 병원 운영 효율을 한 단계 끌어올릴 수 있습니다.
+          </p>
+
+          <div class="hero-btn-group">
+            <a href="#proposalPrice" class="btn-medical-primary">
+              <i class="fa-solid fa-won-sign"></i>
+              제안 금액 보기
+            </a>
+            <a href="#consultForm" class="btn-medical-outline">
+              <i class="fa-solid fa-paper-plane"></i>
+              상담 신청하기
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="hero-card">
+            <div class="hero-side-box">
+              <div class="hero-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div>
+                <div class="hero-side-title">외부 노출 최소화</div>
+                <p class="hero-side-text">병원 내부 서버 중심으로 운영하여 민감한 정보 보호에 유리한 환경을 구성할 수 있습니다.</p>
+              </div>
+            </div>
+
+            <div class="hero-side-box">
+              <div class="hero-icon"><i class="fa-solid fa-file-waveform"></i></div>
+              <div>
+                <div class="hero-side-title">문서 지옥 해결</div>
+                <p class="hero-side-text">상담 기록, 내부 보고, 운영 문서 초안 작성 등 반복되는 문서 업무를 효율화합니다.</p>
+              </div>
+            </div>
+
+            <div class="hero-side-box">
+              <div class="hero-icon"><i class="fa-solid fa-gauge-high"></i></div>
+              <div>
+                <div class="hero-side-title">처리속도 향상</div>
+                <p class="hero-side-text">필요한 정보를 빠르게 찾고 정리해 실무자의 업무 시간을 크게 줄일 수 있습니다.</p>
+              </div>
+            </div>
+
+            <div class="hero-side-box">
+              <div class="hero-icon"><i class="fa-solid fa-server"></i></div>
+              <div>
+                <div class="hero-side-title">내부 서버 포함 제안</div>
+                <p class="hero-side-text">내부 서버와 시스템 환경까지 포함한 4,000만원 구축 패키지로 제안 가능합니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 문제 -->
+  <section class="section-space">
+    <div class="container-xxl">
+      <div class="section-title-wrap">
+        <div class="mini-badge">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          병원 운영의 현실적인 문제
+        </div>
+        <h2 class="section-title">반복되는 문서 업무와 기록 정리가 병원 운영을 느리게 만듭니다</h2>
+        <p class="section-desc">
+          내부 자료는 많지만 활용은 어렵고, 상담 내용과 기록은 계속 쌓이며,
+          민감한 정보 때문에 외부 AI를 자유롭게 사용하기 어려운 것이 병원 현장의 현실입니다.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-3">
+          <div class="problem-card">
+            <div class="card-icon"><i class="fa-solid fa-folder-open"></i></div>
+            <h3 class="card-title-lg">자료 분산</h3>
+            <p class="card-desc">부서별 문서가 흩어져 있어 필요한 정보를 찾는 데 시간이 오래 걸립니다.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="problem-card">
+            <div class="card-icon"><i class="fa-solid fa-notes-medical"></i></div>
+            <h3 class="card-title-lg">기록 정리 부담</h3>
+            <p class="card-desc">상담 내용과 운영 기록을 사람이 직접 정리하다 보니 누락과 편차가 생길 수 있습니다.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="problem-card">
+            <div class="card-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <h3 class="card-title-lg">느린 처리 속도</h3>
+            <p class="card-desc">문서 검색, 요약, 작성까지 수작업이 많아 전체 업무 흐름이 느려집니다.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="problem-card">
+            <div class="card-icon"><i class="fa-solid fa-lock"></i></div>
+            <h3 class="card-title-lg">보안 제한</h3>
+            <p class="card-desc">민감한 병원 데이터를 외부 서비스에 올리기 어려워 AI 도입이 제한됩니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 이미지 배너 -->
+  <section class="pb-0">
+    <div class="container-xxl">
+      <div class="image-banner">
+        <div class="image-banner-content">
+          <h3>내부 자료를 안전하게 활용</h3>
+          <p>
+            외부 전송 없이 내부 서버 기반으로 문서를 검색하고,
+            상담 기록과 운영 문서를 빠르게 정리하며,
+            병원 실무 흐름에 맞춰 AI를 사용할 수 있는 구조를 제안합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 해결 -->
+  <section class="highlight-section section-space">
+    <div class="container-xxl highlight-box">
+      <div class="section-title-wrap">
+        <div class="mini-badge" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.16);color:#fff;">
+          <i class="fa-solid fa-stethoscope"></i>
+          해결 방향
+        </div>
+        <h2 class="section-title">병원 전용 오프라인 GPT는 이렇게 작동합니다</h2>
+        <p class="section-desc">
+          병원 내부 문서를 기반으로 검색·요약·초안 작성·상담 기록 정리까지 지원하고,
+          외부 노출 없이 내부에서 안정적으로 운영할 수 있도록 구성합니다.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-3">
+          <div class="highlight-item">
+            <h4>내부 문서 검색</h4>
+            <p>필요한 자료를 빠르게 찾아 핵심 내용을 정리해 업무 판단 속도를 높입니다.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="highlight-item">
+            <h4>상담 내용 요약</h4>
+            <p>상담 내용을 정리해 메모 부담을 줄이고 기록 품질을 일정하게 유지할 수 있습니다.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="highlight-item">
+            <h4>문서 초안 생성</h4>
+            <p>안내문, 보고자료, 운영 문서 등의 초안을 빠르게 생성해 작성 시간을 줄여줍니다.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="highlight-item">
+            <h4>보안형 운영</h4>
+            <p>내부 서버 기반 운영으로 외부 공개형 AI보다 데이터 통제력이 높습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 장점 -->
+  <section class="section-space">
+    <div class="container-xxl">
+      <div class="section-title-wrap">
+        <div class="mini-badge">
+          <i class="fa-solid fa-star"></i>
+          핵심 장점
+        </div>
+        <h2 class="section-title">도입 후 바로 체감할 수 있는 변화</h2>
+        <p class="section-desc">
+          병원 실무에 직접 연결되는 문서·기록·상담 지원 중심으로 설계하여,
+          도입 효과를 빠르게 체감할 수 있습니다.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-4">
+          <div class="benefit-card">
+            <div class="card-icon"><i class="fa-solid fa-user-minus"></i></div>
+            <h3 class="card-title-lg">인건비 감소</h3>
+            <p class="card-desc">반복적인 문서 정리와 기록 초안 작성 시간을 줄여 기존 인력의 효율을 높입니다.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+          <div class="benefit-card">
+            <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3 class="card-title-lg">처리속도 향상</h3>
+            <p class="card-desc">자료 검색과 문서 작성 시간이 단축되어 병원 내부 커뮤니케이션과 대응이 빨라집니다.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+          <div class="benefit-card">
+            <div class="card-icon"><i class="fa-solid fa-shield-heart"></i></div>
+            <h3 class="card-title-lg">안정성 보장</h3>
+            <p class="card-desc">외부에 데이터가 노출되지 않는 방향으로 운영해 보안 신뢰도를 강화할 수 있습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 이미지 포함 설명 섹션 -->
+  <section class="section-space" style="background:#fbfdff;">
+    <div class="container-xxl">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <img
+            src="images/hand.png"
+            alt="병원 데이터와 의료 업무 환경"
+            class="split-image"
+          >
+        </div>
+        <div class="col-lg-6">
+          <div class="image-info-card">
+            <div class="mini-badge">
+              <i class="fa-solid fa-laptop-medical"></i>
+              주요 활용 기능
+            </div>
+            <h2 class="section-title text-start mb-3" style="font-size:2.2rem;">실제 병원 업무에 맞춘 기능 구성</h2>
+            <p class="section-desc text-start mb-4">
+              단순한 챗봇이 아니라 병원 내부 운영 흐름에 맞는
+              실무형 AI 도구로 구성할 수 있습니다.
+            </p>
+
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-check"></i><span>병원 내부 문서 검색 및 핵심 요약</span></li>
+              <li><i class="fa-solid fa-check"></i><span>상담 내용 정리 및 응대 기록 초안 작성</span></li>
+              <li><i class="fa-solid fa-check"></i><span>운영 문서 / 보고 자료 / 안내문 초안 생성</span></li>
+              <li><i class="fa-solid fa-check"></i><span>반복 질의에 대한 내부 지식 기반 답변 지원</span></li>
+              <li><i class="fa-solid fa-check"></i><span>외부 전송 없이 내부 환경 중심 운영</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 가격 -->
+  <section class="section-space" id="proposalPrice">
+    <div class="container-xxl">
+      <div class="section-title-wrap">
+        <div class="mini-badge">
+          <i class="fa-solid fa-won-sign"></i>
+          제안 금액
+        </div>
+        <h2 class="section-title">내부 서버 포함 병원 전용 구축 패키지</h2>
+        <p class="section-desc">
+          병원 내부 자료 활용과 보안형 AI 운영을 위한 구축 기준 제안입니다.
+        </p>
+      </div>
+
+      <div class="price-card pricing-wrap">
+        <div class="price-top">
+          <div>
+            <h3 class="price-title">병원 전용 오프라인 GPT 구축 패키지</h3>
+            <p class="card-desc mb-0">
+              내부 서버, 기본 세팅, 병원 업무 맞춤형 활용 구조 반영까지 포함한 제안 예시입니다.
+            </p>
+          </div>
+          <div class="price-amount">
+
+          </div>
+        </div>
+
+        <ul class="price-list">
+          <li><i class="fa-solid fa-circle-check"></i><span>내부망 또는 폐쇄형 환경을 고려한 서버 구성 포함</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>검색·요약·문서 생성 기능 세팅</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>상담 기록 및 내부 문서 중심 활용 구조 설계</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>병원 맞춤형 프롬프트 / 업무 흐름 반영</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>초기 구축 및 운영 안정화 지원</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>세부 적용 범위는 병원 규모와 요구사항에 따라 조정 가능</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>12개월 분할 납입 가능</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 상담 신청 폼 -->
+  <section class="contact-section section-space" id="consultForm">
+    <div class="container-xxl">
+      <div class="section-title-wrap">
+        <div class="mini-badge">
+          <i class="fa-solid fa-paper-plane"></i>
+          상담 신청
+        </div>
+        <h2 class="section-title">병원 환경에 맞는 오프라인 GPT 구축 상담을 받아보세요</h2>
+        <p class="section-desc">
+          간단한 정보만 남겨주시면 병원 규모와 운영 방식에 맞춰 적합한 구축 방향을 안내해드립니다.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-7">
+          <div class="form-card">
+            <form>
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <label class="form-label">병원명</label>
+                  <input type="text" class="form-control" placeholder="병원명을 입력하세요">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">담당자명</label>
+                  <input type="text" class="form-control" placeholder="담당자명을 입력하세요">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">연락처</label>
+                  <input type="text" class="form-control" placeholder="연락 가능한 번호">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">이메일</label>
+                  <input type="email" class="form-control" placeholder="이메일 주소">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">병원 유형</label>
+                  <select class="form-select">
+                    <option selected>병원 유형 선택</option>
+                    <option>개인병원</option>
+                    <option>의원</option>
+                    <option>요양병원</option>
+                    <option>종합병원</option>
+                    <option>기타</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">관심 분야</label>
+                  <select class="form-select">
+                    <option selected>관심 분야 선택</option>
+                    <option>상담 기록 정리</option>
+                    <option>문서 자동화</option>
+                    <option>내부 자료 검색</option>
+                    <option>보안형 AI 구축</option>
+                    <option>전체 상담</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label">문의 내용</label>
+                  <textarea class="form-control" placeholder="현재 병원에서 겪고 있는 문제나 도입 목적을 적어주세요"></textarea>
+                  <div class="form-note mt-2">
+                    예: 상담 내용 정리 자동화, 내부 문서 검색, 안내문 초안 작성, 보안형 AI 운영 등
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="agreePrivacy">
+                    <label class="form-check-label text-secondary" for="agreePrivacy">
+                      개인정보 수집 및 상담 목적의 이용에 동의합니다.
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-12 d-flex flex-wrap gap-2 pt-2">
+                  <button type="submit" class="btn-medical-primary">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    상담 신청 보내기
+                  </button>
+                  <button type="reset" class="btn-medical-outline">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    다시 작성
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="contact-side-box">
+            <h3>병원 맞춤 구축 상담</h3>
+            <p>
+              병원 내부 문서 환경, 상담 프로세스, 보안 수준, 서버 구성 조건에 따라
+              적용 범위와 방식이 달라질 수 있습니다.
+              아래 내용을 중심으로 상담을 진행합니다.
+            </p>
+
+            <ul class="contact-info-list mt-4">
+              <li><i class="fa-solid fa-check"></i><span>현재 병원 문서 및 기록 관리 방식 진단</span></li>
+              <li><i class="fa-solid fa-check"></i><span>내부 서버 기반 구축 가능 범위 검토</span></li>
+              <li><i class="fa-solid fa-check"></i><span>문서 자동화 및 상담 정리 활용 방안 제안</span></li>
+              <li><i class="fa-solid fa-check"></i><span>예산 및 도입 일정 협의</span></li>
+              <li><i class="fa-solid fa-check"></i><span>12개월 분할 납입 가능</span></li>
+              <li><i class="fa-solid fa-check"></i><span>향후 업데이트시 패치 가능</span></li>
+            </ul>
+
+            <img
+              src="images/local/unsplash_4a0af1455e501dc22c4ae412c462a8f5.jpg"
+              alt="병원 상담 및 의료 환경"
+              class="contact-mini-image"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-space">
+    <div class="container-xxl">
+      <div class="section-title-wrap">
+        <div class="mini-badge">
+          <i class="fa-solid fa-circle-question"></i>
+          자주 묻는 질문
+        </div>
+        <h2 class="section-title">도입 전에 많이 확인하는 내용</h2>
+        <p class="section-desc">병원에서 오프라인 GPT를 검토할 때 자주 나오는 질문을 정리했습니다.</p>
+      </div>
+
+      <div class="faq-wrap">
+        <div class="accordion" id="hospitalFaq">
+          <div class="accordion-item mb-3">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">
+                정말 외부 노출 없이 운영 가능한가요?
+              </button>
+            </h2>
+            <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#hospitalFaq">
+              <div class="accordion-body">
+                제안 방향은 병원 내부 서버 기반의 폐쇄형 또는 제한형 운영 환경을 전제로 하며,
+                실제 적용 구조는 병원의 보안 정책과 네트워크 구성에 맞춰 조정할 수 있습니다.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">
+                어떤 자료를 활용할 수 있나요?
+              </button>
+            </h2>
+            <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#hospitalFaq">
+              <div class="accordion-body">
+                내부 매뉴얼, 상담 기록 양식, 운영 문서, 안내문, 교육 자료 등
+                병원이 지정한 범위 내 자료를 중심으로 검색·요약·문서 생성에 활용할 수 있습니다.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree">
+                비용 절감 효과는 어디서 나오나요?
+              </button>
+            </h2>
+            <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#hospitalFaq">
+              <div class="accordion-body">
+                반복적인 기록 정리, 문서 초안 작성, 자료 탐색 시간 단축 등으로
+                실무자의 비효율을 줄이는 부분에서 가장 직접적인 효과가 발생합니다.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour">
+                병원마다 다른 업무 흐름도 반영 가능한가요?
+              </button>
+            </h2>
+            <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#hospitalFaq">
+              <div class="accordion-body">
+                가능합니다. 병원의 상담 프로세스, 행정 흐름, 문서 체계, 부서별 활용 목적에 맞춰
+                질문 방식과 출력 형식을 맞춤형으로 조정할 수 있습니다.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-space pt-0">
+    <div class="container-xxl">
+      <div class="cta-box">
+        <h2 class="cta-title">병원 내부 업무를 더 빠르고 안전하게 바꾸는 오프라인 GPT</h2>
+        <p class="cta-desc">
+          문서 지옥, 느린 자료 검색, 반복적인 기록 업무를 줄이고
+          보안까지 고려한 병원 전용 AI 시스템을 도입해보세요.
+          내부 서버 포함 4,000만원 기준으로 맞춤 상담이 가능합니다.
+        </p>
+
+        <div class="hero-btn-group">
+          <a href="#consultForm" class="btn-medical-primary" style="background:linear-gradient(135deg,#f4c542 0%, #ffd95f 100%); color:#23384b;">
+            <i class="fa-solid fa-paper-plane"></i>
+            상담 신청하기
+          </a>
+          <a href="#proposalPrice" class="btn-medical-outline">
+            <i class="fa-solid fa-file-signature"></i>
+            제안 내용 다시 보기
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+  <div id="footer-placeholder"></div>
+  <script src="./js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="./js/load_includes.js"></script>
+</body>
+</html>

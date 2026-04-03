@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OfficeGPT</title>
+  <link rel="icon" href="images/favicon.ico" type="image/png">
+  <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/vendor/all.min.css" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+<section class="erp-order-info-wrap">
+  <div class="erp-order-info container-fluid">
+	<div class="breadcrumb-wrap">
+	  <nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+		  <li class="breadcrumb-item"><a href="/">홈</a></li>
+		  <li class="breadcrumb-item"><a href="#">OfficeERP</a></li>
+		  <li class="breadcrumb-item"><a href="#">업무 처리</a></li>
+		  <li class="breadcrumb-item active" aria-current="page">주문 / 발주 관리</li>
+		</ol>
+	  </nav>
+	</div>
+
+    <!-- 비주얼 -->
+    <div class="order-intro-section">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <span class="order-section-chip">OfficeERP</span>
+          <h2 class="order-intro-title">주문 / 발주 관리</h2>
+          <p class="order-intro-text">
+            주문 접수부터 발주 요청, 납기 확인, 진행 상태 관리까지 구매 및 공급 흐름을 체계적으로 운영할 수 있는 페이지입니다.
+            주문과 발주 정보를 통합 관리하여 재고, 거래처, 매입 흐름과 자연스럽게 연결하고 실무 처리 속도와 정확도를 높일 수 있습니다.
+          </p>
+
+          <div class="order-intro-btns">
+            <a href="#" class="btn order-btn-primary">
+              <i class="fa-solid fa-arrow-right"></i> 도입 문의
+            </a>
+            <a href="#" class="btn order-btn-outline">
+              <i class="fa-solid fa-cart-flatbed"></i> 기능 보기
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="order-side-box">
+            <div class="order-mini-point">
+              <i class="fa-solid fa-file-circle-check"></i>
+              <div>
+                <strong>주문 / 발주 흐름 통합</strong>
+                <p>접수부터 요청, 진행, 완료까지 전체 프로세스를 일관되게 관리</p>
+              </div>
+            </div>
+
+            <div class="order-mini-point">
+              <i class="fa-solid fa-truck-fast"></i>
+              <div>
+                <strong>납기 및 진행 상태 관리</strong>
+                <p>출고 예정일과 납기 일정을 기준으로 진행 현황을 명확하게 확인</p>
+              </div>
+            </div>
+
+            <div class="order-mini-point">
+              <i class="fa-solid fa-link"></i>
+              <div>
+                <strong>OfficeERP 모듈 연계 운영</strong>
+                <p>재고, 거래처, 매입 관리와 연결되는 실무 중심 데이터 운영</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 핵심 기능 -->
+    <div class="order-content-section">
+      <div class="order-section-head">
+        <span class="order-section-label">Core Features</span>
+        <h3>핵심 기능</h3>
+        <p>
+          주문 및 발주 관리에 필요한 주요 기능을 실무 중심 구조로 제공합니다.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="order-feature-box">
+            <div class="order-feature-icon">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <h4>주문 접수 관리</h4>
+            <p>
+              고객 주문 정보를 등록하고 품목, 수량, 납기, 요청 사항을 체계적으로 관리하여 주문 누락을 줄일 수 있습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="order-feature-box">
+            <div class="order-feature-icon">
+              <i class="fa-solid fa-file-import"></i>
+            </div>
+            <h4>발주 요청 및 생성</h4>
+            <p>
+              공급사 또는 협력사에 전달할 발주 정보를 생성하고 품목별 발주 수량과 조건을 명확하게 관리할 수 있습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="order-feature-box">
+            <div class="order-feature-icon">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+            <h4>진행 상태 추적</h4>
+            <p>
+              접수, 승인, 발주 완료, 입고 대기, 완료 등 단계별 상태를 구분하여 업무 흐름을 한눈에 파악할 수 있습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="order-feature-box">
+            <div class="order-feature-icon">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <h4>납기 일정 관리</h4>
+            <p>
+              주문 납기와 발주 예정일, 입고 예정일을 기준으로 일정을 관리하여 지연 리스크를 줄일 수 있습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="order-feature-box">
+            <div class="order-feature-icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <h4>검색 및 조건 조회</h4>
+            <p>
+              주문번호, 거래처, 품목, 상태, 기간 조건으로 필요한 주문 및 발주 내역을 빠르게 조회할 수 있습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="order-feature-box">
+            <div class="order-feature-icon">
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </div>
+            <h4>재고 / 매입 연계</h4>
+            <p>
+              발주 결과를 재고 입고와 연결하고 매입 흐름으로 이어지도록 구성하여 전체 운영 효율을 높일 수 있습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 프로세스 -->
+    <div class="order-content-section order-process-section">
+      <div class="order-section-head">
+        <span class="order-section-label">Process</span>
+        <h3>업무 처리 흐름</h3>
+        <p>
+          주문 접수부터 발주 요청, 납기 확인, 입고 반영까지 실제 업무 흐름에 맞춰 구성됩니다.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-3 col-sm-6">
+          <div class="order-process-box">
+            <div class="order-process-no">01</div>
+            <h4>주문 접수</h4>
+            <p>주문 정보와 품목, 수량, 납기 정보를 등록합니다.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+          <div class="order-process-box">
+            <div class="order-process-no">02</div>
+            <h4>발주 생성</h4>
+            <p>공급사 대상 발주 내역을 생성하고 요청합니다.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+          <div class="order-process-box">
+            <div class="order-process-no">03</div>
+            <h4>진행 및 납기 확인</h4>
+            <p>진행 상태와 납기 일정을 지속적으로 관리합니다.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+          <div class="order-process-box">
+            <div class="order-process-no">04</div>
+            <h4>입고 및 연계 처리</h4>
+            <p>입고 반영 후 재고 및 매입 흐름과 연결합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 기대 효과 -->
+    <div class="order-content-section">
+      <div class="order-section-head">
+        <span class="order-section-label">Benefits</span>
+        <h3>기대 효과</h3>
+        <p>
+          주문과 발주 흐름을 표준화하여 누락을 줄이고 운영 효율과 대응 속도를 높일 수 있습니다.
+        </p>
+      </div>
+
+      <div class="order-benefit-box">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <ul class="order-benefit-list">
+              <li><i class="fa-solid fa-check"></i> 주문 누락과 발주 오류를 줄여 업무 정확도를 높일 수 있습니다.</li>
+              <li><i class="fa-solid fa-check"></i> 납기 일정과 진행 상태를 명확하게 관리할 수 있습니다.</li>
+              <li><i class="fa-solid fa-check"></i> 공급사 및 거래처와의 협업 흐름을 체계적으로 운영할 수 있습니다.</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6">
+            <ul class="order-benefit-list">
+              <li><i class="fa-solid fa-check"></i> 재고와 매입 흐름까지 연결하여 운영 시간을 절감할 수 있습니다.</li>
+              <li><i class="fa-solid fa-check"></i> 주문부터 입고까지 전체 프로세스를 한눈에 파악할 수 있습니다.</li>
+              <li><i class="fa-solid fa-check"></i> OfficeERP 내 다른 관리 모듈과 연계하여 확장성과 일관성을 확보할 수 있습니다.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+  <div id="footer-placeholder"></div>
+  <script src="./js/vendor/bootstrap.bundle.min.js"></script>
+  <script src="./js/load_includes.js"></script>
+</body>
+</html>
