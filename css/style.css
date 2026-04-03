@@ -1203,6 +1203,7 @@
       }
 
       .hero-mobile-backdrop {
+        display: none;
         position: absolute;
         inset: 0;
         background:
@@ -1480,7 +1481,7 @@
 
       .hero-mobile-flow {
         position: absolute;
-        top: 92px;
+        top: 80px;
         left: 136px;
         width: 108px;
         height: 48px;
@@ -1590,7 +1591,7 @@
 
       .hero-mobile-title {
         margin: 16px 0 14px;
-        font-size: 33px;
+        font-size: 28px;
         line-height: 1.1;
         letter-spacing: -0.045em;
         font-weight: 800;
@@ -1614,14 +1615,14 @@
 
       @media (max-width: 390px) {
         .hero-mobile-title {
-          font-size: 26px;
+          font-size: 24px;
           max-width: 300px;
         }
       }
 
       @media (max-width: 360px) {
         .hero-mobile-title {
-          font-size: 22px;
+          font-size: 20px;
           max-width: 284px;
         }
       }
@@ -1648,15 +1649,15 @@
       }
 
       .hero-mobile-keyword-row-a {
-        top: 6px;
+        top: 20px;
       }
 
       .hero-mobile-keyword-row-b {
-        top: 92px;
+        top: 160px;
       }
 
       .hero-mobile-keyword-row-c {
-        top: 168px;
+        top: 250px;
       }
     
       .hero-mobile-link {
