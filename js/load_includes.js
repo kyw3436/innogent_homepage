@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const mobileBreakpoint = 992;
     const openSubmenusKey = "openSubmenus";
+    const currentSubmenuKey = "currentOpenSubmenu";
     const mobileNavScrollKey = "mobileNavScrollTop";
     const includeVersion = "20260404b";
     const breadcrumbLinkMap = {
@@ -47,6 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
         sessionStorage.setItem(openSubmenusKey, JSON.stringify(openSubmenus));
     }
 
+    function saveCurrentSubmenu() {
+        const currentItem = document.querySelector(".nav-item.dropdown-hover.dropdown-current .nav-link");
+        const currentLabel = currentItem ? currentItem.textContent.trim() : "";
+
+        sessionStorage.setItem(currentSubmenuKey, currentLabel);
+    }
+
     function saveMobileNavScroll() {
         const navCollapseEl = document.getElementById("mainNav");
 
@@ -77,11 +85,43 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    function scrollNavItemIntoView(item) {
+        const navCollapseEl = document.getElementById("mainNav");
+        const navLink = item?.querySelector(":scope > .nav-link");
+
+        if (!navCollapseEl || !navLink || window.innerWidth >= mobileBreakpoint) {
+            return;
+        }
+
+        requestAnimationFrame(() => {
+            const containerRect = navCollapseEl.getBoundingClientRect();
+            const linkRect = navLink.getBoundingClientRect();
+            const topPadding = 12;
+            const bottomPadding = 18;
+
+            if (linkRect.top < containerRect.top + topPadding) {
+                navCollapseEl.scrollBy({
+                    top: linkRect.top - containerRect.top - topPadding,
+                    behavior: "smooth"
+                });
+            } else if (linkRect.bottom > containerRect.bottom - bottomPadding) {
+                navCollapseEl.scrollBy({
+                    top: linkRect.bottom - containerRect.bottom + bottomPadding,
+                    behavior: "smooth"
+                });
+            }
+
+            saveMobileNavScroll();
+        });
+    }
+
     function restoreOpenSubmenus() {
         const savedSubmenus = sessionStorage.getItem(openSubmenusKey);
+        const currentSubmenu = sessionStorage.getItem(currentSubmenuKey);
 
         document.querySelectorAll(".nav-item.dropdown-hover").forEach((item) => {
             item.classList.remove("dropdown-open");
+            item.classList.remove("dropdown-current");
         });
 
         if (!savedSubmenus) {
@@ -102,6 +142,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (link && submenus.includes(link.textContent.trim())) {
                 item.classList.add("dropdown-open");
+
+                if (currentSubmenu && link.textContent.trim() === currentSubmenu) {
+                    item.classList.add("dropdown-current");
+                }
             }
         });
     }
@@ -231,15 +275,20 @@ document.addEventListener("DOMContentLoaded", function () {
                     const item = this.closest(".nav-item");
                     const isOpen = item.classList.contains("dropdown-open");
 
-                    document
-                        .querySelectorAll(".nav-item.dropdown-open")
-                        .forEach((openItem) => openItem.classList.remove("dropdown-open"));
+                    document.querySelectorAll(".nav-item.dropdown-hover").forEach((navItem) => {
+                        navItem.classList.remove("dropdown-current");
+                    });
 
                     if (!isOpen) {
                         item.classList.add("dropdown-open");
+                        item.classList.add("dropdown-current");
+                        scrollNavItemIntoView(item);
+                    } else {
+                        item.classList.remove("dropdown-open");
                     }
 
                     saveOpenSubmenus();
+                    saveCurrentSubmenu();
                     syncSubmenuToggleState();
                 });
             });
@@ -253,14 +302,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     const parentItem = this.closest(".nav-item.dropdown-hover");
 
                     document.querySelectorAll(".nav-item.dropdown-hover").forEach((item) => {
-                        item.classList.remove("dropdown-open");
+                        item.classList.remove("dropdown-current");
                     });
 
                     if (parentItem) {
-                        parentItem.classList.add("dropdown-open");
+                        parentItem.classList.add("dropdown-current");
                     }
 
                     saveOpenSubmenus();
+                    saveCurrentSubmenu();
                     syncSubmenuToggleState();
                 });
             });

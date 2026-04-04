@@ -405,12 +405,7 @@
       }
 
       .gnb-center .nav-item.dropdown-open > .nav-toggle-link::before {
-        border-color: var(--point-color);
         transform: translateY(-35%) rotate(-135deg);
-      }
-
-      .gnb-center .nav-item.dropdown-open > .nav-toggle-link {
-        color: var(--point-color);
       }
 
       .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
@@ -432,14 +427,16 @@
         display: none;
       }
 
-      .site-header .navbar-collapse .nav-item:not(.dropdown-open) > .nav-toggle-link,
-      .site-header .navbar-collapse .nav-item:not(.dropdown-open) > .nav-toggle-link.active {
+      .site-header .navbar-collapse .nav-item > .nav-toggle-link {
         color: #111 !important;
       }
 
-      .site-header .navbar-collapse .nav-item.dropdown-open > .nav-toggle-link,
-      .site-header .navbar-collapse .nav-item.dropdown-open > .nav-toggle-link.active {
+      .site-header .navbar-collapse .nav-item > .nav-toggle-link.active {
         color: var(--point-color) !important;
+      }
+
+      .site-header .navbar-collapse .nav-item > .nav-toggle-link.active::before {
+        border-color: var(--point-color);
       }
 
       .solution-card {
@@ -4807,7 +4804,7 @@
     .sub-hero {
       background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
       border-bottom: 1px solid var(--brand-line);
-      padding: 56px 0 44px;
+      padding: 26px 0 44px;
     }
 
     .breadcrumb-wrap {
@@ -5412,7 +5409,7 @@
       }
 
       .main-title {
-        font-size: 1.85rem;
+        font-size: 1.6rem;
       }
 
       .main-desc {
@@ -5680,7 +5677,7 @@
       }
 
       .main-title {
-        font-size: 1.85rem;
+        font-size: 1.6rem;
       }
 
       .main-desc {
@@ -5948,7 +5945,7 @@
       }
 
       .main-title {
-        font-size: 1.85rem;
+        font-size: 1.6rem;
       }
 
       .main-desc {
@@ -6268,7 +6265,7 @@
 
 @media (max-width: 767.98px) {
   .officegpt-bom-section {
-    padding-top: 3rem !important;
+    padding-top: 1rem !important;
     padding-bottom: 3rem !important;
   }
 
@@ -6584,7 +6581,7 @@
   }
 
   .feature-content h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .feature-content p {
@@ -6595,7 +6592,7 @@
 
 @media (max-width: 767.98px) {
   .officegpt-doc-section {
-    padding-top: 3rem !important;
+    padding-top: 1rem !important;
     padding-bottom: 3rem !important;
   }
 
@@ -7211,7 +7208,7 @@
   display:flex;
   align-items:center;
   gap:12px;
-  font-size:clamp(1.9rem,2.8vw,3rem);
+  font-size:clamp(1.6rem,2.8vw,3rem);
   font-weight:800;
   color:#1847a2;
   letter-spacing:-0.5px;
@@ -7654,7 +7651,7 @@
 
 @media (max-width: 767.98px){
   .cad-section{
-    padding-top:3rem !important;
+    padding-top:1rem !important;
     padding-bottom:3rem !important;
   }
 
@@ -7928,7 +7925,7 @@
 
 @media (max-width: 767.98px){
   .cad-scenario-section{
-    padding-top:3rem !important;
+    padding-top:1rem !important;
     padding-bottom:3rem !important;
   }
 
@@ -8141,7 +8138,7 @@
 
 @media (max-width: 767.98px){
   .business-scenario-section{
-    padding-top:3rem !important;
+    padding-top:1rem !important;
     padding-bottom:3rem !important;
   }
 
@@ -8659,7 +8656,7 @@ font-size:32px;
 
 @media (max-width: 991.98px){
   .erp-sales-info-wrap{
-    padding:35px 16px;
+    padding:16px 16px;
   }
 
   .intro-section,
@@ -8994,7 +8991,8 @@ font-size:32px;
 
 @media (max-width: 991.98px){
   .erp-inventory-info-wrap{
-    padding:35px 16px;
+    padding:16px 8px;
+
   }
 
   .inventory-intro-section,
@@ -9329,7 +9327,7 @@ font-size:32px;
 
 @media (max-width: 991.98px){
   .erp-customer-info-wrap{
-    padding:35px 16px;
+    padding:16px 16px;
   }
 
   .customer-intro-section,
@@ -9664,7 +9662,7 @@ font-size:32px;
 
 @media (max-width: 991.98px){
   .erp-product-info-wrap{
-    padding:35px 16px;
+    padding:16px 16px;
   }
 
   .product-intro-section,
@@ -9999,7 +9997,7 @@ font-size:32px;
 
 @media (max-width: 991.98px){
   .erp-order-info-wrap{
-    padding:35px 16px;
+    padding:16px 16px;
   }
 
   .order-intro-section,
@@ -10334,7 +10332,7 @@ font-size:32px;
 
 @media (max-width: 991.98px){
   .erp-production-info-wrap{
-    padding:35px 16px;
+    padding:16px 16px;
   }
 
   .production-intro-section,
@@ -10669,7 +10667,7 @@ font-size:32px;
 
 @media (max-width: 991.98px){
   .erp-shipping-info-wrap{
-    padding:35px 16px;
+    padding:16px 16px;
   }
 
   .shipping-intro-section,
@@ -11005,7 +11003,7 @@ font-size:32px;
 
 @media (max-width: 991.98px){
   .erp-settlement-info-wrap{
-    padding:35px 16px;
+    padding:16px 16px;
   }
 
   .settlement-intro-section,
@@ -11493,7 +11491,7 @@ margin-top:6px;
 
 @media (max-width: 991.98px){
   .erp-profit-info-wrap{
-    padding:35px 16px;
+    padding:16px 16px;
   }
 
   .profit-intro-section,
@@ -11828,7 +11826,7 @@ margin-top:6px;
 
 @media (max-width: 991.98px){
   .erp-decision-info-wrap{
-    padding:35px 16px;
+    padding:16px 16px;
   }
 
   .decision-intro-section,
@@ -12085,7 +12083,7 @@ margin-top:6px;
 
 @media (max-width: 991.98px){
   .erp-faq-suite-wrap{
-    padding:35px 16px;
+    padding:16px 16px;
   }
 
   .faq-suite-intro,
@@ -12510,7 +12508,7 @@ margin-top:6px;
 
 @media (max-width: 991.98px){
   .erp-notice-wrap{
-    padding:35px 16px;
+    padding:16px 16px;
   }
 
   .notice-intro-section,
@@ -12897,7 +12895,7 @@ margin-top:6px;
 
 @media (max-width: 991.98px){
   .erp-notice-detail-wrap{
-    padding:35px 16px;
+    padding:16px 16px;
   }
 
   .notice-detail-intro,
