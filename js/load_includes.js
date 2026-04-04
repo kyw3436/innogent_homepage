@@ -88,30 +88,38 @@ document.addEventListener("DOMContentLoaded", function () {
     function scrollNavItemIntoView(item) {
         const navCollapseEl = document.getElementById("mainNav");
         const navLink = item?.querySelector(":scope > .nav-link");
+        const dropdown = item?.querySelector(":scope > .mega-dropdown");
 
         if (!navCollapseEl || !navLink || window.innerWidth >= mobileBreakpoint) {
             return;
         }
 
         requestAnimationFrame(() => {
-            const containerRect = navCollapseEl.getBoundingClientRect();
-            const linkRect = navLink.getBoundingClientRect();
-            const topPadding = 12;
-            const bottomPadding = 18;
+            requestAnimationFrame(() => {
+                const containerRect = navCollapseEl.getBoundingClientRect();
+                const linkRect = navLink.getBoundingClientRect();
+                const dropdownRect = dropdown?.getBoundingClientRect();
+                const topPadding = 12;
+                const bottomPadding = 20;
+                let scrollDelta = 0;
 
-            if (linkRect.top < containerRect.top + topPadding) {
-                navCollapseEl.scrollBy({
-                    top: linkRect.top - containerRect.top - topPadding,
-                    behavior: "smooth"
-                });
-            } else if (linkRect.bottom > containerRect.bottom - bottomPadding) {
-                navCollapseEl.scrollBy({
-                    top: linkRect.bottom - containerRect.bottom + bottomPadding,
-                    behavior: "smooth"
-                });
-            }
+                if (linkRect.top < containerRect.top + topPadding) {
+                    scrollDelta = linkRect.top - containerRect.top - topPadding;
+                } else if (dropdownRect && dropdownRect.bottom > containerRect.bottom - bottomPadding) {
+                    scrollDelta = dropdownRect.bottom - containerRect.bottom + bottomPadding;
+                } else if (linkRect.bottom > containerRect.bottom - bottomPadding) {
+                    scrollDelta = linkRect.bottom - containerRect.bottom + bottomPadding;
+                }
 
-            saveMobileNavScroll();
+                if (scrollDelta !== 0) {
+                    navCollapseEl.scrollBy({
+                        top: scrollDelta,
+                        behavior: "smooth"
+                    });
+                }
+
+                saveMobileNavScroll();
+            });
         });
     }
 
