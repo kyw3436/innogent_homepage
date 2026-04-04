@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const mobileBreakpoint = 992;
     const openSubmenusKey = "openSubmenus";
+    const includeVersion = "20260404b";
     const breadcrumbLinkMap = {
         "홈": "index.html",
         "OfficeGPT (Professional)": "law_solution.html",
@@ -72,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateBreadcrumbLinks();
 
-    fetch("header.html")
+    fetch(`header.html?v=${includeVersion}`, { cache: "no-store" })
         .then((r) => r.text())
         .then((d) => {
             const h = document.getElementById("header-placeholder");
@@ -108,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-    fetch("footer.html")
+    fetch(`footer.html?v=${includeVersion}`, { cache: "no-store" })
         .then((r) => r.text())
         .then((d) => {
             const f = document.getElementById("footer-placeholder");
