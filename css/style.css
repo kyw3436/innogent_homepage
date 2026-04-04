@@ -381,6 +381,81 @@
         border-top: 1px solid var(--line-color);
       }
     }
+
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      .site-header .navbar {
+        min-height: 84px;
+      }
+
+      .site-header .container-fluid {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+      }
+
+      .navbar-brand img {
+        height: 40px;
+      }
+
+      .gnb-center {
+        gap: 0.25rem;
+      }
+
+      .gnb-center .nav-link {
+        padding: 0 0.7rem;
+        font-size: 1rem;
+        line-height: 1.2;
+        text-align: center;
+      }
+
+      .hero-visual {
+        padding: 28px;
+        min-height: 470px;
+      }
+
+      .hero-chip {
+        padding: 8px 12px;
+        font-size: 0.84rem;
+      }
+
+      .hero-desktop-fusion {
+        min-height: 400px;
+      }
+
+      .hero-desktop-node {
+        padding: 16px 18px;
+        border-radius: 22px;
+      }
+
+      .hero-desktop-node strong {
+        font-size: 1.35rem;
+      }
+
+      .hero-desktop-node small {
+        font-size: 0.78rem;
+      }
+
+      .hero-desktop-node-dx {
+        top: 40px;
+      }
+
+      .hero-desktop-node-ax {
+        top: 132px;
+      }
+
+      .hero-desktop-switch {
+        top: 92px;
+      }
+
+      .hero-desktop-note {
+        left: 20px;
+        right: 20px;
+        padding: 16px 18px;
+      }
+
+      .hero-desktop-note li {
+        font-size: 0.86rem;
+      }
+    }
 	
 	
   .section-space {
@@ -991,22 +1066,23 @@
 
       .hero-desktop-node-dx {
         top: 44px;
-        left: 34px;
-        width: 210px;
+        left: clamp(12px, 5.5%, 34px);
+        width: clamp(148px, 42%, 210px);
         animation: hero-mobile-float-dx 6.5s ease-in-out infinite;
       }
 
       .hero-desktop-node-ax {
         top: 108px;
-        right: 26px;
-        width: 236px;
+        right: clamp(12px, 4.5%, 26px);
+        width: clamp(164px, 48%, 236px);
         animation: hero-mobile-float-ax 6.5s ease-in-out infinite;
       }
 
       .hero-desktop-switch {
         position: absolute;
         top: 82px;
-        left: 190px;
+        left: 50%;
+        transform: translateX(-50%);
         width: 74px;
         height: 38px;
         z-index: 3;
@@ -1163,11 +1239,36 @@
 
       .hero-mobile-copy {
         position: relative;
-        z-index: 2;
+        isolation: isolate;
+        z-index: 3;
         width: 100%;
         padding: 16px 24px 0;
         text-align: center;
         margin: 0 0 32px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.14) 100%);
+      }
+
+      .hero-mobile-copy::before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: -8%;
+        right: -8%;
+        bottom: -18px;
+        z-index: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(circle at 22% 38%, rgba(74, 143, 255, 0.22) 0%, rgba(74, 143, 255, 0) 26%),
+          radial-gradient(circle at 74% 44%, rgba(116, 173, 255, 0.24) 0%, rgba(116, 173, 255, 0) 30%),
+          radial-gradient(circle at 50% 82%, rgba(96, 160, 255, 0.26) 0%, rgba(96, 160, 255, 0) 34%),
+          linear-gradient(180deg, rgba(232, 242, 255, 0) 0%, rgba(232, 242, 255, 0.34) 42%, rgba(255, 255, 255, 0.08) 100%);
+        filter: blur(10px);
+        animation: hero-mobile-cloud-drift-c 8s ease-in-out infinite;
+      }
+
+      .hero-mobile-copy > * {
+        position: relative;
+        z-index: 1;
       }
 
       .hero-mobile-keywords {
@@ -1188,28 +1289,54 @@
       }
     }
 
-@media (max-width: 575.98px) {
+@media (max-width: 991.98px) {
       .navbar-brand {
         font-size: 1.6rem;
+      }
+
+      .hero-main-row {
+        display: none;
       }
 
       .hero-section {
         padding: 0 0 52px;
         min-height: calc(100svh - 83px);
+        background: #ffffff;
       }
 
       .hero-mobile-intro {
+        position: relative;
+        isolation: isolate;
         grid-template-rows: 300px auto;
       }
 
+      .hero-mobile-intro::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -10%;
+        right: -10%;
+        height: clamp(240px, 36svh, 320px);
+        z-index: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(circle at 18% 20%, rgba(83, 149, 255, 0.24) 0%, rgba(83, 149, 255, 0) 24%),
+          radial-gradient(circle at 82% 16%, rgba(55, 129, 249, 0.24) 0%, rgba(55, 129, 249, 0) 26%),
+          radial-gradient(circle at 50% 42%, rgba(148, 193, 255, 0.28) 0%, rgba(148, 193, 255, 0) 34%);
+        filter: blur(14px);
+        animation: hero-mobile-cloud-drift-a 7s ease-in-out infinite;
+      }
+
       .hero-mobile-backdrop {
-        display: none;
+        display: block;
         position: absolute;
         inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
         background:
-          radial-gradient(circle at 80% 16%, rgba(83, 149, 255, 0.18), transparent 34%),
-          radial-gradient(circle at 24% 28%, rgba(31, 115, 232, 0.16), transparent 34%),
-          radial-gradient(circle at 50% 72%, rgba(31, 115, 232, 0.08), transparent 42%),
+          radial-gradient(circle at 50% 18%, rgba(83, 149, 255, 0.08), transparent 30%),
+          radial-gradient(circle at 50% 74%, rgba(88, 153, 255, 0.12), transparent 34%),
           linear-gradient(180deg, #eaf3ff 0%, #f4f8ff 48%, #ffffff 100%);
       }
 
@@ -1229,12 +1356,13 @@
       .hero-mobile-backdrop::after {
         content: "";
         position: absolute;
-        inset: auto -10% 14% auto;
-        width: 240px;
-        height: 240px;
+        inset: auto -8% 4% auto;
+        width: 300px;
+        height: 260px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(31, 115, 232, 0.12) 0%, rgba(31, 115, 232, 0) 72%);
-        filter: blur(10px);
+        background: radial-gradient(circle, rgba(31, 115, 232, 0.24) 0%, rgba(84, 145, 255, 0.16) 38%, rgba(31, 115, 232, 0) 74%);
+        filter: blur(16px);
+        animation: hero-mobile-cloud-drift-b 12s ease-in-out infinite;
       }
 
       .hero-mobile-cloud {
@@ -1303,17 +1431,206 @@
         animation: hero-mobile-cloud-drift-b 26s ease-in-out infinite;
       }
 
+      .hero-mobile-intro.hero-mobile-theme-aurora::before {
+        background:
+          radial-gradient(circle at 12% 16%, rgba(103, 170, 255, 0.48) 0%, rgba(103, 170, 255, 0) 30%),
+          radial-gradient(circle at 86% 12%, rgba(48, 124, 247, 0.42) 0%, rgba(48, 124, 247, 0) 32%),
+          linear-gradient(115deg, rgba(255, 255, 255, 0) 16%, rgba(161, 205, 255, 0.64) 48%, rgba(255, 255, 255, 0) 78%),
+          radial-gradient(circle at 50% 42%, rgba(187, 220, 255, 0.48) 0%, rgba(187, 220, 255, 0) 44%);
+        filter: blur(24px);
+        animation: hero-mobile-aurora-sway 4.5s ease-in-out infinite;
+      }
+
+      .hero-mobile-theme-aurora .hero-mobile-backdrop {
+        background:
+          radial-gradient(circle at 50% 18%, rgba(83, 149, 255, 0.18), transparent 32%),
+          radial-gradient(circle at 22% 24%, rgba(55, 129, 249, 0.18), transparent 30%),
+          radial-gradient(circle at 76% 72%, rgba(99, 159, 255, 0.24), transparent 36%),
+          linear-gradient(180deg, #eaf3ff 0%, #f4f8ff 48%, #ffffff 100%);
+        animation: hero-mobile-cloud-drift 5.5s ease-in-out infinite;
+      }
+
+      .hero-mobile-theme-aurora .hero-mobile-backdrop::after {
+        inset: auto -8% 4% auto;
+        width: 330px;
+        height: 290px;
+        background: radial-gradient(circle, rgba(31, 115, 232, 0.3) 0%, rgba(84, 145, 255, 0.22) 38%, rgba(31, 115, 232, 0) 76%);
+        filter: blur(18px);
+        animation: hero-mobile-cloud-drift-b 6.5s ease-in-out infinite;
+      }
+
+      .hero-mobile-theme-aurora .hero-mobile-copy::before {
+        background:
+          radial-gradient(circle at 18% 34%, rgba(74, 143, 255, 0.28) 0%, rgba(74, 143, 255, 0) 26%),
+          radial-gradient(circle at 78% 42%, rgba(116, 173, 255, 0.28) 0%, rgba(116, 173, 255, 0) 32%),
+          radial-gradient(circle at 50% 82%, rgba(96, 160, 255, 0.34) 0%, rgba(96, 160, 255, 0) 36%),
+          linear-gradient(180deg, rgba(232, 242, 255, 0) 0%, rgba(232, 242, 255, 0.34) 42%, rgba(255, 255, 255, 0.1) 100%);
+        filter: blur(12px);
+        animation: hero-mobile-cloud-drift-c 5.5s ease-in-out infinite;
+      }
+
+      .hero-mobile-intro.hero-mobile-theme-particles::before {
+        background:
+          radial-gradient(circle at 14% 24%, rgba(68, 136, 255, 0.24) 0 2px, rgba(68, 136, 255, 0) 3px),
+          radial-gradient(circle at 32% 18%, rgba(107, 169, 255, 0.28) 0 2px, rgba(107, 169, 255, 0) 3px),
+          radial-gradient(circle at 48% 34%, rgba(68, 136, 255, 0.24) 0 1.5px, rgba(68, 136, 255, 0) 3px),
+          radial-gradient(circle at 66% 22%, rgba(131, 184, 255, 0.28) 0 2px, rgba(131, 184, 255, 0) 3px),
+          radial-gradient(circle at 82% 30%, rgba(68, 136, 255, 0.24) 0 2px, rgba(68, 136, 255, 0) 3px),
+          linear-gradient(120deg, rgba(255, 255, 255, 0) 18%, rgba(171, 211, 255, 0.2) 50%, rgba(255, 255, 255, 0) 80%);
+        filter: blur(1px);
+        animation: hero-mobile-particle-drift 12s linear infinite;
+      }
+
+      .hero-mobile-theme-particles .hero-mobile-backdrop {
+        background:
+          radial-gradient(circle at 12% 18%, rgba(68, 136, 255, 0.2) 0 1.2px, rgba(68, 136, 255, 0) 3px),
+          radial-gradient(circle at 26% 28%, rgba(68, 136, 255, 0.22) 0 1.8px, rgba(68, 136, 255, 0) 3px),
+          radial-gradient(circle at 42% 14%, rgba(108, 170, 255, 0.24) 0 2.2px, rgba(108, 170, 255, 0) 4px),
+          radial-gradient(circle at 58% 26%, rgba(68, 136, 255, 0.2) 0 1.2px, rgba(68, 136, 255, 0) 3px),
+          radial-gradient(circle at 74% 18%, rgba(108, 170, 255, 0.22) 0 1.8px, rgba(108, 170, 255, 0) 4px),
+          radial-gradient(circle at 86% 32%, rgba(68, 136, 255, 0.2) 0 1.2px, rgba(68, 136, 255, 0) 3px),
+          radial-gradient(circle at 22% 74%, rgba(88, 153, 255, 0.22) 0 1.8px, rgba(88, 153, 255, 0) 3px),
+          radial-gradient(circle at 50% 84%, rgba(116, 173, 255, 0.24) 0 2.2px, rgba(116, 173, 255, 0) 4px),
+          radial-gradient(circle at 78% 76%, rgba(88, 153, 255, 0.22) 0 1.8px, rgba(88, 153, 255, 0) 3px),
+          radial-gradient(circle at 34% 52%, rgba(88, 153, 255, 0.18) 0 1.6px, rgba(88, 153, 255, 0) 3px),
+          radial-gradient(circle at 68% 58%, rgba(116, 173, 255, 0.2) 0 1.8px, rgba(116, 173, 255, 0) 4px),
+          linear-gradient(180deg, rgba(225, 239, 255, 0.9) 0%, rgba(244, 248, 255, 0.92) 48%, rgba(255, 255, 255, 0.96) 100%);
+      }
+
+      .hero-mobile-theme-particles .hero-mobile-backdrop::after {
+        inset: 22% 10% auto auto;
+        width: 190px;
+        height: 190px;
+        background:
+          radial-gradient(circle at 30% 28%, rgba(68, 136, 255, 0.24) 0 2.2px, rgba(68, 136, 255, 0) 3px),
+          radial-gradient(circle at 68% 52%, rgba(111, 172, 255, 0.26) 0 2.2px, rgba(111, 172, 255, 0) 4px),
+          radial-gradient(circle at 42% 76%, rgba(68, 136, 255, 0.22) 0 1.8px, rgba(68, 136, 255, 0) 3px),
+          radial-gradient(circle, rgba(125, 181, 255, 0.28) 0%, rgba(125, 181, 255, 0) 70%);
+        filter: blur(1px);
+        animation: hero-mobile-particle-drift 8s linear infinite reverse;
+      }
+
+      .hero-mobile-theme-particles .hero-mobile-copy::before {
+        background:
+          radial-gradient(circle at 20% 32%, rgba(88, 153, 255, 0.22) 0 1.4px, rgba(88, 153, 255, 0) 3px),
+          radial-gradient(circle at 72% 38%, rgba(116, 173, 255, 0.24) 0 1.8px, rgba(116, 173, 255, 0) 4px),
+          radial-gradient(circle at 56% 80%, rgba(88, 153, 255, 0.24) 0 2.2px, rgba(88, 153, 255, 0) 4px),
+          radial-gradient(circle at 50% 72%, rgba(166, 206, 255, 0.34) 0%, rgba(166, 206, 255, 0) 34%),
+          linear-gradient(180deg, rgba(232, 242, 255, 0) 0%, rgba(232, 242, 255, 0.24) 48%, rgba(255, 255, 255, 0.08) 100%);
+        filter: blur(2px);
+        animation: hero-mobile-particle-drift 10s linear infinite;
+      }
+
+      .hero-mobile-theme-particles .hero-mobile-keyword-row {
+        color: rgba(17, 63, 156, 0.038);
+      }
+
+      .hero-mobile-intro.hero-mobile-theme-network::before {
+        background:
+          linear-gradient(118deg, rgba(255, 255, 255, 0) 24%, rgba(128, 186, 255, 0.34) 50%, rgba(255, 255, 255, 0) 76%),
+          linear-gradient(90deg, rgba(67, 136, 255, 0.12) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(67, 136, 255, 0.12) 1px, transparent 1px);
+        background-size: 100% 100%, 72px 72px, 72px 72px;
+        filter: blur(0px);
+        opacity: 1;
+        animation: hero-mobile-network-pan 11s linear infinite;
+      }
+
+      .hero-mobile-theme-network .hero-mobile-backdrop {
+        background:
+          radial-gradient(circle at 18% 26%, rgba(67, 136, 255, 0.28) 0 3px, rgba(67, 136, 255, 0) 4px),
+          radial-gradient(circle at 44% 20%, rgba(67, 136, 255, 0.24) 0 2px, rgba(67, 136, 255, 0) 4px),
+          radial-gradient(circle at 74% 30%, rgba(107, 169, 255, 0.26) 0 3px, rgba(107, 169, 255, 0) 4px),
+          radial-gradient(circle at 28% 78%, rgba(67, 136, 255, 0.22) 0 2px, rgba(67, 136, 255, 0) 4px),
+          radial-gradient(circle at 70% 82%, rgba(107, 169, 255, 0.26) 0 3px, rgba(107, 169, 255, 0) 4px),
+          linear-gradient(126deg, rgba(76, 144, 255, 0.16) 0, rgba(76, 144, 255, 0.16) 1px, transparent 1px, transparent 100%),
+          linear-gradient(54deg, rgba(76, 144, 255, 0.14) 0, rgba(76, 144, 255, 0.14) 1px, transparent 1px, transparent 100%),
+          linear-gradient(180deg, #edf5ff 0%, #f6f9ff 48%, #ffffff 100%);
+        background-size: auto, auto, auto, auto, auto, 180px 120px, 180px 120px, 100% 100%;
+      }
+
+      .hero-mobile-theme-network .hero-mobile-backdrop::after {
+        inset: auto 8% 12% auto;
+        width: 210px;
+        height: 210px;
+        background:
+          radial-gradient(circle at 18% 26%, rgba(67, 136, 255, 0.34) 0 3.2px, rgba(67, 136, 255, 0) 4px),
+          radial-gradient(circle at 54% 44%, rgba(107, 169, 255, 0.3) 0 3.2px, rgba(107, 169, 255, 0) 4px),
+          radial-gradient(circle at 82% 18%, rgba(67, 136, 255, 0.28) 0 3px, rgba(67, 136, 255, 0) 4px),
+          linear-gradient(135deg, rgba(76, 144, 255, 0.22) 0, rgba(76, 144, 255, 0.22) 1px, transparent 1px, transparent 100%),
+          linear-gradient(180deg, rgba(154, 203, 255, 0.28) 0%, rgba(154, 203, 255, 0) 82%);
+        background-size: auto, auto, auto, 140px 140px, 100% 100%;
+        filter: blur(0.6px);
+        animation: hero-mobile-network-pan 9s linear infinite reverse;
+      }
+
+      .hero-mobile-theme-network .hero-mobile-copy::before {
+        background:
+          radial-gradient(circle at 28% 28%, rgba(67, 136, 255, 0.24) 0 2.2px, rgba(67, 136, 255, 0) 4px),
+          radial-gradient(circle at 74% 48%, rgba(107, 169, 255, 0.26) 0 2.2px, rgba(107, 169, 255, 0) 4px),
+          linear-gradient(90deg, rgba(76, 144, 255, 0.12) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(76, 144, 255, 0.12) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(232, 242, 255, 0) 0%, rgba(232, 242, 255, 0.22) 48%, rgba(255, 255, 255, 0.08) 100%);
+        background-size: auto, auto, 90px 90px, 90px 90px, 100% 100%;
+        filter: blur(0px);
+        animation: hero-mobile-network-pan 11s linear infinite;
+      }
+
+      .hero-mobile-theme-network .hero-mobile-keyword-row {
+        color: rgba(17, 63, 156, 0.032);
+      }
+
+      .hero-mobile-intro.hero-mobile-theme-glass::before {
+        background:
+          radial-gradient(ellipse at 18% 24%, rgba(255, 255, 255, 0.76) 0%, rgba(221, 236, 255, 0.22) 42%, rgba(221, 236, 255, 0) 70%),
+          radial-gradient(ellipse at 84% 18%, rgba(179, 214, 255, 0.52) 0%, rgba(179, 214, 255, 0) 60%),
+          linear-gradient(120deg, rgba(255, 255, 255, 0) 18%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 82%);
+        filter: blur(18px);
+        animation: hero-mobile-glass-wave 7.5s ease-in-out infinite;
+      }
+
+      .hero-mobile-theme-glass .hero-mobile-backdrop {
+        background:
+          radial-gradient(ellipse at 50% 10%, rgba(187, 220, 255, 0.28) 0%, rgba(187, 220, 255, 0) 42%),
+          linear-gradient(180deg, rgba(233, 242, 255, 0.98) 0%, rgba(246, 249, 255, 0.95) 54%, rgba(255, 255, 255, 0.98) 100%);
+      }
+
+      .hero-mobile-theme-glass .hero-mobile-backdrop::after {
+        inset: auto -4% 8% auto;
+        width: 290px;
+        height: 240px;
+        border-radius: 46% 54% 58% 42% / 44% 44% 56% 56%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.68) 0%, rgba(196, 224, 255, 0.32) 48%, rgba(255, 255, 255, 0.12) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.42);
+        box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 24px 52px rgba(122, 176, 255, 0.24);
+        filter: blur(9px);
+        animation: hero-mobile-glass-wave 9.5s ease-in-out infinite reverse;
+      }
+
+      .hero-mobile-theme-glass .hero-mobile-copy::before {
+        background:
+          radial-gradient(ellipse at 22% 34%, rgba(255, 255, 255, 0.56) 0%, rgba(222, 237, 255, 0.18) 42%, rgba(222, 237, 255, 0) 70%),
+          radial-gradient(ellipse at 74% 52%, rgba(184, 218, 255, 0.42) 0%, rgba(184, 218, 255, 0) 56%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(232, 242, 255, 0.34) 52%, rgba(255, 255, 255, 0.12) 100%);
+        filter: blur(14px);
+        animation: hero-mobile-glass-wave 8.5s ease-in-out infinite;
+      }
+
+      .hero-mobile-theme-glass .hero-mobile-keyword-row {
+        color: rgba(17, 63, 156, 0.03);
+      }
+
       .hero-mobile-keywords {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        height: 50%;
-        z-index: 0;
+        height: min(100%, clamp(230px, 34svh, 300px));
+        z-index: 1;
         overflow: hidden;
         pointer-events: none;
-        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 82%, rgba(0, 0, 0, 0) 100%);
-        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 82%, rgba(0, 0, 0, 0) 100%);
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 72%, rgba(0, 0, 0, 0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 72%, rgba(0, 0, 0, 0) 100%);
       }
 
       .hero-mobile-keyword-row {
@@ -1613,20 +1930,6 @@
         color: #0d4fb2;
       }
 
-      @media (max-width: 390px) {
-        .hero-mobile-title {
-          font-size: 24px;
-          max-width: 300px;
-        }
-      }
-
-      @media (max-width: 360px) {
-        .hero-mobile-title {
-          font-size: 20px;
-          max-width: 284px;
-        }
-      }
-
       .hero-mobile-desc {
         max-width: 320px;
         margin-bottom: 18px;
@@ -1760,7 +2063,95 @@
         padding: 30px 20px;
       }
 	  .navbar .px-3 {padding:0px}
-    }	
+    }
+
+    @media (max-width: 575.98px) {
+      .hero-mobile-intro {
+        grid-template-rows: 320px auto;
+      }
+
+      .hero-mobile-stage {
+        width: min(390px, calc(100vw - 32px));
+        height: 320px;
+      }
+
+      .hero-mobile-keywords {
+        height: 300px;
+      }
+
+      .hero-mobile-keyword-row-a {
+        top: 18px;
+        font-size: 2.45rem;
+      }
+
+      .hero-mobile-keyword-row-b {
+        top: 118px;
+        font-size: 2.18rem;
+      }
+
+      .hero-mobile-keyword-row-c {
+        top: 224px;
+        font-size: 1.9rem;
+      }
+
+      .hero-mobile-node {
+        border-radius: 22px;
+      }
+
+      .hero-mobile-node-dx {
+        top: 20px;
+        left: 8px;
+        width: clamp(138px, 40%, 156px);
+        min-width: 0;
+        padding: 12px 14px;
+      }
+
+      .hero-mobile-node-ax {
+        top: 122px;
+        right: 8px;
+        width: clamp(182px, 58%, 214px);
+        min-width: 0;
+        min-height: 0;
+        padding: 18px 18px 18px 20px;
+      }
+
+      .hero-mobile-node strong {
+        font-size: 1.08rem;
+      }
+
+      .hero-mobile-node small {
+        font-size: 0.72rem;
+      }
+
+      .hero-mobile-node-ax strong {
+        font-size: 1.36rem;
+      }
+
+      .hero-mobile-node-ax small {
+        font-size: 0.76rem;
+      }
+
+      .hero-mobile-flow {
+        top: 24%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 102px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .hero-mobile-title {
+        font-size: 24px;
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .hero-mobile-title {
+        font-size: 20px;
+        max-width: 284px;
+      }
+    }
 
     @keyframes hero-mobile-title-shimmer {
       0%, 100% {
@@ -1768,6 +2159,49 @@
       }
       50% {
         background-position: -20% 0;
+      }
+    }
+
+    @keyframes hero-mobile-aurora-sway {
+      0%, 100% {
+        transform: translate3d(-3%, 0, 0) scale(1);
+        opacity: 0.92;
+      }
+      50% {
+        transform: translate3d(3%, 10px, 0) scale(1.06);
+        opacity: 1;
+      }
+    }
+
+    @keyframes hero-mobile-particle-drift {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      50% {
+        transform: translate3d(-3%, 8px, 0);
+      }
+      100% {
+        transform: translate3d(3%, -6px, 0);
+      }
+    }
+
+    @keyframes hero-mobile-network-pan {
+      0% {
+        transform: translate3d(0, 0, 0);
+        background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+      }
+      100% {
+        transform: translate3d(0, 0, 0);
+        background-position: 0 0, 54px 36px, -54px 36px, 32px 48px, 0 0;
+      }
+    }
+
+    @keyframes hero-mobile-glass-wave {
+      0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+      }
+      50% {
+        transform: translate3d(2%, -10px, 0) rotate(-2deg) scale(1.04);
       }
     }
 
@@ -12948,7 +13382,7 @@ margin-top:6px;
   }
 
   .hero-title{
-    font-size: clamp(2rem, 3vw, 3.3rem);
+    font-size: clamp(2rem, 3vw, 3.0rem);
     font-weight: 800;
     color: #13439c;
     line-height: 1.15;

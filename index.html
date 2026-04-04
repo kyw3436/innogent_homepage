@@ -98,7 +98,7 @@
           </div>
 
           <h1 class="hero-title">
-            견고한 데이터를 넘어 스스로 실행하는<br>
+            견고한 데이터를 넘어 스스로 실행하는
             <span class="point">자율형 에이전틱 비즈니스, OfficeERP(DX) + OfficeGPT(AX)</span>
           </h1>
 
@@ -447,6 +447,23 @@
   <script src="./js/load_includes.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const mobileIntro = document.querySelector('.hero-mobile-intro');
+      if (mobileIntro) {
+        const introThemes = [
+          'hero-mobile-theme-aurora',
+          'hero-mobile-theme-particles',
+          'hero-mobile-theme-network',
+          'hero-mobile-theme-glass'
+        ];
+        const previousTheme = window.localStorage.getItem('homeMobileIntroTheme');
+        const availableThemes = introThemes.filter(theme => theme !== previousTheme);
+        const themePool = availableThemes.length ? availableThemes : introThemes;
+        const randomTheme = themePool[Math.floor(Math.random() * themePool.length)];
+        mobileIntro.classList.add(randomTheme);
+        mobileIntro.dataset.heroTheme = randomTheme.replace('hero-mobile-theme-', '');
+        window.localStorage.setItem('homeMobileIntroTheme', randomTheme);
+      }
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
