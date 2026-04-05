@@ -1535,6 +1535,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        font-weight: 900;
       }
 
       .hero-desktop-switch-label-dx {
@@ -2279,6 +2280,7 @@
         align-items: center;
         justify-content: center;
         text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+        font-weight: 900;
       }
 
       .hero-mobile-flow-knob-label-dx {
