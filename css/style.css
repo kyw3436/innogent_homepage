@@ -1707,20 +1707,19 @@
       .hero-mobile-copy::before {
         content: "";
         position: absolute;
-        top: -56px;
+        top: -18px;
         left: -16%;
         right: -16%;
-        bottom: -34px;
+        bottom: -180px;
         z-index: 0;
         pointer-events: none;
         background:
-          radial-gradient(circle at 22% 38%, rgba(74, 143, 255, 0.22) 0%, rgba(74, 143, 255, 0) 26%),
-          radial-gradient(circle at 74% 44%, rgba(116, 173, 255, 0.24) 0%, rgba(116, 173, 255, 0) 30%),
-          radial-gradient(circle at 50% 82%, rgba(96, 160, 255, 0.26) 0%, rgba(96, 160, 255, 0) 34%),
-          linear-gradient(180deg, rgba(232, 242, 255, 0) 0%, rgba(232, 242, 255, 0.26) 42%, rgba(255, 255, 255, 0.04) 100%);
-        filter: blur(16px);
-        opacity: 0.9;
-        animation: hero-mobile-cloud-drift-c 8s ease-in-out infinite;
+          linear-gradient(rgba(99, 159, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(99, 159, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(232, 242, 255, 0) 0%, rgba(232, 242, 255, 0.18) 44%, rgba(255, 255, 255, 0.12) 100%);
+        background-size: 26px 26px, 26px 26px, 100% 100%;
+        background-position: center top, center top, center top;
+        opacity: 0.55;
       }
 
       .hero-mobile-copy > * {
@@ -1929,12 +1928,14 @@
 
       .hero-mobile-theme-aurora .hero-mobile-copy::before {
         background:
-          radial-gradient(circle at 18% 34%, rgba(74, 143, 255, 0.28) 0%, rgba(74, 143, 255, 0) 26%),
-          radial-gradient(circle at 78% 42%, rgba(116, 173, 255, 0.28) 0%, rgba(116, 173, 255, 0) 32%),
-          radial-gradient(circle at 50% 82%, rgba(96, 160, 255, 0.34) 0%, rgba(96, 160, 255, 0) 36%),
-          linear-gradient(180deg, rgba(232, 242, 255, 0) 0%, rgba(232, 242, 255, 0.34) 42%, rgba(255, 255, 255, 0.1) 100%);
-        filter: blur(12px);
-        animation: hero-mobile-cloud-drift-c 5.5s ease-in-out infinite;
+          linear-gradient(rgba(99, 159, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(99, 159, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(232, 242, 255, 0) 0%, rgba(232, 242, 255, 0.18) 44%, rgba(255, 255, 255, 0.04) 100%);
+        background-size: 26px 26px, 26px 26px, 100% 100%;
+        background-position: center top, center top, center top;
+        filter: none;
+        opacity: 0.55;
+        animation: none;
       }
 
       .hero-mobile-intro.hero-mobile-theme-particles::before {
@@ -1980,13 +1981,14 @@
 
       .hero-mobile-theme-particles .hero-mobile-copy::before {
         background:
-          radial-gradient(circle at 20% 32%, rgba(88, 153, 255, 0.22) 0 1.4px, rgba(88, 153, 255, 0) 3px),
-          radial-gradient(circle at 72% 38%, rgba(116, 173, 255, 0.24) 0 1.8px, rgba(116, 173, 255, 0) 4px),
-          radial-gradient(circle at 56% 80%, rgba(88, 153, 255, 0.24) 0 2.2px, rgba(88, 153, 255, 0) 4px),
-          radial-gradient(circle at 50% 72%, rgba(166, 206, 255, 0.34) 0%, rgba(166, 206, 255, 0) 34%),
-          linear-gradient(180deg, rgba(232, 242, 255, 0) 0%, rgba(232, 242, 255, 0.24) 48%, rgba(255, 255, 255, 0.08) 100%);
-        filter: blur(2px);
-        animation: hero-mobile-particle-drift 10s linear infinite;
+          linear-gradient(rgba(99, 159, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(99, 159, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(232, 242, 255, 0) 0%, rgba(232, 242, 255, 0.18) 44%, rgba(255, 255, 255, 0.04) 100%);
+        background-size: 26px 26px, 26px 26px, 100% 100%;
+        background-position: center top, center top, center top;
+        filter: none;
+        opacity: 0.55;
+        animation: none;
       }
 
       .hero-mobile-theme-particles .hero-mobile-keyword-row {
@@ -2011,10 +2013,9 @@
           radial-gradient(circle at 74% 30%, rgba(107, 169, 255, 0.26) 0 3px, rgba(107, 169, 255, 0) 4px),
           radial-gradient(circle at 28% 78%, rgba(67, 136, 255, 0.22) 0 2px, rgba(67, 136, 255, 0) 4px),
           radial-gradient(circle at 70% 82%, rgba(107, 169, 255, 0.26) 0 3px, rgba(107, 169, 255, 0) 4px),
-          linear-gradient(126deg, rgba(76, 144, 255, 0.16) 0, rgba(76, 144, 255, 0.16) 1px, transparent 1px, transparent 100%),
-          linear-gradient(54deg, rgba(76, 144, 255, 0.14) 0, rgba(76, 144, 255, 0.14) 1px, transparent 1px, transparent 100%),
           linear-gradient(180deg, #edf5ff 0%, #f6f9ff 48%, #ffffff 100%);
-        background-size: auto, auto, auto, auto, auto, 180px 120px, 180px 120px, 100% 100%;
+        background-size: auto, auto, auto, auto, auto, 100% 100%;
+        background-position: 0 0, 0 0, 0 0, 0 0, 0 0, center top;
       }
 
       .hero-mobile-theme-network .hero-mobile-backdrop::after {
@@ -2034,13 +2035,14 @@
 
       .hero-mobile-theme-network .hero-mobile-copy::before {
         background:
-          radial-gradient(circle at 28% 28%, rgba(67, 136, 255, 0.24) 0 2.2px, rgba(67, 136, 255, 0) 4px),
-          radial-gradient(circle at 74% 48%, rgba(107, 169, 255, 0.26) 0 2.2px, rgba(107, 169, 255, 0) 4px),
-          linear-gradient(90deg, rgba(76, 144, 255, 0.12) 1px, transparent 1px),
-          linear-gradient(0deg, rgba(76, 144, 255, 0.12) 1px, transparent 1px),
-          linear-gradient(180deg, rgba(232, 242, 255, 0) 0%, rgba(232, 242, 255, 0.22) 48%, rgba(255, 255, 255, 0.08) 100%);
+          radial-gradient(circle at 28% 28%, rgba(67, 136, 255, 0.16) 0 2.2px, rgba(67, 136, 255, 0) 4px),
+          radial-gradient(circle at 74% 48%, rgba(107, 169, 255, 0.18) 0 2.2px, rgba(107, 169, 255, 0) 4px),
+          linear-gradient(90deg, rgba(76, 144, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(76, 144, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(232, 242, 255, 0) 0%, rgba(232, 242, 255, 0.22) 48%, rgba(255, 255, 255, 0.14) 100%);
         background-size: auto, auto, 90px 90px, 90px 90px, 100% 100%;
         filter: blur(0px);
+        opacity: 0.8;
         animation: hero-mobile-network-pan 11s linear infinite;
       }
 
@@ -2077,11 +2079,14 @@
 
       .hero-mobile-theme-glass .hero-mobile-copy::before {
         background:
-          radial-gradient(ellipse at 22% 34%, rgba(255, 255, 255, 0.56) 0%, rgba(222, 237, 255, 0.18) 42%, rgba(222, 237, 255, 0) 70%),
-          radial-gradient(ellipse at 74% 52%, rgba(184, 218, 255, 0.42) 0%, rgba(184, 218, 255, 0) 56%),
-          linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(232, 242, 255, 0.34) 52%, rgba(255, 255, 255, 0.12) 100%);
-        filter: blur(14px);
-        animation: hero-mobile-glass-wave 8.5s ease-in-out infinite;
+          linear-gradient(rgba(99, 159, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(99, 159, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(232, 242, 255, 0) 0%, rgba(232, 242, 255, 0.18) 44%, rgba(255, 255, 255, 0.04) 100%);
+        background-size: 26px 26px, 26px 26px, 100% 100%;
+        background-position: center top, center top, center top;
+        filter: none;
+        opacity: 0.55;
+        animation: none;
       }
 
       .hero-mobile-theme-glass .hero-mobile-keyword-row {
@@ -2201,7 +2206,7 @@
       }
 
       .hero-mobile-node-dx {
-        top: 28px;
+        top: 42px;
         left: 10px;
         opacity: 0.92;
         min-width: 156px;
@@ -2211,7 +2216,7 @@
       }
 
       .hero-mobile-node-ax {
-        top: 98px;
+        top: 116px;
         right: 10px;
         min-width: 206px;
         min-height: 122px;
@@ -2251,7 +2256,7 @@
 
       .hero-mobile-flow {
         position: absolute;
-        top: 22%;
+        top: 28%;
         left: 34%;
         width: 108px;
         height: 48px;
@@ -2637,7 +2642,7 @@
       }
 
       .hero-mobile-node-dx {
-        top: 20px;
+        top: 34px;
         left: 8px;
         width: clamp(138px, 40%, 156px);
         min-width: 0;
@@ -2645,7 +2650,7 @@
       }
 
       .hero-mobile-node-ax {
-        top: 122px;
+        top: 138px;
         right: 8px;
         width: clamp(182px, 58%, 214px);
         min-width: 0;
@@ -2670,7 +2675,7 @@
       }
 
       .hero-mobile-flow {
-        top: 24%;
+        top: 30%;
         left: 50%;
         transform: translateX(-50%);
         width: 102px;

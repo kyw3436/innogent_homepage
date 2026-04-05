@@ -17,7 +17,7 @@
   <!-- HERO -->
   <section class="hero-section">
     <div class="container">
-      <div class="hero-mobile-intro d-lg-none">
+      <div class="hero-mobile-intro d-lg-none hero-mobile-theme-network" data-hero-theme="network">
         <div class="hero-mobile-backdrop"></div>
         <div class="hero-mobile-keywords hero-text-stream" data-stream-theme="mobile" aria-hidden="true"></div>
         <div class="hero-mobile-visual" aria-hidden="true">
@@ -432,19 +432,13 @@
     document.addEventListener('DOMContentLoaded', () => {
       const mobileIntro = document.querySelector('.hero-mobile-intro');
       if (mobileIntro) {
-        const introThemes = [
+        mobileIntro.classList.remove(
           'hero-mobile-theme-aurora',
           'hero-mobile-theme-particles',
-          'hero-mobile-theme-network',
           'hero-mobile-theme-glass'
-        ];
-        const previousTheme = window.localStorage.getItem('homeMobileIntroTheme');
-        const availableThemes = introThemes.filter(theme => theme !== previousTheme);
-        const themePool = availableThemes.length ? availableThemes : introThemes;
-        const randomTheme = themePool[Math.floor(Math.random() * themePool.length)];
-        mobileIntro.classList.add(randomTheme);
-        mobileIntro.dataset.heroTheme = randomTheme.replace('hero-mobile-theme-', '');
-        window.localStorage.setItem('homeMobileIntroTheme', randomTheme);
+        );
+        mobileIntro.classList.add('hero-mobile-theme-network');
+        mobileIntro.dataset.heroTheme = 'network';
       }
 
       const observer = new IntersectionObserver((entries) => {
