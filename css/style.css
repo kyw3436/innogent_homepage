@@ -14651,6 +14651,12 @@ html {
     scroll-margin-top: calc(var(--gnb-height) + 28px);
 }
 
+@media (max-width: 991.98px) {
+    #why-officegpt {
+        scroll-margin-top: calc(var(--gnb-height) - 36px);
+    }
+}
+
 /* Breadcrumb refresh */
 .breadcrumb-infused {
     margin-top: 28px !important;
