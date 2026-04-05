@@ -851,6 +851,7 @@
       position: relative;
       overflow: hidden;
       padding: 110px 0 95px;
+      min-height: calc(100svh - var(--gnb-height));
       background:
         radial-gradient(circle at top right, rgba(31, 115, 232, 0.18), transparent 26%),
         radial-gradient(circle at left bottom, rgba(31, 115, 232, 0.08), transparent 22%),
@@ -14648,12 +14649,28 @@ html {
 }
 
 #why-officegpt {
-    scroll-margin-top: calc(var(--gnb-height) + 18px);
+    scroll-margin-top: 132px;
+    scroll-margin-block-start: 132px;
+}
+
+@media (max-width: 1199.98px) {
+    #why-officegpt {
+        scroll-margin-top: 120px;
+        scroll-margin-block-start: 120px;
+    }
 }
 
 @media (max-width: 991.98px) {
     #why-officegpt {
-        scroll-margin-top: calc(var(--gnb-height) - 36px);
+        scroll-margin-top: 76px;
+        scroll-margin-block-start: 76px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #why-officegpt {
+        scroll-margin-top: 64px;
+        scroll-margin-block-start: 64px;
     }
 }
 
