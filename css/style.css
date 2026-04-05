@@ -14648,7 +14648,7 @@ html {
 }
 
 #why-officegpt {
-    scroll-margin-top: calc(var(--gnb-height) + 28px);
+    scroll-margin-top: calc(var(--gnb-height) + 8px);
 }
 
 @media (max-width: 991.98px) {
