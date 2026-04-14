@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function initIncludes() {
     const mobileBreakpoint = 992;
     const openSubmenusKey = "openSubmenus";
     const currentSubmenuKey = "currentOpenSubmenu";
@@ -31,6 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!link.getAttribute("href") || link.getAttribute("href") === "#") {
                 link.setAttribute("href", mappedHref);
             }
+        });
+    }
+
+    function revealPage() {
+        requestAnimationFrame(() => {
+            document.body.classList.add("page-ready");
         });
     }
 
@@ -197,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateBreadcrumbLinks();
 
-    fetch(`header.html?v=${includeVersion}`, { cache: "no-store" })
+    const headerPromise = fetch(`header.html?v=${includeVersion}`, { cache: "no-store" })
         .then((r) => r.text())
         .then((d) => {
             const h = document.getElementById("header-placeholder");
@@ -324,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-    fetch(`footer.html?v=${includeVersion}`, { cache: "no-store" })
+    const footerPromise = fetch(`footer.html?v=${includeVersion}`, { cache: "no-store" })
         .then((r) => r.text())
         .then((d) => {
             const f = document.getElementById("footer-placeholder");
@@ -334,10 +340,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
+    Promise.allSettled([headerPromise, footerPromise]).then(() => {
+        revealPage();
+    });
+
     window.addEventListener("resize", () => {
         if (window.innerWidth >= mobileBreakpoint) {
             document.body.classList.remove("mobile-nav-open");
             document.querySelector(".mobile-nav-overlay")?.classList.remove("is-visible");
         }
     });
-});
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initIncludes, { once: true });
+} else {
+    initIncludes();
+}
