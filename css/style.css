@@ -20,6 +20,7 @@
     html,
     body {
       min-height: 100%;
+      overflow-x: hidden;
     }
 
     body {
@@ -347,7 +348,7 @@
         top: 72px;
         left: 0;
         right: 0;
-        width: 100vw;
+        width: auto;
         max-width: none;
         height: calc(100dvh - 72px);
         display: block !important;
@@ -1401,6 +1402,11 @@
 
     /* Responsive */
     @media (min-width: 992px) {
+      .hero-section {
+        padding: 96px 0 72px;
+        min-height: min(calc(100svh - var(--gnb-height)), 800px);
+      }
+
       .hero-mobile-intro {
         display: none !important;
       }
@@ -1670,9 +1676,9 @@
         align-content: start;
         min-height: calc(100svh - 83px);
         padding: 28px 0 28px;
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-        margin-right: calc(50% - 50vw);
+        width: auto;
+        margin-left: calc(var(--bs-gutter-x, 1.5rem) * -0.5);
+        margin-right: calc(var(--bs-gutter-x, 1.5rem) * -0.5);
         overflow: hidden;
       }
 
