@@ -4,122 +4,622 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OfficeGPT</title>
+  <title>회사개요 | 이노젠트</title>
   <link rel="icon" href="images/favicon.ico" type="image/png">
   <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
   <link href="./css/style.css?v=20260404b" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <style>
+    /* ===== Overview page (scoped: ov-) ===== */
+    .ov-wrap{
+      flex:1 0 auto;
+      background:linear-gradient(180deg,#f8fbff,#eef4ff);
+      overflow:hidden;
+    }
+    .ov-section{ padding:70px 0; }
+    .ov-eyebrow{
+      display:inline-block;
+      color:#2563eb;
+      font-weight:700;
+      letter-spacing:1px;
+      font-size:.9rem;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+    .ov-heading{
+      font-size:34px;
+      font-weight:800;
+      color:#0f172a;
+      line-height:1.3;
+      margin-bottom:14px;
+    }
+    .ov-heading strong{ color:#1d4ed8; }
+    .ov-sub{
+      color:#4b5563;
+      line-height:1.85;
+      font-size:1.02rem;
+      max-width:720px;
+    }
+    .ov-sub.mx-auto{ margin-left:auto; margin-right:auto; }
+
+    /* Intro */
+    .ov-intro .ov-title{
+      font-size:44px;
+      font-weight:800;
+      line-height:1.28;
+      color:#0f172a;
+      margin:12px 0 20px;
+    }
+    .ov-intro .ov-title strong{ color:#1d4ed8; }
+    .ov-intro .ov-lead{
+      color:#4b5563;
+      line-height:1.9;
+      margin-bottom:16px;
+    }
+    .ov-intro .ov-lead strong{ color:#1d4ed8; }
+    .ov-cta-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:26px; }
+    .ov-btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:13px 26px; border-radius:12px;
+      font-weight:700; font-size:.98rem; text-decoration:none;
+      transition:.25s;
+    }
+    .ov-btn-primary{
+      background:linear-gradient(90deg,#1f73e8,#2f6bf5);
+      color:#fff; border:1px solid transparent;
+      box-shadow:0 12px 24px rgba(31,115,232,.28);
+    }
+    .ov-btn-primary:hover{ transform:translateY(-2px); color:#fff; box-shadow:0 16px 30px rgba(31,115,232,.36); }
+    .ov-btn-ghost{
+      background:#fff; color:#1d4ed8; border:1px solid #cfe0ff;
+    }
+    .ov-btn-ghost:hover{ transform:translateY(-2px); border-color:#1d4ed8; color:#1d4ed8; }
+
+    .ov-visual{ position:relative; text-align:center; }
+    .ov-visual img{
+      width:100%;
+      max-width:520px;
+      border-radius:24px;
+      box-shadow:0 30px 60px rgba(15,54,120,.22);
+    }
+    .ov-visual::after{
+      content:"";
+      position:absolute; inset:auto -6% -8% -6%;
+      height:60%;
+      background:radial-gradient(ellipse at center, rgba(31,115,232,.18), transparent 70%);
+      z-index:-1; filter:blur(10px);
+    }
+
+    /* Stat strip */
+    .ov-stat-strip{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:18px;
+      margin-top:44px;
+    }
+    .ov-stat{
+      background:#fff; border-radius:18px; padding:24px 20px; text-align:center;
+      box-shadow:0 14px 30px rgba(15,54,120,.07);
+      border:1px solid #eaf1ff;
+    }
+    .ov-stat i{ color:#1f73e8; font-size:1.35rem; margin-bottom:10px; }
+    .ov-stat b{ display:block; font-size:1.7rem; font-weight:800; color:#0f172a; line-height:1.2; }
+    .ov-stat span{ display:block; color:#6b7280; font-size:.9rem; margin-top:6px; }
+
+    /* Challenge cards */
+    .ov-white{ background:#fff; }
+    .ov-challenge{
+      background:#f8fbff; border:1px solid #e8f0ff; border-radius:20px;
+      padding:30px 26px; height:100%;
+      transition:.3s; position:relative; overflow:hidden;
+    }
+    .ov-challenge:hover{ transform:translateY(-6px); box-shadow:0 22px 44px rgba(15,54,120,.12); border-color:#cfe0ff; }
+    .ov-challenge .ov-num{
+      font-size:.85rem; font-weight:800; letter-spacing:1px;
+      color:#9db8ea; margin-bottom:14px;
+    }
+    .ov-challenge h4{
+      font-size:1.12rem; font-weight:800; color:#0f172a; margin-bottom:6px;
+    }
+    .ov-challenge .ov-problem{
+      color:#94a3b8; font-size:.92rem; margin-bottom:16px; line-height:1.6;
+    }
+    .ov-challenge .ov-solve{
+      display:flex; gap:10px; align-items:flex-start;
+      color:#334155; font-size:.96rem; line-height:1.65;
+      padding-top:16px; border-top:1px dashed #d9e4fb;
+    }
+    .ov-challenge .ov-solve i{ color:#1f73e8; margin-top:3px; }
+    .ov-challenge .ov-solve strong{ color:#1d4ed8; }
+
+    /* Capability icon cards */
+    .ov-cap{
+      background:#fff; border-radius:20px; padding:30px 24px; height:100%;
+      text-align:center; box-shadow:0 15px 35px rgba(15,54,120,.08);
+      border:1px solid #eef4ff; transition:.3s;
+    }
+    .ov-cap:hover{ transform:translateY(-6px); box-shadow:0 24px 46px rgba(15,54,120,.14); }
+    .ov-cap .ov-ico{
+      width:64px; height:64px; margin:0 auto 18px;
+      display:flex; align-items:center; justify-content:center;
+      border-radius:18px; font-size:1.5rem; color:#fff;
+      background:linear-gradient(135deg,#1f73e8,#4f9bff);
+      box-shadow:0 10px 22px rgba(31,115,232,.3);
+    }
+    .ov-cap h4{ font-size:1.08rem; font-weight:800; color:#1d4ed8; margin-bottom:10px; }
+    .ov-cap p{ font-size:.94rem; color:#6b7280; line-height:1.65; margin:0; }
+
+    /* Journey steps */
+    .ov-journey{ background:linear-gradient(135deg,#0f2c66,#123e94); color:#fff; }
+    .ov-journey .ov-eyebrow{ color:#8fb6ff; }
+    .ov-journey .ov-heading{ color:#fff; }
+    .ov-journey .ov-sub{ color:#cdddff; }
+    .ov-steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:44px; }
+    .ov-step{
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+      border-radius:18px; padding:26px 22px; position:relative;
+    }
+    .ov-step .ov-step-no{
+      width:40px; height:40px; border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      background:#4f9bff; color:#fff; font-weight:800; margin-bottom:16px;
+    }
+    .ov-step h5{ font-weight:800; font-size:1.05rem; margin-bottom:8px; color:#fff; }
+    .ov-step .ov-tag{ font-size:.78rem; color:#8fb6ff; font-weight:700; letter-spacing:.5px; display:block; margin-bottom:4px; }
+    .ov-step p{ font-size:.9rem; color:#c2d4f5; line-height:1.6; margin:0; }
+    .ov-step:not(:last-child)::after{
+      content:"\f061"; font-family:"Font Awesome 6 Free"; font-weight:900;
+      position:absolute; right:-13px; top:50%; transform:translateY(-50%);
+      color:rgba(255,255,255,.35); font-size:.9rem;
+    }
+
+    /* Solution lineup */
+    .ov-solu{
+      display:block; text-decoration:none; height:100%;
+      background:#fff; border:1px solid #eef4ff; border-radius:20px;
+      padding:30px 26px; transition:.3s;
+      box-shadow:0 15px 35px rgba(15,54,120,.07);
+    }
+    .ov-solu:hover{ transform:translateY(-6px); border-color:#cfe0ff; box-shadow:0 24px 46px rgba(15,54,120,.14); }
+    .ov-solu .ov-badge{
+      display:inline-block; font-size:.78rem; font-weight:800; letter-spacing:.5px;
+      color:#1d4ed8; background:#edf5ff; padding:6px 12px; border-radius:999px; margin-bottom:14px;
+    }
+    .ov-solu h4{ font-size:1.2rem; font-weight:800; color:#0f172a; margin-bottom:10px; }
+    .ov-solu p{ color:#6b7280; font-size:.95rem; line-height:1.65; margin-bottom:16px; }
+    .ov-solu .ov-more{ color:#1f73e8; font-weight:700; font-size:.92rem; }
+    .ov-solu .ov-more i{ transition:.25s; }
+    .ov-solu:hover .ov-more i{ transform:translateX(4px); }
+
+    /* Why list */
+    .ov-why{
+      display:flex; gap:16px; background:#fff; border:1px solid #eef4ff;
+      border-radius:16px; padding:24px; height:100%;
+      box-shadow:0 12px 28px rgba(15,54,120,.06);
+    }
+    .ov-why .ov-ico2{
+      flex:0 0 auto; width:48px; height:48px; border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      background:#edf5ff; color:#1f73e8; font-size:1.2rem;
+    }
+    .ov-why h5{ font-weight:800; font-size:1.02rem; color:#0f172a; margin-bottom:6px; }
+    .ov-why p{ color:#6b7280; font-size:.93rem; line-height:1.6; margin:0; }
+
+    /* Company facts */
+    .ov-facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .ov-fact{
+      background:#fff; border:1px solid #eef4ff; border-radius:16px; padding:24px;
+      box-shadow:0 12px 24px rgba(15,54,120,.05); display:flex; gap:14px; align-items:flex-start;
+    }
+    .ov-fact i{ color:#1f73e8; font-size:1.15rem; margin-top:2px; }
+    .ov-fact span{ display:block; color:#9aa4b2; font-size:.82rem; margin-bottom:4px; }
+    .ov-fact p{ font-weight:700; color:#0f172a; margin:0; font-size:.98rem; line-height:1.5; }
+
+    /* CTA banner */
+    .ov-cta-banner{
+      background:linear-gradient(120deg,#1f73e8,#123e94);
+      border-radius:26px; padding:52px 40px; text-align:center; color:#fff;
+      box-shadow:0 26px 54px rgba(18,62,148,.3);
+    }
+    .ov-cta-banner h3{ font-size:1.9rem; font-weight:800; margin-bottom:12px; }
+    .ov-cta-banner p{ color:#dbe8ff; margin-bottom:26px; font-size:1.02rem; }
+    .ov-cta-banner .ov-btn-white{
+      background:#fff; color:#1d4ed8;
+    }
+    .ov-cta-banner .ov-btn-white:hover{ transform:translateY(-2px); color:#1d4ed8; }
+    .ov-cta-banner .ov-btn-outline{
+      background:transparent; color:#fff; border:1px solid rgba(255,255,255,.6);
+    }
+    .ov-cta-banner .ov-btn-outline:hover{ transform:translateY(-2px); background:rgba(255,255,255,.12); color:#fff; }
+
+    /* Responsive */
+    @media (max-width:991px){
+      .ov-stat-strip{ grid-template-columns:repeat(2,1fr); }
+      .ov-steps{ grid-template-columns:repeat(2,1fr); }
+      .ov-step:not(:last-child)::after{ display:none; }
+      .ov-facts{ grid-template-columns:1fr 1fr; }
+      .ov-intro .ov-title{ font-size:34px; }
+      .ov-visual{ margin-top:36px; }
+    }
+    @media (max-width:575px){
+      .ov-section{ padding:52px 0; }
+      .ov-stat-strip{ grid-template-columns:1fr 1fr; }
+      .ov-steps{ grid-template-columns:1fr; }
+      .ov-facts{ grid-template-columns:1fr; }
+      .ov-heading{ font-size:27px; }
+      .ov-intro .ov-title{ font-size:29px; }
+      .ov-cta-banner{ padding:40px 22px; }
+      .ov-cta-banner h3{ font-size:1.5rem; }
+    }
+  </style>
 </head>
 
 <body>
   <div id="header-placeholder"></div>
-  <section class="company-section py-5">
-    <div class="container">
-      <div class="row align-items-center mb-5">
 
-        <div class="col-lg-6">
+  <main class="ov-wrap">
 
-          <span class="company-tag">Company Overview</span>
-
-          <h2 class="company-title">
-            미래를 설계하는<br>
-            <strong>AI 기술 전문 기업</strong>
-          </h2>
-
-          <p class="company-desc">
-            이노젠트는 고객 비즈니스에 최적화된 AI 솔루션을 설계하고 구축하는
-            <strong>AI Foundry 기업</strong>입니다.
-            데이터 분석, 문서 AI, Vision AI, LLM 기술을 기반으로 기업의 업무 자동화와
-            지능형 의사결정을 지원하는 다양한 AI 플랫폼을 제공합니다.
-          </p>
-
-          <p class="company-desc">
-            단순한 AI 서비스 제공을 넘어 기업 맞춤형 AI 시스템을 설계하고 구축하며
-            AI 도입부터 운영까지 전 과정을 함께하는 AI 파트너입니다.
-          </p>
-
-        </div>
-
-        <div class="col-lg-6">
-
-          <div class="company-image">
-            <img src="images/local/unsplash_5656ba49be24dd40bfbc9aaea009d963.jpg" class="img-fluid"
-              alt="미래를 설계하는 AI 기술 전문 기업">
+    <!-- ===== 1. Intro ===== -->
+    <section class="ov-section ov-intro">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="ov-eyebrow">Company Overview</span>
+            <h2 class="ov-title">
+              DX·AI 전환의 핵심과제를<br>
+              <strong>실행 가능한 성과로</strong> 바꾸는 기업
+            </h2>
+            <p class="ov-lead">
+              이노젠트(INNOGENT)는 기업이 <strong>디지털 전환(DX)과 AI 전환(AX)</strong> 과정에서
+              마주하는 핵심 과제를 진단하고, 데이터 기반 위에 실제로 <strong>스스로 실행되는 AI</strong>를
+              올려 성과로 연결하는 <strong>AI Foundry 기업</strong>입니다.
+            </p>
+            <p class="ov-lead">
+              OfficeERP로 기업의 데이터를 견고하게 축적(DX)하고, OfficeGPT라는 두뇌를 더해
+              업무가 스스로 흐르는 <strong>자율형 에이전틱 비즈니스(AX)</strong>로 진화시킵니다.
+              도입 상담부터 구축, 운영·고도화까지 전 과정을 함께하는 AI 전환 파트너입니다.
+            </p>
           </div>
 
+          <div class="col-lg-6">
+            <div class="ov-visual">
+              <img src="images/overview_main.jpg" alt="이노젠트 - 데이터와 AI를 연결하는 기업 전환 파트너">
+            </div>
+          </div>
         </div>
 
+        <!-- 핵심 지표 / 정체성 요약 -->
+        <div class="ov-stat-strip">
+          <div class="ov-stat">
+            <i class="fa-solid fa-layer-group"></i>
+            <b>DX + AX</b>
+            <span>데이터부터 실행까지 통합</span>
+          </div>
+          <div class="ov-stat">
+            <i class="fa-solid fa-industry"></i>
+            <b>산업 특화</b>
+            <span>법무·의료·손해사정·제조</span>
+          </div>
+          <div class="ov-stat">
+            <i class="fa-solid fa-shield-halved"></i>
+            <b>100% 온프레미스</b>
+            <span>오프라인 · 보안 구축 가능</span>
+          </div>
+          <div class="ov-stat">
+            <i class="fa-solid fa-arrows-spin"></i>
+            <b>전 과정 지원</b>
+            <span>진단 · 구축 · 운영 · 고도화</span>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- 핵심 역량 -->
-
-      <div class="row g-4">
-
-        <div class="col-lg-3 col-md-6">
-          <div class="company-card">
-
-            <img src="images/local/unsplash_1a8e3fc407cde674d16e95f1fefd5ea1.jpg" alt="AI Solution">
-
-            <h4>AI Solution</h4>
-
-            <p>
-              기업 업무에 특화된 AI 자동화 솔루션을 설계하고 구축합니다.
-            </p>
-
-          </div>
+    <!-- ===== 2. 핵심 과제 ===== -->
+    <section class="ov-section ov-white">
+      <div class="container">
+        <div class="text-center mb-2">
+          <span class="ov-eyebrow">Core Challenges</span>
+          <h2 class="ov-heading">기업의 AI 전환, <strong>진짜 문제</strong>는 따로 있습니다</h2>
+          <p class="ov-sub mx-auto">
+            AI 도입이 성과로 이어지지 않는 이유는 기술이 아니라 실행에 있습니다.
+            이노젠트는 전환 과정에서 반복적으로 발생하는 핵심 과제를 정의하고, 그에 맞는 해법을 제공합니다.
+          </p>
         </div>
 
-
-        <div class="col-lg-3 col-md-6">
-          <div class="company-card">
-
-            <img src="images/local/unsplash_26753014fe27fd8b9d3503a9f27b2c68.jpg" alt="Document AI">
-
-            <h4>Document AI</h4>
-
-            <p>
-              문서 분석, 요약, 검색 자동화를 위한 LLM 기반 AI 시스템을 제공합니다.
-            </p>
-
+        <div class="row g-4 mt-2">
+          <div class="col-lg-3 col-md-6">
+            <div class="ov-challenge">
+              <div class="ov-num">CHALLENGE 01</div>
+              <h4>흩어진 데이터</h4>
+              <p class="ov-problem">시스템마다 데이터가 분산돼 자산으로 활용되지 못합니다.</p>
+              <div class="ov-solve">
+                <i class="fa-solid fa-circle-check"></i>
+                <span><strong>OfficeERP</strong>로 업무 데이터를 표준화·통합해 AI가 활용할 수 있는 기반(DX)을 구축합니다.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="ov-challenge">
+              <div class="ov-num">CHALLENGE 02</div>
+              <h4>실행되지 않는 AI</h4>
+              <p class="ov-problem">도입은 했지만 실제 업무를 대신 처리해주지는 못합니다.</p>
+              <div class="ov-solve">
+                <i class="fa-solid fa-circle-check"></i>
+                <span><strong>OfficeGPT 에이전트</strong>가 문서·업무를 스스로 추론하고 실행(AX)합니다.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="ov-challenge">
+              <div class="ov-num">CHALLENGE 03</div>
+              <h4>보안·규제 리스크</h4>
+              <p class="ov-problem">민감 데이터를 외부 클라우드에 올리기 어렵습니다.</p>
+              <div class="ov-solve">
+                <i class="fa-solid fa-circle-check"></i>
+                <span><strong>100% 온프레미스·오프라인</strong> 구축으로 데이터를 내부에 안전하게 유지합니다.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="ov-challenge">
+              <div class="ov-num">CHALLENGE 04</div>
+              <h4>산업별 특수성</h4>
+              <p class="ov-problem">범용 AI로는 현장의 전문 업무를 소화하기 어렵습니다.</p>
+              <div class="ov-solve">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>법무·의료·손해사정·설계 등 <strong>산업 특화 모델</strong>로 현장 업무에 최적화합니다.</span>
+              </div>
+            </div>
           </div>
         </div>
-
-
-        <div class="col-lg-3 col-md-6">
-          <div class="company-card">
-
-            <img src="images/local/unsplash_de734f26b9838dbf400cf0e3bbb9e928.jpg" alt="Vision AI">
-
-            <h4>Vision AI</h4>
-
-            <p>
-              이미지와 도면 데이터를 분석하는 Vision AI 솔루션을 제공합니다.
-            </p>
-
-          </div>
-        </div>
-
-
-        <div class="col-lg-3 col-md-6">
-          <div class="company-card">
-
-            <img src="images/local/unsplash_3f47c6f72d6ddc139f0675a82c6bef6e.jpg" alt="AI Platform">
-
-            <h4>AI Platform</h4>
-
-            <p>
-              기업 내부 환경에 맞는 AI 플랫폼 구축 및 운영 지원을 제공합니다.
-            </p>
-
-          </div>
-        </div>
-
       </div>
-    </div>
-    <!-- 회사 정보 -->
-    </div>
-  </section>
+    </section>
+
+    <!-- ===== 3. 핵심 역량 ===== -->
+    <section class="ov-section">
+      <div class="container">
+        <div class="text-center mb-2">
+          <span class="ov-eyebrow">Core Capabilities</span>
+          <h2 class="ov-heading">전환을 실행하는 <strong>4가지 핵심 역량</strong></h2>
+          <p class="ov-sub mx-auto">
+            데이터 분석부터 문서 AI, Vision AI, 자체 AI 플랫폼 구축까지 —
+            기업의 AI 전환에 필요한 기술을 한 곳에서 설계하고 구현합니다.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-lg-3 col-md-6">
+            <div class="ov-cap">
+              <div class="ov-ico"><i class="fa-solid fa-robot"></i></div>
+              <h4>AI Solution</h4>
+              <p>기업 업무에 특화된 AI 자동화 솔루션을 설계하고 구축합니다.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="ov-cap">
+              <div class="ov-ico"><i class="fa-solid fa-file-lines"></i></div>
+              <h4>Document AI</h4>
+              <p>문서 분석·요약·검색 자동화를 위한 LLM 기반 AI 시스템을 제공합니다.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="ov-cap">
+              <div class="ov-ico"><i class="fa-solid fa-eye"></i></div>
+              <h4>Vision AI</h4>
+              <p>이미지와 도면 데이터를 분석하는 Vision AI 솔루션을 제공합니다.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="ov-cap">
+              <div class="ov-ico"><i class="fa-solid fa-server"></i></div>
+              <h4>AI Platform</h4>
+              <p>기업 내부 환경에 맞는 AI 플랫폼 구축 및 운영을 지원합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. DX → AX 전환 여정 ===== -->
+    <section class="ov-section ov-journey">
+      <div class="container">
+        <div class="text-center mb-2">
+          <span class="ov-eyebrow">Transformation Journey</span>
+          <h2 class="ov-heading">데이터에서 실행까지, <strong>이노젠트의 전환 여정</strong></h2>
+          <p class="ov-sub mx-auto">
+            단순 AI 서비스 제공이 아니라, 진단부터 운영·고도화까지 전 과정을 함께합니다.
+          </p>
+        </div>
+
+        <div class="ov-steps">
+          <div class="ov-step">
+            <div class="ov-step-no">1</div>
+            <span class="ov-tag">DIAGNOSIS</span>
+            <h5>진단 · 설계</h5>
+            <p>업무 프로세스와 데이터 현황을 진단하고 전환 로드맵을 설계합니다.</p>
+          </div>
+          <div class="ov-step">
+            <div class="ov-step-no">2</div>
+            <span class="ov-tag">DX · OfficeERP</span>
+            <h5>데이터 기반 구축</h5>
+            <p>OfficeERP로 흩어진 데이터를 통합·표준화해 AI 활용 기반을 마련합니다.</p>
+          </div>
+          <div class="ov-step">
+            <div class="ov-step-no">3</div>
+            <span class="ov-tag">AX · OfficeGPT</span>
+            <h5>AI 실행 적용</h5>
+            <p>OfficeGPT 에이전트가 문서·업무를 자율 추론하고 실제로 실행합니다.</p>
+          </div>
+          <div class="ov-step">
+            <div class="ov-step-no">4</div>
+            <span class="ov-tag">OPERATION</span>
+            <h5>운영 · 고도화</h5>
+            <p>도입 이후 성과를 측정하고 지속적으로 운영하며 고도화합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. 솔루션 라인업 ===== -->
+    <section class="ov-section ov-white">
+      <div class="container">
+        <div class="text-center mb-2">
+          <span class="ov-eyebrow">Solution Lineup</span>
+          <h2 class="ov-heading">전환을 완성하는 <strong>제품 라인업</strong></h2>
+          <p class="ov-sub mx-auto">
+            데이터를 쌓는 OfficeERP와 이를 실행으로 바꾸는 OfficeGPT가 하나로 연결됩니다.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-lg-4">
+            <a href="purchase.html" class="ov-solu">
+              <span class="ov-badge">DX · 데이터 기반</span>
+              <h4>OfficeERP</h4>
+              <p>매출·매입, 재고, 생산, 정산까지 기업 운영 데이터를 하나로 통합 관리하는 ERP 플랫폼입니다.</p>
+              <span class="ov-more">자세히 보기 <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+          </div>
+          <div class="col-lg-4">
+            <a href="law_solution.html" class="ov-solu">
+              <span class="ov-badge">AX · 산업 특화</span>
+              <h4>OfficeGPT Professional</h4>
+              <p>법무·의료·손해사정 등 전문 산업 현장의 업무를 자동 처리하는 산업 특화 AI 에이전트입니다.</p>
+              <span class="ov-more">자세히 보기 <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+          </div>
+          <div class="col-lg-4">
+            <a href="officegpt.html" class="ov-solu">
+              <span class="ov-badge">AX · 엔지니어링</span>
+              <h4>OfficeGPT Engineering</h4>
+              <p>CAD BOM 처리와 문서 요약 등 설계·제조 현장의 반복 업무를 자동화하는 AI 에이전트입니다.</p>
+              <span class="ov-more">자세히 보기 <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. 왜 이노젠트인가 ===== -->
+    <section class="ov-section">
+      <div class="container">
+        <div class="text-center mb-2">
+          <span class="ov-eyebrow">Why Innogent</span>
+          <h2 class="ov-heading">왜 <strong>이노젠트</strong>인가</h2>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-lg-6">
+            <div class="ov-why">
+              <div class="ov-ico2"><i class="fa-solid fa-diagram-project"></i></div>
+              <div>
+                <h5>데이터와 실행을 하나로</h5>
+                <p>ERP(DX)와 AI(AX)를 각각 파는 것이 아니라, 데이터 수집부터 지능적 실행까지 한 번에 연결합니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="ov-why">
+              <div class="ov-ico2"><i class="fa-solid fa-lock"></i></div>
+              <div>
+                <h5>보안 우선, 온프레미스</h5>
+                <p>민감 데이터를 외부로 내보내지 않는 100% 오프라인·온프레미스 구축으로 보안과 규제를 충족합니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="ov-why">
+              <div class="ov-ico2"><i class="fa-solid fa-briefcase"></i></div>
+              <div>
+                <h5>산업 현장을 아는 특화 모델</h5>
+                <p>범용 AI가 아닌, 법무·의료·손해사정·설계 등 각 산업의 실제 업무에 맞춘 특화 모델을 제공합니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="ov-why">
+              <div class="ov-ico2"><i class="fa-solid fa-handshake-angle"></i></div>
+              <div>
+                <h5>도입부터 운영까지 동행</h5>
+                <p>일회성 납품이 아니라 진단·구축·운영·고도화까지 전 과정을 함께하는 장기 파트너입니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 7. 회사 정보 ===== -->
+    <section class="ov-section ov-white">
+      <div class="container">
+        <div class="text-center mb-2">
+          <span class="ov-eyebrow">Company Information</span>
+          <h2 class="ov-heading">회사 정보</h2>
+        </div>
+
+        <div class="ov-facts mt-4">
+          <div class="ov-fact">
+            <i class="fa-solid fa-building"></i>
+            <div>
+              <span>상호</span>
+              <p>이노젠트 (INNOGENT)</p>
+            </div>
+          </div>
+          <div class="ov-fact">
+            <i class="fa-solid fa-briefcase"></i>
+            <div>
+              <span>사업 분야</span>
+              <p>기업용 AI 솔루션 · ERP · Document/Vision AI 구축</p>
+            </div>
+          </div>
+          <div class="ov-fact">
+            <i class="fa-solid fa-cube"></i>
+            <div>
+              <span>주요 제품</span>
+              <p>OfficeERP · OfficeGPT</p>
+            </div>
+          </div>
+          <div class="ov-fact">
+            <i class="fa-solid fa-industry"></i>
+            <div>
+              <span>주요 산업</span>
+              <p>법무 · 의료 · 손해사정 · 설계/제조</p>
+            </div>
+          </div>
+          <div class="ov-fact">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <span>소재지</span>
+              <p>서울 금천구 범안로 1126 대륭21차 719호</p>
+            </div>
+          </div>
+          <div class="ov-fact">
+            <i class="fa-solid fa-globe"></i>
+            <div>
+              <span>홈페이지</span>
+              <p><a href="https://innogent.co.kr" target="_blank" style="color:#1d4ed8;font-weight:700;">innogent.co.kr</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="ov-cta-banner mt-5">
+          <h3>AI 전환, 어디서부터 시작해야 할지 막막하신가요?</h3>
+          <p>이노젠트가 귀사의 핵심 과제를 함께 진단하고, 실행 가능한 전환 로드맵을 제안드립니다.</p>
+          <div class="ov-cta-row justify-content-center" style="margin-top:0;">
+            <a href="https://forms.gle/EQoF4aKhrZdGcUrK8" target="_blank" class="ov-btn ov-btn-white">
+              <i class="fa-solid fa-paper-plane"></i> 도입 상담 요청
+            </a>
+            <a href="location.html" class="ov-btn ov-btn-outline">
+              <i class="fa-solid fa-map-location-dot"></i> 오시는 길
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
   <div id="footer-placeholder"></div>
   <script src="./js/vendor/bootstrap.bundle.min.js?v=20260404b"></script>
   <script src="./js/load_includes.js?v=20260404b"></script>
