@@ -5,9 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  /* 메인 히어로에 흘러가는 키워드. **화면에 그대로 보인다** —
+     제품명(OfficeERP·OfficeGPT)이 여기 있어 2026-08-25 에 역량어로 바꿨다.
+     HTML 만 훑으면 안 잡히는 자리이니, 문구를 점검할 때 이 배열도 같이 본다. */
   const phrasePool = [
-    "OfficeERP",
-    "OfficeGPT",
+    "Enterprise ERP",
+    "AI Agent",
     "DX",
     "AX",
     "Autonomous AI",

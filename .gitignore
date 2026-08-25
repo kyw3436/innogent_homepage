@@ -180,3 +180,23 @@ output/
 llm_server.pid
 media_server.pid
 .history
+
+# 로컬 작업 폴더 — 커밋하지 않는다
+#
+# 이 저장소는 public 이고 GitHub Pages 로 배포된다. 커밋하는 순간
+#   ① GitHub 저장소 화면에 전문이 공개되고
+#   ② innogent.co.kr/<경로> 로 직접 열리며
+#   ③ 나중에 지워도 git 이력에 영구히 남는다.
+# `_local/` 은 로컬 개발용 웹서버(serve.py·serve.bat) 등 배포와 무관한 것들이 있는 자리다.
+#
+# 원래는 `.git/info/exclude` 에만 적혀 있었는데, 그 파일은 **이 클론에만** 적용된다 —
+# 다른 PC 에서 새로 클론하면 무시가 풀려 실수로 커밋될 수 있어 여기로 옮겼다 (2026-08-25).
+_local/
+
+# AI 도구(Claude Code)용 내부 작업 지침 — 커밋하지 않는다
+#
+# 위 `_local/` 과 같은 이유다. 사내 작업 규칙·권한 등급·경로가 적히는 파일이라
+# public 저장소에 올라가면 그대로 공개된다.
+# 이것도 `.git/info/exclude` 에만 있어 다른 클론에서는 보호가 풀렸다 (2026-08-25 함께 이동).
+CLAUDE.md
+CLAUDE.local.md

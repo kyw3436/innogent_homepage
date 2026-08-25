@@ -3,16 +3,16 @@ function initIncludes() {
     const openSubmenusKey = "openSubmenus";
     const currentSubmenuKey = "currentOpenSubmenu";
     const mobileNavScrollKey = "mobileNavScrollTop";
-    const includeVersion = "20260404b";
+    const includeVersion = "20260825d";
     const breadcrumbLinkMap = {
         "홈": "index.html",
-        "OfficeGPT (Professional)": "law_solution.html",
+        "산업별 AI 솔루션": "law_solution.html",
         "산업별 솔루션": "law_solution.html",
         "Agent Package": "law_gpt.html",
-        "OfficeGPT (Engineering)": "officegpt.html",
+        "문서·설계 자동화": "officegpt.html",
         "CAD BOM": "officegpt.html",
         "Document Summary": "docsgpt.html",
-        "OfficeERP": "purchase.html",
+        "통합 ERP": "purchase.html",
         "데이터 관리": "purchase.html",
         "업무 처리": "order.html",
         "경영 지원": "analysis.html",
@@ -177,7 +177,12 @@ function initIncludes() {
     function markActiveHeaderMenu() {
         const currentPath = window.location.pathname.split("/").pop() || "index.html";
 
-        document.querySelectorAll(".mega-list a, .mega-link-only a").forEach((link) => {
+        /* 🔴 `.mega-link-only a`(「INNOGENT AI ↗」)는 **일부러 뺐다.**
+           이 링크는 그룹에 속한 항목이 아니라 어느 그룹에서든 회사개요로 보내는 공통 링크다.
+           활성 판정에 넣으면 overview.html 에서 **3개 그룹이 동시에 켜지고**(파란 밑줄),
+           모바일에서는 드롭다운 3개가 함께 열린다 (2026-08-25 실측).
+           예전에는 전부 `href="#"` 라 어차피 걸러졌으므로, 빼도 잃는 동작이 없다. */
+        document.querySelectorAll(".mega-list a").forEach((link) => {
             const href = link.getAttribute("href");
 
             if (!href || href === "#") {
