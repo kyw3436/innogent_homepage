@@ -8182,6 +8182,24 @@ font-size:32px;
   flex-wrap:wrap;
 }
 
+/* 도입부 안내 문구 — 안 가는 버튼 자리를 대체한다 (2026-09-04) */
+.inventory-intro-note{
+  margin-top:28px;
+  max-width:760px;
+  padding:14px 18px;
+  border-left:3px solid #2d7df6;
+  border-radius:0 10px 10px 0;
+  background:#f4f8ff;
+  font-size:15px;
+  line-height:1.75;
+  color:#62749a;
+}
+
+.inventory-intro-note strong{
+  color:#1f63d8;
+  font-weight:700;
+}
+
 .inventory-btn-primary,
 .inventory-btn-outline{
   height:48px;
@@ -8516,6 +8534,24 @@ font-size:32px;
   display:flex;
   gap:12px;
   flex-wrap:wrap;
+}
+
+/* 도입부 안내 문구 — 안 가는 버튼 자리를 대체한다 (2026-09-04) */
+.customer-intro-note{
+  margin-top:28px;
+  max-width:760px;
+  padding:14px 18px;
+  border-left:3px solid #2d7df6;
+  border-radius:0 10px 10px 0;
+  background:#f4f8ff;
+  font-size:15px;
+  line-height:1.75;
+  color:#62749a;
+}
+
+.customer-intro-note strong{
+  color:#1f63d8;
+  font-weight:700;
 }
 
 .customer-btn-primary,
@@ -8853,6 +8889,24 @@ font-size:32px;
   flex-wrap:wrap;
 }
 
+/* 도입부 안내 문구 — 안 가는 버튼 자리를 대체한다 (2026-09-04) */
+.product-intro-note{
+  margin-top:28px;
+  max-width:760px;
+  padding:14px 18px;
+  border-left:3px solid #2d7df6;
+  border-radius:0 10px 10px 0;
+  background:#f4f8ff;
+  font-size:15px;
+  line-height:1.75;
+  color:#62749a;
+}
+
+.product-intro-note strong{
+  color:#1f63d8;
+  font-weight:700;
+}
+
 .product-btn-primary,
 .product-btn-outline{
   height:48px;
@@ -9186,6 +9240,24 @@ font-size:32px;
   display:flex;
   gap:12px;
   flex-wrap:wrap;
+}
+
+/* 도입부 안내 문구 — 안 가는 버튼 자리를 대체한다 (2026-09-04) */
+.order-intro-note{
+  margin-top:28px;
+  max-width:760px;
+  padding:14px 18px;
+  border-left:3px solid #2d7df6;
+  border-radius:0 10px 10px 0;
+  background:#f4f8ff;
+  font-size:15px;
+  line-height:1.75;
+  color:#62749a;
+}
+
+.order-intro-note strong{
+  color:#1f63d8;
+  font-weight:700;
 }
 
 .order-btn-primary,
@@ -9523,6 +9595,24 @@ font-size:32px;
   flex-wrap:wrap;
 }
 
+/* 도입부 안내 문구 — 안 가는 버튼 자리를 대체한다 (2026-09-04) */
+.production-intro-note{
+  margin-top:28px;
+  max-width:760px;
+  padding:14px 18px;
+  border-left:3px solid #2d7df6;
+  border-radius:0 10px 10px 0;
+  background:#f4f8ff;
+  font-size:15px;
+  line-height:1.75;
+  color:#62749a;
+}
+
+.production-intro-note strong{
+  color:#1f63d8;
+  font-weight:700;
+}
+
 .production-btn-primary,
 .production-btn-outline{
   height:48px;
@@ -9856,6 +9946,24 @@ font-size:32px;
   display:flex;
   gap:12px;
   flex-wrap:wrap;
+}
+
+/* 도입부 안내 문구 — 안 가는 버튼 자리를 대체한다 (2026-09-04) */
+.shipping-intro-note{
+  margin-top:28px;
+  max-width:760px;
+  padding:14px 18px;
+  border-left:3px solid #2d7df6;
+  border-radius:0 10px 10px 0;
+  background:#f4f8ff;
+  font-size:15px;
+  line-height:1.75;
+  color:#62749a;
+}
+
+.shipping-intro-note strong{
+  color:#1f63d8;
+  font-weight:700;
 }
 
 .shipping-btn-primary,
@@ -10194,6 +10302,24 @@ font-size:32px;
   flex-wrap:wrap;
 }
 
+/* 도입부 안내 문구 — 안 가는 버튼 자리를 대체한다 (2026-09-04) */
+.settlement-intro-note{
+  margin-top:28px;
+  max-width:760px;
+  padding:14px 18px;
+  border-left:3px solid #2d7df6;
+  border-radius:0 10px 10px 0;
+  background:#f4f8ff;
+  font-size:15px;
+  line-height:1.75;
+  color:#62749a;
+}
+
+.settlement-intro-note strong{
+  color:#1f63d8;
+  font-weight:700;
+}
+
 .settlement-btn-primary,
 .settlement-btn-outline{
   height:48px;
@@ -10527,6 +10653,24 @@ gap:12px;
 flex-wrap:wrap;
 }
 
+/* 도입부 안내 문구 — 안 가는 버튼 자리를 대체한다 (2026-09-04) */
+.sales-note{
+  margin-top:28px;
+  max-width:760px;
+  padding:14px 18px;
+  border-left:3px solid #2d7df6;
+  border-radius:0 10px 10px 0;
+  background:#f4f8ff;
+  font-size:15px;
+  line-height:1.75;
+  color:#62749a;
+}
+
+.sales-note strong{
+  color:#1f63d8;
+  font-weight:700;
+}
+
 .sales-btn-primary{
 background:#2d7df6;
 color:#fff;
@@ -10680,6 +10824,24 @@ margin-top:6px;
   display:flex;
   gap:12px;
   flex-wrap:wrap;
+}
+
+/* 도입부 안내 문구 — 안 가는 버튼 자리를 대체한다 (2026-09-04) */
+.profit-intro-note{
+  margin-top:28px;
+  max-width:760px;
+  padding:14px 18px;
+  border-left:3px solid #2d7df6;
+  border-radius:0 10px 10px 0;
+  background:#f4f8ff;
+  font-size:15px;
+  line-height:1.75;
+  color:#62749a;
+}
+
+.profit-intro-note strong{
+  color:#1f63d8;
+  font-weight:700;
 }
 
 .profit-btn-primary,
@@ -11017,6 +11179,24 @@ margin-top:6px;
   flex-wrap:wrap;
 }
 
+/* 도입부 안내 문구 — 안 가는 버튼 자리를 대체한다 (2026-09-04) */
+.decision-intro-note{
+  margin-top:28px;
+  max-width:760px;
+  padding:14px 18px;
+  border-left:3px solid #2d7df6;
+  border-radius:0 10px 10px 0;
+  background:#f4f8ff;
+  font-size:15px;
+  line-height:1.75;
+  color:#62749a;
+}
+
+.decision-intro-note strong{
+  color:#1f63d8;
+  font-weight:700;
+}
+
 .decision-btn-primary,
 .decision-btn-outline{
   height:48px;
@@ -11350,6 +11530,24 @@ margin-top:6px;
   display:flex;
   gap:12px;
   flex-wrap:wrap;
+}
+
+/* 도입부 안내 문구 — 안 가는 버튼 자리를 대체한다 (2026-09-04) */
+.faq-suite-note{
+  margin-top:28px;
+  max-width:760px;
+  padding:14px 18px;
+  border-left:3px solid #2d7df6;
+  border-radius:0 10px 10px 0;
+  background:#f4f8ff;
+  font-size:15px;
+  line-height:1.75;
+  color:#62749a;
+}
+
+.faq-suite-note strong{
+  color:#1f63d8;
+  font-weight:700;
 }
 
 .faq-suite-btn-primary,
