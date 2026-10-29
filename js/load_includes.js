@@ -3,16 +3,16 @@ function initIncludes() {
     const openSubmenusKey = "openSubmenus";
     const currentSubmenuKey = "currentOpenSubmenu";
     const mobileNavScrollKey = "mobileNavScrollTop";
-    const includeVersion = "20260904a";
+    const includeVersion = "20261029m";
     const breadcrumbLinkMap = {
         "홈": "index.html",
-        "산업별 AI 솔루션": "law_solution.html",
+        "산업별 AI 솔루션": "ai_industry.html",
         "산업별 솔루션": "law_solution.html",
         "Agent Package": "law_gpt.html",
-        "문서·설계 자동화": "officegpt.html",
+        "문서·설계 자동화": "docs_auto.html",
         "CAD BOM": "officegpt.html",
         "Document Summary": "docsgpt.html",
-        "통합 ERP": "purchase.html",
+        "맞춤형 ERP": "erp.html",
         "데이터 관리": "purchase.html",
         "업무 처리": "order.html",
         "경영 지원": "analysis.html",

@@ -1,0 +1,36 @@
+# 이노젠트 (INNOGENT)
+
+> 이노젠트는 회사 업무에 맞춰 도입하는 맞춤형 ERP와, 회사 안에 설치하는 온프레미스 AI 에이전트를 함께 구축하는 회사입니다. 맞춤형 ERP로 기업 데이터를 쌓고, AI 에이전트로 그 데이터를 업무 실행으로 바꾸도록 도입 상담부터 구축, 운영·고도화까지 함께합니다.
+
+- 회사명: 주식회사 이노젠트(INNOGENT)
+- 주소: 서울 금천구 범안로 1126 대륭21차 719호
+- 상담: 홈페이지 «전문가와 상담하기» 상담 신청 양식 — https://forms.gle/EQoF4aKhrZdGcUrK8
+- 홈페이지: https://innogent.co.kr/
+
+## 맞춤형 ERP
+
+- [맞춤형 ERP 한눈에 보기](https://innogent.co.kr/erp.html): 10개 업무 그룹·820여 개 업무 화면을 갖춘 웹 ERP를 회사 업무 규칙과 용어에 맞춰 도입. 영업·구매자재·생산(현장실적 POP·MES, 설비·금형관리)·프로젝트·회계·인사급여·건물관리·후원자관리·시스템관리·그룹웨어. 사내 서버 설치, 브라우저로 사용.
+- [매출 / 매입 관리](https://innogent.co.kr/purchase.html): 매출·매입 통합 관리와 거래 내역 자동 집계
+- [재고 관리](https://innogent.co.kr/inventory.html): 입출고와 재고 현황 파악, 재고 평가
+- [생산 관리](https://innogent.co.kr/production.html): 생산계획·소요량전개(MRP)·작업지시·작업실적·실제원가
+- [매출 분석 리포트](https://innogent.co.kr/analysis.html): 경영 데이터 기반 매출 분석
+
+## 산업별 AI 솔루션
+
+- [산업별 AI 한눈에 보기](https://innogent.co.kr/ai_industry.html): 법무법인·병원·손해사정·설계사무소용 설치형(온프레미스) AI. 내부 문서 자연어 검색, 요약, 반복 문서 초안 작성. 폐쇄망 설치 가능.
+- [법무법인 솔루션](https://innogent.co.kr/law_solution.html): 계약서 검토, 판례·서면 검색, 상담 기록 정리
+- [병원 솔루션](https://innogent.co.kr/medi_solution.html): 상담 내용 정리, 진료 안내 보조, 내부 지침 검색
+- [손해사정사 솔루션](https://innogent.co.kr/archi_solution.html): 청구 자료 검토, 약관·보상 기준 검색, 보고서 작성 보조
+- [설계사무소 Agent](https://innogent.co.kr/architecture.html): 도면 BOM 추출, 도면 변경점 비교
+
+## 문서·설계 자동화
+
+- [문서·설계 자동화 한눈에 보기](https://innogent.co.kr/docs_auto.html): 도면에서 부품표(BOM)를 찾아 품번·품명·수량 데이터로 정리하고, 대용량 문서를 끝까지 읽어 핵심·리스크·수치를 구조화한 리포트로 정리. 사내 서버의 비전 AI(VLM)로 처리.
+- [CAD BOM Agent](https://innogent.co.kr/officegpt.html): 도면의 부품표 영역 탐지와 속성 분류
+- [문서 요약 Agent](https://innogent.co.kr/docsgpt.html): 대용량 문서 전수 분석 리포트
+
+## 회사
+
+- [회사개요](https://innogent.co.kr/overview.html): 회사 소개, 핵심 역량, 제품 라인업, 자주 묻는 질문
+- [자주 묻는 질문](https://innogent.co.kr/faq.html): 업종별 AI 에이전트 도입 FAQ 16문항
+- [오시는 길](https://innogent.co.kr/location.html): 사무실 위치와 교통편

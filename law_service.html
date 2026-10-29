@@ -4,34 +4,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>법무법인 전용 오프라인 AI 제안 | 이노젠트</title>
-  <meta name="description" content="법무법인 내부 서버에 구축하는 폐쇄망 AI — 사건 자료를 외부로 내보내지 않고 문서 업무를 자동화합니다." />
+  <title>법무법인 전용 오프라인 GPT - 내부 서버에 구축하는 법률 AI | 이노젠트</title>
+  <meta name="description" content="법무법인 내부 서버에 구축하는 오프라인 GPT입니다. 사건 자료를 외부로 내보내지 않고 계약서·판례·서면 검토, 요약, 초안 작성, 질의응답 업무를 내부 환경에서 자동화합니다." />
   <link rel="canonical" href="https://innogent.co.kr/law_service.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="이노젠트" />
-  <meta property="og:title" content="법무법인 전용 오프라인 AI 제안 | 이노젠트" />
-  <meta property="og:description" content="법무법인 내부 서버에 구축하는 폐쇄망 AI — 사건 자료를 외부로 내보내지 않고 문서 업무를 자동화합니다." />
+  <meta property="og:title" content="법무법인 전용 오프라인 GPT - 내부 서버에 구축하는 법률 AI | 이노젠트" />
+  <meta property="og:description" content="법무법인 내부 서버에 구축하는 오프라인 GPT입니다. 사건 자료를 외부로 내보내지 않고 계약서·판례·서면 검토, 요약, 초안 작성, 질의응답 업무를 내부 환경에서 자동화합니다." />
   <meta property="og:url" content="https://innogent.co.kr/law_service.html" />
-  <meta property="og:image" content="https://innogent.co.kr/images/overview_main.jpg" />
+  <meta property="og:image" content="https://innogent.co.kr/images/og_main.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="법무법인 전용 오프라인 GPT - 내부 서버에 구축하는 법률 AI | 이노젠트" />
+  <meta name="twitter:description" content="법무법인 내부 서버에 구축하는 오프라인 GPT입니다. 사건 자료를 외부로 내보내지 않고 계약서·판례·서면 검토, 요약, 초안 작성, 질의응답 업무를 내부 환경에서 자동화합니다." />
+  <meta name="twitter:image" content="https://innogent.co.kr/images/og_main.jpg" />
   <link rel="icon" href="images/favicon.ico" type="image/png">
   <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
-  <link href="./css/style.css?v=20260904a" rel="stylesheet" />
+  <link href="./css/style.css?v=20261029m" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- 구조화 데이터 (schema.org JSON-LD · 2026-10-29 SEO·GEO — 화면 글자와 같은 사실만) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "@id": "https://innogent.co.kr/law_service.html#webpage",
+        "url": "https://innogent.co.kr/law_service.html",
+        "name": "법무법인 전용 오프라인 GPT - 내부 서버에 구축하는 법률 AI | 이노젠트",
+        "description": "법무법인 내부 서버에 구축하는 오프라인 GPT입니다. 사건 자료를 외부로 내보내지 않고 계약서·판례·서면 검토, 요약, 초안 작성, 질의응답 업무를 내부 환경에서 자동화합니다.",
+        "inLanguage": "ko-KR",
+        "isPartOf": {
+          "@id": "https://innogent.co.kr/#website"
+        },
+        "publisher": {
+          "@id": "https://innogent.co.kr/#organization"
+        },
+        "breadcrumb": {
+          "@id": "https://innogent.co.kr/law_service.html#breadcrumb"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "왜 일반 GPT가 아니라 오프라인 GPT여야 하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "법률 분야는 의뢰인 정보, 사건 내용, 계약 검토 자료 등 민감도가 높은 데이터를 다루기 때문에 외부 공개형 AI 사용에 제한이 큰 편입니다. 오프라인 GPT는 보다 높은 통제력과 내부 기준 반영에 유리합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "내부 자료를 학습하거나 검색에 활용할 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가능합니다. 내부 문서, 자문 사례, 매뉴얼, 상담 기록 양식 등 조직이 허용하는 범위의 자료를 중심으로 검색·요약·초안 작성 보조 구조를 설계할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "가장 큰 효과는 어떤 부분에서 나오나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "반복 초안 작성, 내부 자료 탐색, 상담 정리, 검토 메모 작성처럼 매일 자주 발생하지만 부가가치가 낮은 작업에서 가장 빠른 효과가 나옵니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "조직마다 다른 문체와 업무 방식도 반영 가능한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가능합니다. 문서 톤, 검토 기준, 내부 양식, 업무 단계별 출력 형식 등을 조직 스타일에 맞게 커스터마이징하는 방향으로 설계할 수 있습니다."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://innogent.co.kr/law_service.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "홈",
+            "item": "https://innogent.co.kr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "법무법인 전용 오프라인 GPT",
+            "item": "https://innogent.co.kr/law_service.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
   <div id="header-placeholder"></div>
-  <!DOCTYPE html>
-  <html lang="ko">
-
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>법무법인 전용 오프라인 GPT 제안 랜딩페이지</title>
-  </head>
-
-  <body>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -656,7 +730,7 @@
                   <div class="icon-box"><i class="fa-solid fa-gauge-high"></i></div>
                   <div>
                     <div class="side-title">실무 처리 속도 향상</div>
-                    <p class="side-text">초안 작성, 요약, 비교 검토, 질의응답 속도를 높여 변호사와 실무자의 시간을 더 가치 있는 업무에 집중시킵니다.</p>
+                    <p class="side-text">초안 작성, 요약, 비교 검토, 질의응답 속도를 높여 변호사와 실무자가 더 가치 있는 업무에 집중하게 합니다.</p>
                   </div>
                 </div>
 
@@ -1137,7 +1211,7 @@
 
             <div class="col-lg-5">
               <div class="contact-side">
-                <h3>오프라인 ChatGPT 도입 상담</h3>
+                <h3>오프라인 GPT 도입 상담</h3>
                 <p>
                   업종별 문서 구조와 보안 환경에 맞춰 오프라인 AI 구축 방향을 제안해드립니다.
                 </p>
@@ -1265,12 +1339,9 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-
-  </html>
   <div id="footer-placeholder"></div>
-  <script src="./js/vendor/bootstrap.bundle.min.js?v=20260904a"></script>
-  <script src="./js/load_includes.js?v=20260904a"></script>
+  <script src="./js/vendor/bootstrap.bundle.min.js?v=20261029m"></script>
+  <script src="./js/load_includes.js?v=20261029m"></script>
 </body>
 
 </html>

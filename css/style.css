@@ -14764,7 +14764,9 @@ margin-top:6px;
     padding-top: 28px;
 }
 
-[class^="erp-"][class$="-wrap"] {
+/* 총괄 랜딩(landhub-)도 맞춤형 ERP 총괄(erp-hub-wrap)과 같은 위아래 여백을 쓴다(2026-10-29) */
+[class^="erp-"][class$="-wrap"],
+.landhub-wrap.landhub-wrap {
     flex: 1 0 auto;
     padding-top: 28px;
     padding-bottom: 48px;
@@ -14775,7 +14777,8 @@ margin-top:6px;
 .officegpt-bom-section > .container > .breadcrumb-wrap,
 .officegpt-doc-section > .container > .breadcrumb-wrap,
 [class*="officegpt-"] > .container > .breadcrumb-wrap,
-[class^="erp-"][class$="-wrap"] > [class^="erp-"] > .breadcrumb-wrap {
+[class^="erp-"][class$="-wrap"] > [class^="erp-"] > .breadcrumb-wrap,
+.landhub-wrap > .landhub > .breadcrumb-wrap {
     margin-top: 0 !important;
     margin-bottom: 22px !important;
 }
@@ -15025,4 +15028,1652 @@ html {
         border-color: rgba(31, 115, 232, 0.18);
     }
 
+}
+
+
+/* =========================================================
+   맞춤형 ERP 총괄 페이지 (erp.html) — 2026-10-29
+   ② ERP 업무 계열의 inventory- 값을 그대로 옮기고 접두어만 erphub- 로 바꿨다.
+   (purchase↔inventory 처럼 클래스를 공유하지 않게 — 계열 가이드 02)
+   ========================================================= */
+.erp-hub-wrap{
+  padding:28px 20px 50px;
+  background:#f6f9ff;
+}
+
+.erp-hub{
+  max-width:1400px;
+  margin:0 auto;
+}
+
+.erphub-intro-section{
+  background:linear-gradient(135deg, #ffffff 0%, #eef5ff 100%);
+  border:1px solid #dce8fb;
+  border-radius:28px;
+  padding:50px;
+  margin-bottom:30px;
+}
+
+.erphub-section-chip{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:#e9f2ff;
+  color:#1f63d8;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+.erphub-intro-title{
+  margin:0 0 16px;
+  font-size:40px;
+  font-weight:800;
+  color:#184291;
+  line-height:1.2;
+}
+
+.erphub-intro-text{
+  margin:0;
+  font-size:16px;
+  line-height:1.9;
+  color:#62749a;
+  max-width:760px;
+}
+
+.erphub-intro-note{
+  margin-top:28px;
+  max-width:760px;
+  padding:14px 18px;
+  border-left:3px solid #2d7df6;
+  border-radius:0 10px 10px 0;
+  background:#f4f8ff;
+  font-size:15px;
+  line-height:1.75;
+  color:#62749a;
+}
+
+.erphub-intro-note strong{
+  color:#1f63d8;
+  font-weight:700;
+}
+
+.erphub-side-box{
+  background:#ffffff;
+  border:1px solid #e2ecfb;
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 12px 30px rgba(35, 86, 170, 0.06);
+}
+
+.erphub-mini-point{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  padding:16px 0;
+  border-bottom:1px solid #edf3fd;
+}
+
+.erphub-mini-point:last-child{
+  border-bottom:none;
+  padding-bottom:0;
+}
+
+.erphub-mini-point:first-child{
+  padding-top:0;
+}
+
+.erphub-mini-point i{
+  width:46px;
+  height:46px;
+  border-radius:12px;
+  background:#eaf2ff;
+  color:#2468dd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  flex-shrink:0;
+}
+
+.erphub-mini-point strong{
+  display:block;
+  font-size:16px;
+  color:#1f3f86;
+  margin-bottom:6px;
+}
+
+.erphub-mini-point p{
+  margin:0;
+  font-size:14px;
+  color:#7484a6;
+  line-height:1.7;
+}
+
+.erphub-content-section{
+  margin-bottom:30px;
+  background:#fff;
+  border:1px solid #e2ecfb;
+  border-radius:24px;
+  padding:40px;
+}
+
+.erphub-section-head{
+  margin-bottom:28px;
+}
+
+.erphub-section-label{
+  display:inline-block;
+  font-size:12px;
+  font-weight:700;
+  color:#2a6de3;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.erphub-section-head h3{
+  margin:0 0 12px;
+  font-size:32px;
+  font-weight:800;
+  color:#183f8f;
+}
+
+.erphub-section-head p{
+  margin:0;
+  font-size:15px;
+  line-height:1.8;
+  color:#7182a5;
+}
+
+.erphub-feature-box{
+  height:100%;
+  background:#f9fbff;
+  border:1px solid #e6eefc;
+  border-radius:20px;
+  padding:28px;
+  transition:all .2s ease;
+}
+
+.erphub-feature-box:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(34, 87, 173, 0.08);
+}
+
+.erphub-feature-icon{
+  width:58px;
+  height:58px;
+  border-radius:16px;
+  background:#e8f1ff;
+  color:#2468dd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:18px;
+}
+
+.erphub-feature-box h4{
+  margin:0 0 12px;
+  font-size:20px;
+  font-weight:700;
+  color:#204287;
+}
+
+.erphub-feature-box p{
+  margin:0;
+  font-size:14px;
+  line-height:1.8;
+  color:#7182a5;
+  word-break:keep-all;
+}
+
+/* 업무 모듈 아래 한 줄 · 연계 카드의 글 링크 */
+.erphub-foot-note{
+  margin:24px 0 0;
+  font-size:14px;
+  line-height:1.8;
+  color:#7182a5;
+}
+
+.erphub-text-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:16px;
+  font-size:14px;
+  font-weight:700;
+  color:#1f63d8;
+  text-decoration:none;
+}
+
+.erphub-text-link:hover{
+  color:#1669e6;
+}
+
+.erphub-process-section{
+  background:linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+}
+
+.erphub-process-box{
+  height:100%;
+  background:#ffffff;
+  border:1px solid #e3edfb;
+  border-radius:20px;
+  padding:28px;
+  text-align:left;
+  box-shadow:0 10px 24px rgba(38, 92, 181, 0.05);
+}
+
+.erphub-process-no,
+.erphub-process-icon{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:#2d7df6;
+  color:#fff;
+  font-size:18px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:18px;
+}
+
+.erphub-process-box h4{
+  margin:0 0 10px;
+  font-size:19px;
+  font-weight:700;
+  color:#1d4085;
+}
+
+.erphub-process-box p{
+  margin:0;
+  font-size:14px;
+  line-height:1.8;
+  color:#7383a6;
+  word-break:keep-all;
+}
+
+/* 도입 절차 — 단계마다 받는 결과물 */
+.erphub-output{
+  display:inline-block;
+  margin-top:14px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:#e9f2ff;
+  color:#1f63d8;
+  font-size:13px;
+  font-weight:700;
+}
+
+.erphub-benefit-box{
+  background:#f9fbff;
+  border:1px solid #e6eefc;
+  border-radius:20px;
+  padding:30px;
+}
+
+.erphub-benefit-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.erphub-benefit-list li{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  font-size:15px;
+  line-height:1.9;
+  color:#61749a;
+  margin-bottom:14px;
+}
+
+.erphub-benefit-list li:last-child{
+  margin-bottom:0;
+}
+
+.erphub-benefit-list i{
+  color:#2d7df6;
+  margin-top:6px;
+  flex-shrink:0;
+}
+
+/* 세부 화면 보기 — 드롭다운과 같은 세 묶음 */
+.erphub-link-group{
+  height:100%;
+  background:#f9fbff;
+  border:1px solid #e6eefc;
+  border-radius:20px;
+  padding:26px 28px;
+}
+
+.erphub-link-group h4{
+  margin:0 0 14px;
+  font-size:18px;
+  font-weight:700;
+  color:#204287;
+}
+
+.erphub-link-group ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.erphub-link-group li + li{
+  border-top:1px solid #e6eefc;
+}
+
+.erphub-link-group a{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 0;
+  font-size:15px;
+  color:#3a527f;
+  text-decoration:none;
+}
+
+.erphub-link-group a i{
+  color:#2d7df6;
+  font-size:13px;
+}
+
+.erphub-link-group a:hover{
+  color:#1f63d8;
+}
+
+@media (max-width: 991.98px){
+  .erp-hub-wrap{
+    padding:16px 8px;
+  }
+
+  .erphub-intro-section,
+  .erphub-content-section{
+    padding:28px;
+  }
+
+  .erphub-intro-title{
+    font-size:32px;
+  }
+
+  .erphub-section-head h3{
+    font-size:26px;
+  }
+}
+
+@media (max-width: 575.98px){
+  .erphub-intro-section,
+  .erphub-content-section,
+  .erphub-benefit-box{
+    padding:22px;
+  }
+
+  .erphub-intro-title{
+    font-size:28px;
+  }
+
+  .erphub-section-head h3{
+    font-size:23px;
+  }
+}
+
+
+/* 맞춤형 ERP 총괄 — 구성도 (2026-10-29)
+   가로 바(묶음) 아래 업무 열 · 함께 쓰는 바탕 띠 · AI 연계 띠. 색은 erphub- 의 파랑 계열 그대로.
+   1400 이상: 10열(ERP 9 + 그룹웨어 1) · 768~1399: ERP 3열 · 767 이하: 한 줄씩 쌓고 메뉴는 칩으로 */
+.erphub-map{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.erphub-map-groups{
+  display:grid;
+  grid-template-columns:9fr 1fr;
+  gap:10px;
+}
+
+.erphub-map-group{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:0;
+}
+
+.erphub-map-bar{
+  padding:12px 16px;
+  border-radius:12px;
+  background:#184291;
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+  text-align:center;
+  letter-spacing:.5px;
+}
+
+.erphub-map-group--gw .erphub-map-bar{
+  background:#2d7df6;
+}
+
+.erphub-map-cols{
+  display:grid;
+  grid-template-columns:repeat(9, minmax(0, 1fr));
+  gap:10px;
+  align-items:start;
+}
+
+.erphub-map-group--gw .erphub-map-cols{
+  grid-template-columns:minmax(0, 1fr);
+}
+
+.erphub-map-col{
+  background:#f9fbff;
+  border:1px solid #e6eefc;
+  border-top:3px solid #2d7df6;
+  border-radius:14px;
+  transition:box-shadow .2s ease, border-color .2s ease;
+}
+
+.erphub-map-col:hover,
+.erphub-map-col[open]{
+  border-color:#c9dcfa;
+  border-top-color:#184291;
+  box-shadow:0 10px 24px rgba(34, 87, 173, 0.08);
+}
+
+.erphub-map-col summary{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:16px 8px 14px;
+  list-style:none;
+  cursor:pointer;
+}
+
+.erphub-map-col summary::-webkit-details-marker{
+  display:none;
+}
+
+.erphub-map-col summary:focus-visible{
+  outline:2px solid #2d7df6;
+  outline-offset:2px;
+  border-radius:12px;
+}
+
+.erphub-map-name{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  font-size:16px;
+  font-weight:800;
+  color:#204287;
+  text-align:center;
+}
+
+.erphub-map-name i{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  background:#e8f1ff;
+  color:#2468dd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+}
+
+.erphub-map-menu{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.erphub-map-menu span{
+  display:block;
+  padding:7px 4px;
+  border-radius:8px;
+  background:#fff;
+  border:1px solid #edf3fd;
+  font-size:12.5px;
+  line-height:1.4;
+  color:#3a527f;
+  text-align:center;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+}
+
+.erphub-map-more{
+  font-size:12px;
+  font-weight:700;
+  color:#1f63d8;
+  text-align:center;
+}
+
+.erphub-map-more::after{
+  content:" +";
+}
+
+.erphub-map-col[open] .erphub-map-more::after{
+  content:" −";
+}
+
+.erphub-map-detail{
+  padding:0 12px 16px;
+}
+
+.erphub-map-detail p{
+  margin:0 0 10px;
+  padding-top:12px;
+  border-top:1px solid #e6eefc;
+  font-size:13px;
+  line-height:1.7;
+  color:#61749a;
+  word-break:keep-all;
+}
+
+.erphub-map-detail a{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:6px;
+  padding:6px 0;
+  font-size:13px;
+  font-weight:700;
+  color:#1f63d8;
+  text-decoration:none;
+}
+
+.erphub-map-detail a i{
+  font-size:11px;
+}
+
+.erphub-map-detail a:hover{
+  color:#184291;
+}
+
+.erphub-map-band{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:16px 20px;
+  border-radius:14px;
+}
+
+.erphub-map-band > strong{
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:15px;
+  font-weight:800;
+}
+
+.erphub-map-band--base{
+  background:#eef5ff;
+  border:1px solid #dce8fb;
+}
+
+.erphub-map-band--base > strong{
+  color:#184291;
+}
+
+.erphub-map-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.erphub-map-chips span{
+  padding:6px 12px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid #dce8fb;
+  font-size:13px;
+  color:#3a527f;
+}
+
+.erphub-map-band--ai{
+  background:#12306b;
+  color:#dbe7ff;
+}
+
+.erphub-map-band--ai > strong{
+  color:#fff;
+}
+
+.erphub-map-ai{
+  flex:1;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:10px;
+}
+
+.erphub-map-ai span{
+  padding:10px 14px;
+  border-radius:10px;
+  background:rgba(255, 255, 255, 0.08);
+  border:1px solid rgba(255, 255, 255, 0.14);
+  font-size:13px;
+  line-height:1.7;
+  word-break:keep-all;
+}
+
+.erphub-map-ai b{
+  display:block;
+  color:#fff;
+  font-size:14px;
+}
+
+.erphub-map-ai-link{
+  flex-shrink:0;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 14px;
+  border-radius:999px;
+  background:#fff;
+  color:#184291;
+  font-size:13px;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.erphub-map-ai-link:hover{
+  color:#1f63d8;
+}
+
+.erphub-map-summary{
+  margin:26px 0 0;
+  font-size:20px;
+  font-weight:800;
+  line-height:1.6;
+  color:#184291;
+  text-align:center;
+  word-break:keep-all;
+}
+
+.erphub-map-section .erphub-foot-note{
+  margin-top:10px;
+  text-align:center;
+}
+
+@media (max-width: 1399.98px){
+  .erphub-map-groups{
+    grid-template-columns:minmax(0, 1fr);
+  }
+
+  .erphub-map-group--erp .erphub-map-cols{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+  }
+
+  /* 그룹웨어 한 열은 폭을 다 쓰므로 메뉴를 칩으로 */
+  .erphub-map-group--gw .erphub-map-menu{
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .erphub-map-band{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .erphub-map-ai{
+    width:100%;
+  }
+}
+
+@media (max-width: 767.98px){
+  .erphub-map-group--erp .erphub-map-cols{
+    grid-template-columns:minmax(0, 1fr);
+  }
+
+  .erphub-map-name{
+    flex-direction:row;
+    justify-content:flex-start;
+  }
+
+  .erphub-map-menu{
+    flex-direction:row;
+    flex-wrap:wrap;
+  }
+
+  .erphub-map-group--gw .erphub-map-menu{
+    justify-content:flex-start;
+  }
+
+  .erphub-map-menu span{
+    padding:5px 9px;
+  }
+
+  .erphub-map-more{
+    text-align:left;
+  }
+
+  .erphub-map-ai{
+    grid-template-columns:minmax(0, 1fr);
+  }
+
+  .erphub-map-summary{
+    font-size:17px;
+  }
+}
+
+
+/* =========================================================
+   산업별 AI 솔루션 · 문서·설계 자동화 총괄 페이지 (ai_industry.html · docs_auto.html) — 2026-10-29
+   맞춤형 ERP 총괄(erphub-)의 값을 옮기고 접두어만 landhub- 로 바꿨다.
+   두 총괄 페이지는 같은 날 같은 골격으로 만들어 이 접두어를 «의도적으로» 함께 쓴다(계열 가이드 03·05).
+   ========================================================= */
+.landhub-wrap{
+  padding:28px 20px 50px;
+  background:#f6f9ff;
+}
+
+.landhub{
+  max-width:1400px;
+  margin:0 auto;
+}
+
+.landhub-intro-section{
+  background:linear-gradient(135deg, #ffffff 0%, #eef5ff 100%);
+  border:1px solid #dce8fb;
+  border-radius:28px;
+  padding:50px;
+  margin-bottom:30px;
+}
+
+.landhub-section-chip{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:#e9f2ff;
+  color:#1f63d8;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+.landhub-intro-title{
+  margin:0 0 16px;
+  font-size:40px;
+  font-weight:800;
+  color:#184291;
+  line-height:1.2;
+}
+
+.landhub-intro-text{
+  margin:0;
+  font-size:16px;
+  line-height:1.9;
+  color:#62749a;
+  max-width:760px;
+}
+
+.landhub-intro-note{
+  margin-top:28px;
+  max-width:760px;
+  padding:14px 18px;
+  border-left:3px solid #2d7df6;
+  border-radius:0 10px 10px 0;
+  background:#f4f8ff;
+  font-size:15px;
+  line-height:1.75;
+  color:#62749a;
+}
+
+.landhub-intro-note strong{
+  color:#1f63d8;
+  font-weight:700;
+}
+
+.landhub-side-box{
+  background:#ffffff;
+  border:1px solid #e2ecfb;
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 12px 30px rgba(35, 86, 170, 0.06);
+}
+
+.landhub-mini-point{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  padding:16px 0;
+  border-bottom:1px solid #edf3fd;
+}
+
+.landhub-mini-point:last-child{
+  border-bottom:none;
+  padding-bottom:0;
+}
+
+.landhub-mini-point:first-child{
+  padding-top:0;
+}
+
+.landhub-mini-point i{
+  width:46px;
+  height:46px;
+  border-radius:12px;
+  background:#eaf2ff;
+  color:#2468dd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  flex-shrink:0;
+}
+
+.landhub-mini-point strong{
+  display:block;
+  font-size:16px;
+  color:#1f3f86;
+  margin-bottom:6px;
+}
+
+.landhub-mini-point p{
+  margin:0;
+  font-size:14px;
+  color:#7484a6;
+  line-height:1.7;
+}
+
+.landhub-content-section{
+  margin-bottom:30px;
+  background:#fff;
+  border:1px solid #e2ecfb;
+  border-radius:24px;
+  padding:40px;
+}
+
+.landhub-section-head{
+  margin-bottom:28px;
+}
+
+.landhub-section-label{
+  display:inline-block;
+  font-size:12px;
+  font-weight:700;
+  color:#2a6de3;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.landhub-section-head h3{
+  margin:0 0 12px;
+  font-size:32px;
+  font-weight:800;
+  color:#183f8f;
+}
+
+.landhub-section-head p{
+  margin:0;
+  font-size:15px;
+  line-height:1.8;
+  color:#7182a5;
+}
+
+.landhub-feature-box{
+  height:100%;
+  background:#f9fbff;
+  border:1px solid #e6eefc;
+  border-radius:20px;
+  padding:28px;
+  transition:all .2s ease;
+}
+
+.landhub-feature-box:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(34, 87, 173, 0.08);
+}
+
+.landhub-feature-icon{
+  width:58px;
+  height:58px;
+  border-radius:16px;
+  background:#e8f1ff;
+  color:#2468dd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:18px;
+}
+
+.landhub-feature-box h4{
+  margin:0 0 12px;
+  font-size:20px;
+  font-weight:700;
+  color:#204287;
+}
+
+.landhub-feature-box p{
+  margin:0;
+  font-size:14px;
+  line-height:1.8;
+  color:#7182a5;
+  word-break:keep-all;
+}
+
+/* 업무 모듈 아래 한 줄 · 연계 카드의 글 링크 */
+.landhub-foot-note{
+  margin:24px 0 0;
+  font-size:14px;
+  line-height:1.8;
+  color:#7182a5;
+}
+
+.landhub-text-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:16px;
+  font-size:14px;
+  font-weight:700;
+  color:#1f63d8;
+  text-decoration:none;
+}
+
+.landhub-text-link:hover{
+  color:#1669e6;
+}
+
+.landhub-process-section{
+  background:linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+}
+
+.landhub-process-box{
+  height:100%;
+  background:#ffffff;
+  border:1px solid #e3edfb;
+  border-radius:20px;
+  padding:28px;
+  text-align:left;
+  box-shadow:0 10px 24px rgba(38, 92, 181, 0.05);
+}
+
+.landhub-process-no,
+.landhub-process-icon{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:#2d7df6;
+  color:#fff;
+  font-size:18px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:18px;
+}
+
+.landhub-process-box h4{
+  margin:0 0 10px;
+  font-size:19px;
+  font-weight:700;
+  color:#1d4085;
+}
+
+.landhub-process-box p{
+  margin:0;
+  font-size:14px;
+  line-height:1.8;
+  color:#7383a6;
+  word-break:keep-all;
+}
+
+/* 도입 절차 — 단계마다 받는 결과물 */
+.landhub-output{
+  display:inline-block;
+  margin-top:14px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:#e9f2ff;
+  color:#1f63d8;
+  font-size:13px;
+  font-weight:700;
+}
+
+.landhub-benefit-box{
+  background:#f9fbff;
+  border:1px solid #e6eefc;
+  border-radius:20px;
+  padding:30px;
+}
+
+.landhub-benefit-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.landhub-benefit-list li{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  font-size:15px;
+  line-height:1.9;
+  color:#61749a;
+  margin-bottom:14px;
+}
+
+.landhub-benefit-list li:last-child{
+  margin-bottom:0;
+}
+
+.landhub-benefit-list i{
+  color:#2d7df6;
+  margin-top:6px;
+  flex-shrink:0;
+}
+
+/* 세부 화면 보기 — 드롭다운과 같은 세 묶음 */
+.landhub-link-group{
+  height:100%;
+  background:#f9fbff;
+  border:1px solid #e6eefc;
+  border-radius:20px;
+  padding:26px 28px;
+}
+
+.landhub-link-group h4{
+  margin:0 0 14px;
+  font-size:18px;
+  font-weight:700;
+  color:#204287;
+}
+
+.landhub-link-group ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.landhub-link-group li + li{
+  border-top:1px solid #e6eefc;
+}
+
+.landhub-link-group a{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 0;
+  font-size:15px;
+  color:#3a527f;
+  text-decoration:none;
+}
+
+.landhub-link-group a i{
+  color:#2d7df6;
+  font-size:13px;
+}
+
+.landhub-link-group a:hover{
+  color:#1f63d8;
+}
+
+@media (max-width: 991.98px){
+  .landhub-wrap{
+    padding:16px 8px;
+  }
+
+  .landhub-intro-section,
+  .landhub-content-section{
+    padding:28px;
+  }
+
+  .landhub-intro-title{
+    font-size:32px;
+  }
+
+  .landhub-section-head h3{
+    font-size:26px;
+  }
+}
+
+@media (max-width: 575.98px){
+  .landhub-intro-section,
+  .landhub-content-section,
+  .landhub-benefit-box{
+    padding:22px;
+  }
+
+  .landhub-intro-title{
+    font-size:28px;
+  }
+
+  .landhub-section-head h3{
+    font-size:23px;
+  }
+}
+
+
+/* 맞춤형 ERP 총괄 — 구성도 (2026-10-29)
+   가로 바(묶음) 아래 업무 열 · 함께 쓰는 바탕 띠 · AI 연계 띠. 색은 landhub- 의 파랑 계열 그대로.
+   992 이상: 한 묶음 4열 · 576~991: 2열 · 575 이하: 한 줄씩 쌓고 메뉴는 칩으로.
+   흐름 묶음(--flow)은 열 사이에 화살표를 둔다 */
+.landhub-map{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.landhub-map-groups{
+  display:grid;
+  grid-template-columns:minmax(0, 1fr);
+  gap:18px;
+}
+
+.landhub-map-group{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:0;
+}
+
+.landhub-map-bar{
+  padding:12px 16px;
+  border-radius:12px;
+  background:#184291;
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+  text-align:center;
+  letter-spacing:.5px;
+}
+
+.landhub-map-group--alt .landhub-map-bar{
+  background:#2d7df6;
+}
+
+.landhub-map-cols{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+  gap:14px;
+  align-items:start;
+}
+
+.landhub-map-col{
+  background:#f9fbff;
+  border:1px solid #e6eefc;
+  border-top:3px solid #2d7df6;
+  border-radius:14px;
+  transition:box-shadow .2s ease, border-color .2s ease;
+}
+
+.landhub-map-col:hover,
+.landhub-map-col[open]{
+  border-color:#c9dcfa;
+  border-top-color:#184291;
+  box-shadow:0 10px 24px rgba(34, 87, 173, 0.08);
+}
+
+.landhub-map-col summary{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:16px 8px 14px;
+  list-style:none;
+  cursor:pointer;
+}
+
+.landhub-map-col summary::-webkit-details-marker{
+  display:none;
+}
+
+.landhub-map-col summary:focus-visible{
+  outline:2px solid #2d7df6;
+  outline-offset:2px;
+  border-radius:12px;
+}
+
+.landhub-map-name{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  font-size:16px;
+  font-weight:800;
+  color:#204287;
+  text-align:center;
+}
+
+.landhub-map-name i{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  background:#e8f1ff;
+  color:#2468dd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+}
+
+.landhub-map-menu{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.landhub-map-menu span{
+  display:block;
+  padding:7px 4px;
+  border-radius:8px;
+  background:#fff;
+  border:1px solid #edf3fd;
+  font-size:13.5px;
+  line-height:1.4;
+  color:#3a527f;
+  text-align:center;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+}
+
+.landhub-map-more{
+  font-size:12px;
+  font-weight:700;
+  color:#1f63d8;
+  text-align:center;
+}
+
+.landhub-map-more::after{
+  content:" +";
+}
+
+.landhub-map-col[open] .landhub-map-more::after{
+  content:" −";
+}
+
+.landhub-map-detail{
+  padding:0 12px 16px;
+}
+
+.landhub-map-detail p{
+  margin:0 0 10px;
+  padding-top:12px;
+  border-top:1px solid #e6eefc;
+  font-size:13px;
+  line-height:1.7;
+  color:#61749a;
+  word-break:keep-all;
+}
+
+.landhub-map-detail a{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:6px;
+  padding:6px 0;
+  font-size:13px;
+  font-weight:700;
+  color:#1f63d8;
+  text-decoration:none;
+}
+
+.landhub-map-detail a i{
+  font-size:11px;
+}
+
+.landhub-map-detail a:hover{
+  color:#184291;
+}
+
+.landhub-map-band{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:16px 20px;
+  border-radius:14px;
+}
+
+.landhub-map-band > strong{
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:15px;
+  font-weight:800;
+}
+
+.landhub-map-band--base{
+  background:#eef5ff;
+  border:1px solid #dce8fb;
+}
+
+.landhub-map-band--base > strong{
+  color:#184291;
+}
+
+.landhub-map-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.landhub-map-chips span{
+  padding:6px 12px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid #dce8fb;
+  font-size:13px;
+  color:#3a527f;
+}
+
+.landhub-map-band--ai{
+  background:#12306b;
+  color:#dbe7ff;
+}
+
+.landhub-map-band--ai > strong{
+  color:#fff;
+}
+
+.landhub-map-ai{
+  flex:1;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:10px;
+}
+
+.landhub-map-ai span{
+  padding:10px 14px;
+  border-radius:10px;
+  background:rgba(255, 255, 255, 0.08);
+  border:1px solid rgba(255, 255, 255, 0.14);
+  font-size:13px;
+  line-height:1.7;
+  word-break:keep-all;
+}
+
+.landhub-map-ai b{
+  display:block;
+  color:#fff;
+  font-size:14px;
+}
+
+.landhub-map-ai-link{
+  flex-shrink:0;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 14px;
+  border-radius:999px;
+  background:#fff;
+  color:#184291;
+  font-size:13px;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.landhub-map-ai-link:hover{
+  color:#1f63d8;
+}
+
+.landhub-map-summary{
+  margin:26px 0 0;
+  font-size:20px;
+  font-weight:800;
+  line-height:1.6;
+  color:#184291;
+  text-align:center;
+  word-break:keep-all;
+}
+
+.landhub-map-section .landhub-foot-note{
+  margin-top:10px;
+  text-align:center;
+}
+
+/* 흐름 묶음 — 열 사이 화살표(넓은 화면만) · details 자신의 ::after 는 닫혀 있으면 안 그려져 summary 에 단다 */
+.landhub-map-cols--flow .landhub-map-col{
+  position:relative;
+}
+
+.landhub-map-cols--flow .landhub-map-col:not(:last-child) > summary::after{
+  content:"\f054";
+  font-family:"Font Awesome 6 Free";
+  font-weight:900;
+  position:absolute;
+  top:34px;
+  right:-12px;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#184291;
+  color:#fff;
+  font-size:9px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1;
+}
+
+.landhub-map-step{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+  color:#2d7df6;
+  text-align:center;
+}
+
+@media (max-width: 991.98px){
+  .landhub-map-cols{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  .landhub-map-cols--flow .landhub-map-col > summary::after{
+    display:none;
+  }
+
+  .landhub-map-band{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .landhub-map-ai{
+    width:100%;
+  }
+}
+
+@media (max-width: 575.98px){
+  .landhub-map-cols{
+    grid-template-columns:minmax(0, 1fr);
+  }
+
+  .landhub-map-name{
+    flex-direction:row;
+    justify-content:flex-start;
+  }
+
+  .landhub-map-step{
+    text-align:left;
+  }
+
+  .landhub-map-menu{
+    flex-direction:row;
+    flex-wrap:wrap;
+  }
+
+  .landhub-map-menu span{
+    padding:5px 9px;
+  }
+
+  .landhub-map-more{
+    text-align:left;
+  }
+
+  .landhub-map-ai{
+    grid-template-columns:minmax(0, 1fr);
+  }
+
+  .landhub-map-summary{
+    font-size:17px;
+  }
+}
+
+/* 낱말 중간 줄바꿈 막기 — 메인 큰 제목(«자율 / 형»)·회사개요 숫자 카드(«온프 / 레미스») 가 낱말 가운데서 끊겼다(2026-10-29 점검) */
+.hero-title,
+.ov-stat b {
+  word-break: keep-all;
+}
+
+/* 맞춤형 ERP 구성도 — 신판(ERP 영업자료 v2 · 2026-10-29) 새 메뉴 21개
+   영업·생산 열의 새 칸은 점선(erphub-map-add), 아래 가로 바 한 줄(--plus)은 두 묶음 폭을 다 쓴다 */
+.erphub-map-menu span.erphub-map-add{
+  border:1px dashed #9cbcf3;
+  background:#f2f7ff;
+  color:#1f63d8;
+  font-weight:700;
+}
+
+.erphub-map-group--plus{
+  grid-column:1 / -1;
+}
+
+.erphub-map-group--plus .erphub-map-bar{
+  background:#2a5fc4;
+}
+
+.erphub-map-group--plus .erphub-map-cols{
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 991.98px){
+  .erphub-map-group--plus .erphub-map-cols{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767.98px){
+  .erphub-map-group--plus .erphub-map-cols{
+    grid-template-columns:minmax(0, 1fr);
+  }
+}
+
+/* 제안 랜딩 2장(law_service · medical_service)은 메인처럼 «나타나기» 스크립트가 없다 —
+   .section-space 의 처음 상태(opacity 0)가 그대로 남아 섹션 대부분이 보이지 않았다(2026-10-29 점검 · 첫 커밋부터).
+   이 두 페이지에서는 처음부터 보이게 한다 */
+.law-page .section-space,
+.hospital-ai-page .section-space {
+  opacity: 1;
+  transform: none;
+}
+
+/* medical_service «해결 방향» 띠 — 다른 페이지의 전역 .highlight-box(밝은 바탕 상자)와 이름이 겹쳐
+   흰 글자가 흰 상자 위에 놓여 읽히지 않았다(2026-10-29 점검). 이 페이지에서는 상자 모양을 걷는다 */
+.hospital-ai-page .highlight-section .highlight-box {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* 자주 묻는 질문(geo-faq) — 총괄 3장 · 회사개요 공용(2026-10-29 SEO·GEO)
+   질문은 summary 안의 h4, 답은 2~4문장. 같은 글자가 JSON-LD(FAQPage)로도 나간다 — 고칠 땐 html 만 고치고 다시 굽는다 */
+.geo-faq{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.geo-faq-item{
+  background:#f9fbff;
+  border:1px solid #e6eefc;
+  border-radius:14px;
+}
+
+.geo-faq-item[open]{
+  border-color:#c9dcfa;
+  background:#fff;
+}
+
+.geo-faq-q{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:16px 20px;
+  cursor:pointer;
+  list-style:none;
+}
+
+.geo-faq-q::-webkit-details-marker{
+  display:none;
+}
+
+.geo-faq-q::before{
+  content:"Q";
+  flex-shrink:0;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:#2d7df6;
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.geo-faq-q h4{
+  flex:1;
+  margin:0;
+  font-size:16px;
+  font-weight:700;
+  color:#204287;
+  word-break:keep-all;
+}
+
+.geo-faq-q::after{
+  content:"+";
+  font-size:18px;
+  font-weight:700;
+  color:#2d7df6;
+}
+
+.geo-faq-item[open] .geo-faq-q::after{
+  content:"\2212";
+}
+
+.geo-faq-a{
+  padding:0 20px 18px 60px;
+}
+
+.geo-faq-a p{
+  margin:0;
+  font-size:15px;
+  line-height:1.85;
+  color:#61749a;
+  word-break:keep-all;
+}
+
+.geo-faq--ov{
+  max-width:960px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+@media (max-width: 575.98px){
+  .geo-faq-q{
+    padding:14px 14px;
+  }
+
+  .geo-faq-q h4{
+    font-size:15px;
+  }
+
+  .geo-faq-a{
+    padding:0 14px 16px 14px;
+  }
 }

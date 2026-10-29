@@ -3,20 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>문서 요약 Agent | 이노젠트</title>
-  <meta name="description" content="긴 보고서·회의록·계약 문서를 읽고 핵심만 뽑아 정리하는 AI 에이전트. 기업 내부 구축을 지원합니다." />
+  <title>문서 요약 Agent - 대용량 문서 전수 분석 리포트 | 이노젠트</title>
+  <meta name="description" content="문서 일부만 찾아 읽지 않고 전체를 읽는 전수 조사에 비전 AI를 결합해, 대용량 문서의 핵심 이슈·리스크·수치·의사결정 포인트를 구조화된 리포트로 빠르게 정리하는 AI 에이전트입니다." />
   <link rel="canonical" href="https://innogent.co.kr/docsgpt.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="이노젠트" />
-  <meta property="og:title" content="문서 요약 Agent | 이노젠트" />
-  <meta property="og:description" content="긴 보고서·회의록·계약 문서를 읽고 핵심만 뽑아 정리하는 AI 에이전트. 기업 내부 구축을 지원합니다." />
+  <meta property="og:title" content="문서 요약 Agent - 대용량 문서 전수 분석 리포트 | 이노젠트" />
+  <meta property="og:description" content="문서 일부만 찾아 읽지 않고 전체를 읽는 전수 조사에 비전 AI를 결합해, 대용량 문서의 핵심 이슈·리스크·수치·의사결정 포인트를 구조화된 리포트로 빠르게 정리하는 AI 에이전트입니다." />
   <meta property="og:url" content="https://innogent.co.kr/docsgpt.html" />
-  <meta property="og:image" content="https://innogent.co.kr/images/overview_main.jpg" />
+  <meta property="og:image" content="https://innogent.co.kr/images/og_main.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="문서 요약 Agent - 대용량 문서 전수 분석 리포트 | 이노젠트" />
+  <meta name="twitter:description" content="문서 일부만 찾아 읽지 않고 전체를 읽는 전수 조사에 비전 AI를 결합해, 대용량 문서의 핵심 이슈·리스크·수치·의사결정 포인트를 구조화된 리포트로 빠르게 정리하는 AI 에이전트입니다." />
+  <meta name="twitter:image" content="https://innogent.co.kr/images/og_main.jpg" />
   <link rel="icon" href="images/favicon.ico" type="image/png">
   <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
-  <link href="./css/style.css?v=20260904a" rel="stylesheet" />
+  <link href="./css/style.css?v=20261029m" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- 구조화 데이터 (schema.org JSON-LD · 2026-10-29 SEO·GEO — 화면 글자와 같은 사실만) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://innogent.co.kr/docsgpt.html#webpage",
+        "url": "https://innogent.co.kr/docsgpt.html",
+        "name": "문서 요약 Agent - 대용량 문서 전수 분석 리포트 | 이노젠트",
+        "description": "문서 일부만 찾아 읽지 않고 전체를 읽는 전수 조사에 비전 AI를 결합해, 대용량 문서의 핵심 이슈·리스크·수치·의사결정 포인트를 구조화된 리포트로 빠르게 정리하는 AI 에이전트입니다.",
+        "inLanguage": "ko-KR",
+        "isPartOf": {
+          "@id": "https://innogent.co.kr/#website"
+        },
+        "publisher": {
+          "@id": "https://innogent.co.kr/#organization"
+        },
+        "breadcrumb": {
+          "@id": "https://innogent.co.kr/docsgpt.html#breadcrumb"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://innogent.co.kr/docsgpt.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "홈",
+            "item": "https://innogent.co.kr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "문서·설계 자동화",
+            "item": "https://innogent.co.kr/docs_auto.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Document Summary",
+            "item": "https://innogent.co.kr/docsgpt.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Document Summary Agent",
+            "item": "https://innogent.co.kr/docsgpt.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -36,13 +98,13 @@
     <div class="row mb-4 mb-lg-5">
       <div class="col-12">
         <div class="section-title-wrap">
-          <h2 class="office-title mb-3">
+          <h1 class="office-title mb-3">
             <span class="title-bar"></span>AI 에이전트 Document Summary Agent
-          </h2>
+          </h1>
           <p class="office-desc mb-0">
             <strong>Document Summary Agent</strong>는 기존 RAG 시스템의 한계인
             <span class="text-primary fw-bold">‘정보 파편화’ 문제를 해결</span>합니다.
-            대용량 문서 내용을 전수 조사와 비전 AI를 결합하여
+            문서 전체를 빠짐없이 읽는 전수 조사에 비전 AI를 결합해 대용량 문서를 분석하고
             <span class="text-primary fw-bold">기업의 의사결정을 지원하는 구조화된 리포트를 신속하게 생성</span>합니다.
           </p>
         </div>
@@ -176,7 +238,7 @@
   </div>
 </section>
   <div id="footer-placeholder"></div>
-  <script src="./js/vendor/bootstrap.bundle.min.js?v=20260904a"></script>
-  <script src="./js/load_includes.js?v=20260904a"></script>
+  <script src="./js/vendor/bootstrap.bundle.min.js?v=20261029m"></script>
+  <script src="./js/load_includes.js?v=20261029m"></script>
 </body>
 </html>

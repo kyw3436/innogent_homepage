@@ -4,24 +4,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAD BOM 주요 기능 | 이노젠트</title>
-  <meta name="description" content="CAD 도면 인식, 부품 자동 집계, BOM 생성과 검증까지 — CAD BOM Agent의 핵심 기능을 소개합니다." />
+  <title>CAD BOM Agent 주요 기능 - 영역 탐지·엔티티 식별·ERP 연계 | 이노젠트</title>
+  <meta name="description" content="도면 업로드부터 부품표 영역 탐지, 표 해석, 검증과 사내 시스템 연계까지 4단계로 도면 데이터를 추출합니다. 비슷한 형식의 코드도 문맥으로 품번과 도면번호를 구별합니다." />
   <link rel="canonical" href="https://innogent.co.kr/officepage.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="이노젠트" />
-  <meta property="og:title" content="CAD BOM 주요 기능 | 이노젠트" />
-  <meta property="og:description" content="CAD 도면 인식, 부품 자동 집계, BOM 생성과 검증까지 — CAD BOM Agent의 핵심 기능을 소개합니다." />
+  <meta property="og:title" content="CAD BOM Agent 주요 기능 - 영역 탐지·엔티티 식별·ERP 연계 | 이노젠트" />
+  <meta property="og:description" content="도면 업로드부터 부품표 영역 탐지, 표 해석, 검증과 사내 시스템 연계까지 4단계로 도면 데이터를 추출합니다. 비슷한 형식의 코드도 문맥으로 품번과 도면번호를 구별합니다." />
   <meta property="og:url" content="https://innogent.co.kr/officepage.html" />
-  <meta property="og:image" content="https://innogent.co.kr/images/overview_main.jpg" />
+  <meta property="og:image" content="https://innogent.co.kr/images/og_main.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CAD BOM Agent 주요 기능 - 영역 탐지·엔티티 식별·ERP 연계 | 이노젠트" />
+  <meta name="twitter:description" content="도면 업로드부터 부품표 영역 탐지, 표 해석, 검증과 사내 시스템 연계까지 4단계로 도면 데이터를 추출합니다. 비슷한 형식의 코드도 문맥으로 품번과 도면번호를 구별합니다." />
+  <meta name="twitter:image" content="https://innogent.co.kr/images/og_main.jpg" />
   <link rel="icon" href="images/favicon.ico" type="image/png">
   <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
-  <link href="./css/style.css?v=20260904a" rel="stylesheet" />
+  <link href="./css/style.css?v=20261029m" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- 구조화 데이터 (schema.org JSON-LD · 2026-10-29 SEO·GEO — 화면 글자와 같은 사실만) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://innogent.co.kr/officepage.html#webpage",
+        "url": "https://innogent.co.kr/officepage.html",
+        "name": "CAD BOM Agent 주요 기능 - 영역 탐지·엔티티 식별·ERP 연계 | 이노젠트",
+        "description": "도면 업로드부터 부품표 영역 탐지, 표 해석, 검증과 사내 시스템 연계까지 4단계로 도면 데이터를 추출합니다. 비슷한 형식의 코드도 문맥으로 품번과 도면번호를 구별합니다.",
+        "inLanguage": "ko-KR",
+        "isPartOf": {
+          "@id": "https://innogent.co.kr/#website"
+        },
+        "publisher": {
+          "@id": "https://innogent.co.kr/#organization"
+        },
+        "breadcrumb": {
+          "@id": "https://innogent.co.kr/officepage.html#breadcrumb"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://innogent.co.kr/officepage.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "홈",
+            "item": "https://innogent.co.kr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "문서·설계 자동화",
+            "item": "https://innogent.co.kr/docs_auto.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "CAD BOM",
+            "item": "https://innogent.co.kr/officegpt.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "주요 기능",
+            "item": "https://innogent.co.kr/officepage.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
   <div id="header-placeholder"></div>
+  <h1 class="visually-hidden">CAD BOM Agent 주요 기능</h1>
   <section class="cadbom-extra-page">
     <div class="container breadcrumb-infused">
       <div class="breadcrumb-wrap">
@@ -30,7 +93,7 @@
             <li class="breadcrumb-item"><a href="#">홈</a></li>
             <li class="breadcrumb-item"><a href="#">문서·설계 자동화</a></li>
             <li class="breadcrumb-item"><a href="#">CAD BOM</a></li>
-            <li class="breadcrumb-item active" aria-current="page">주요핵심 기능</li>
+            <li class="breadcrumb-item active" aria-current="page">주요 기능</li>
           </ol>
         </nav>
       </div>
@@ -174,7 +237,7 @@
 
           <div class="process-banner mt-4 mt-lg-5">
             <i class="fa-regular fa-lightbulb"></i>
-            <span>이 모든 과정은 단 수초 만에 수행되며, 사용자 확인을 거친 후 즉시 자산화 시킬 수 있습니다.</span>
+            <span>이 모든 과정은 단 수초 만에 수행되며, 사용자 확인을 거친 후 즉시 자산화할 수 있습니다.</span>
           </div>
         </div>
       </div>
@@ -192,7 +255,7 @@
             <table class="table cad-bom-table align-middle mb-0">
               <thead>
                 <tr>
-                  <th>품번</th>
+                  <th>번호</th>
                   <th>품명</th>
                   <th>수량</th>
                   <th>부품번호</th>
@@ -258,7 +321,7 @@
           </div>
 
           <div class="table-note">
-            CAD BOM Agent는 한국어, 영어, 특수 기호 및 숫자가 복합하게 결합된
+            CAD BOM Agent는 한국어, 영어, 특수 기호 및 숫자가 복합적으로 결합된
             비정형 문자열 환경에서도 품번, 품명, 수량, 부품번호 등 핵심 엔티티를 정밀하게 식별합니다.
             특히 다국어 혼용 및 제조사별 고유 코드 체계를 완벽하게 이해하여, 수작업 시 발생하기 쉬운
             오타와 누락을 원천 차단하고 기업의 도면 데이터 자산화를 가속합니다.
@@ -332,12 +395,12 @@
                 <div class="icon-circle">
                   <i class="fa-solid fa-lock"></i>
                 </div>
-                <h4>로컬 VLLM 기반의 완전 보안</h4>
+                <h4>로컬 vLLM 기반의 완전 보안</h4>
               </div>
 
               <div class="info-body">
                 <p>
-                  AI 에이전트는 외부 API를 전혀 활용하지 않는 로컬 VLLM(On-Premise) 엔진으로 동작합니다.
+                  AI 에이전트는 외부 API를 전혀 활용하지 않는 로컬 vLLM(온프레미스) 엔진으로 동작합니다.
                   모든 도면 분석과 데이터 처리가 기업 내부 네트워크 내에서 완료되는 구조이므로,
                   민감한 설계 자산이 외부로 노출될 위험을 원천 차단합니다.
                 </p>
@@ -349,7 +412,7 @@
                     <div class="rack rack-3"></div>
                     <div class="monitor-glow"></div>
                     <div class="desk-line"></div>
-                    <div class="security-label">Local VLLM Server</div>
+                    <div class="security-label">Local vLLM Server</div>
                   </div>
                 </div>
               </div>
@@ -361,8 +424,8 @@
 
   </section>
   <div id="footer-placeholder"></div>
-  <script src="./js/vendor/bootstrap.bundle.min.js?v=20260904a"></script>
-  <script src="./js/load_includes.js?v=20260904a"></script>
+  <script src="./js/vendor/bootstrap.bundle.min.js?v=20261029m"></script>
+  <script src="./js/load_includes.js?v=20261029m"></script>
 </body>
 
 </html>

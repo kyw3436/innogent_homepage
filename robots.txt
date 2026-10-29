@@ -1,4 +1,30 @@
+# 이노젠트 홈페이지 — 검색엔진·AI 크롤러 안내 (2026-10-29)
+# 기본: 모든 공개 페이지 허용. 막을 경로가 생기면 Disallow 줄을 더한다.
+
 User-agent: *
+Allow: /
+
+# AI 검색·답변 크롤러 — 이름별로 적어 두었다(허용). 막으려면 해당 묶음의 Allow 를 Disallow: / 로 바꾼다.
+# OpenAI (학습 · 검색 · 사용자 요청)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (학습 · 검색 · 사용자 요청)
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+
+# Google AI(Gemini 학습·근거) · Apple AI
+User-agent: Google-Extended
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://innogent.co.kr/sitemap.xml

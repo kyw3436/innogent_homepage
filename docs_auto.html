@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>문서·설계 자동화 - 도면 BOM 추출과 대용량 문서 요약 | 이노젠트</title>
+  <meta name="description" content="도면에서 부품표(BOM)를 찾아 품번·품명·수량 데이터로 정리하고, 대용량 문서를 끝까지 읽어 핵심·리스크·수치를 구조화한 리포트로 돌려줍니다. 회사 안에 설치하는 비전 AI로 처리합니다." />
+  <link rel="canonical" href="https://innogent.co.kr/docs_auto.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="이노젠트" />
+  <meta property="og:title" content="문서·설계 자동화 - 도면 BOM 추출과 대용량 문서 요약 | 이노젠트" />
+  <meta property="og:description" content="도면에서 부품표(BOM)를 찾아 품번·품명·수량 데이터로 정리하고, 대용량 문서를 끝까지 읽어 핵심·리스크·수치를 구조화한 리포트로 돌려줍니다. 회사 안에 설치하는 비전 AI로 처리합니다." />
+  <meta property="og:url" content="https://innogent.co.kr/docs_auto.html" />
+  <meta property="og:image" content="https://innogent.co.kr/images/og_main.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="문서·설계 자동화 - 도면 BOM 추출과 대용량 문서 요약 | 이노젠트" />
+  <meta name="twitter:description" content="도면에서 부품표(BOM)를 찾아 품번·품명·수량 데이터로 정리하고, 대용량 문서를 끝까지 읽어 핵심·리스크·수치를 구조화한 리포트로 돌려줍니다. 회사 안에 설치하는 비전 AI로 처리합니다." />
+  <meta name="twitter:image" content="https://innogent.co.kr/images/og_main.jpg" />
+  <link rel="icon" href="images/favicon.ico" type="image/png">
+  <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
+  <link href="./css/style.css?v=20261029m" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- 구조화 데이터 (schema.org JSON-LD · 2026-10-29 SEO·GEO — 화면 글자와 같은 사실만) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": [
+          "CollectionPage",
+          "FAQPage"
+        ],
+        "@id": "https://innogent.co.kr/docs_auto.html#webpage",
+        "url": "https://innogent.co.kr/docs_auto.html",
+        "name": "문서·설계 자동화 - 도면 BOM 추출과 대용량 문서 요약 | 이노젠트",
+        "description": "도면에서 부품표(BOM)를 찾아 품번·품명·수량 데이터로 정리하고, 대용량 문서를 끝까지 읽어 핵심·리스크·수치를 구조화한 리포트로 돌려줍니다. 회사 안에 설치하는 비전 AI로 처리합니다.",
+        "inLanguage": "ko-KR",
+        "isPartOf": {
+          "@id": "https://innogent.co.kr/#website"
+        },
+        "publisher": {
+          "@id": "https://innogent.co.kr/#organization"
+        },
+        "breadcrumb": {
+          "@id": "https://innogent.co.kr/docs_auto.html#breadcrumb"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "문서·설계 자동화는 무엇을 하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "두 가지를 자동화합니다. 도면에서 부품표(BOM) 영역을 찾아 품번 · 품명 · 수량 데이터로 정리하고, 대용량 문서를 끝까지 읽어 핵심 이슈 · 리스크 · 수치를 구조화한 리포트로 돌려줍니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "어떤 파일을 넣을 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "도면은 JPG · PNG 이미지나 PDF로 넣고, 스캔한 종이 도면도 다룹니다. 문서는 보고서 · 계약서 · 제안서 · 스캔본처럼 표와 도표가 든 문서도 넣을 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "큰 문서는 어떻게 분석하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "문서 분량에 맞는 분석 방식을 자동으로 고르고, 큰 문서는 섹션으로 나눠 최대 10개 섹션을 동시에 분석한 뒤 합칩니다. 결과는 표준 · 사실 확인 · 상세 · 간략 4가지 방식 가운데 골라 받습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "뽑은 데이터를 ERP로 보낼 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "사람이 결과를 확인한 뒤 엑셀이나 표로 정리해 씁니다. 사내 ERP 등 다른 시스템으로 보내는 연계는 회사 환경에 맞춰 개발해 붙입니다."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://innogent.co.kr/docs_auto.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "홈",
+            "item": "https://innogent.co.kr/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "문서·설계 자동화",
+            "item": "https://innogent.co.kr/docs_auto.html"
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://innogent.co.kr/docs_auto.html#services",
+        "name": "문서·설계 자동화 구성",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Service",
+              "name": "설계 도면 자동화",
+              "description": "도면에서 부품표(BOM) 영역을 찾아 품번·품명·수량 데이터로 정리합니다.",
+              "url": "https://innogent.co.kr/officegpt.html",
+              "serviceType": "문서·설계 자동화",
+              "provider": {
+                "@id": "https://innogent.co.kr/#organization"
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "대한민국"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Service",
+              "name": "문서 자동화",
+              "description": "대용량 문서를 끝까지 읽어 핵심·리스크·수치를 구조화한 리포트로 정리합니다.",
+              "url": "https://innogent.co.kr/docsgpt.html",
+              "serviceType": "문서·설계 자동화",
+              "provider": {
+                "@id": "https://innogent.co.kr/#organization"
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "대한민국"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+<!-- 문서·설계 자동화 총괄 페이지 — 맞춤형 ERP 총괄(erp.html)과 같은 골격 · 접두어 landhub- (2026-10-29)
+     흐름 단계·기능 이름은 세부 페이지(officegpt·officepage·docsview · docsgpt·docspage·docsview2)의 문구를 따른다. -->
+<section class="landhub-wrap">
+  <div class="landhub container-fluid">
+	<div class="breadcrumb-wrap">
+	  <nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+		  <li class="breadcrumb-item"><a href="/">홈</a></li>
+		  <li class="breadcrumb-item active" aria-current="page">문서·설계 자동화</li>
+		</ol>
+	  </nav>
+	</div>
+
+    <!-- 한눈에 -->
+    <div class="landhub-intro-section">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <span class="landhub-section-chip">문서·설계 자동화</span>
+          <h1 class="landhub-intro-title">사람이 옮겨 적던 도면과 문서,<br />AI가 먼저 읽습니다</h1>
+          <p class="landhub-intro-text">
+            도면 속 부품표를 한 줄씩 옮겨 적고, 수백 쪽 문서를 끝까지 읽어 요약하는 일. 이노젠트의 문서·설계 자동화는
+            도면과 문서를 그림째 이해하는 비전 AI로 이 일을 먼저 처리하고, 사람은 결과를 확인해 바로 씁니다.
+          </p>
+
+          <p class="landhub-intro-note">
+            아래에서 <strong>두 가지 자동화 흐름</strong>을 먼저 보시고, <strong>활용 장면 · 도입 방식</strong>을 거쳐 상담으로 이어집니다.
+          </p>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="landhub-side-box">
+            <div class="landhub-mini-point">
+              <i class="fa-solid fa-compass-drafting"></i>
+              <div>
+                <strong>도면 → 부품표 데이터</strong>
+                <p>양식이 제각각인 도면에서도 부품표 영역을 찾아 표로 정리합니다</p>
+              </div>
+            </div>
+
+            <div class="landhub-mini-point">
+              <i class="fa-solid fa-file-lines"></i>
+              <div>
+                <strong>문서 → 구조화 리포트</strong>
+                <p>일부만 찾아 읽지 않고 문서 전체를 읽어 핵심 · 리스크 · 수치를 정리합니다</p>
+              </div>
+            </div>
+
+            <div class="landhub-mini-point">
+              <i class="fa-solid fa-shield-halved"></i>
+              <div>
+                <strong>회사 안에서 처리</strong>
+                <p>사내 서버의 AI로 동작해 설계 자산과 문서를 밖으로 보내지 않습니다</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 구성도 — 두 자동화 흐름(가로 바 + 단계 열) · 함께 쓰는 바탕 · 함께 쓰면 띠 (2026-10-29)
+         열을 누르면 <details> 로 그 자리에 설명과 세부 페이지 링크가 펼쳐진다(스크립트 없음). -->
+    <div class="landhub-content-section landhub-map-section" id="map">
+      <div class="landhub-section-head">
+        <span class="landhub-section-label">Overview</span>
+        <h3>한눈에 보는 자동화 흐름</h3>
+        <p>
+          도면과 문서, 두 갈래의 자동화가 같은 바탕 위에서 돌아갑니다. 단계를 누르면 설명과 세부 페이지가 펼쳐집니다.
+        </p>
+      </div>
+
+      <div class="landhub-map">
+        <div class="landhub-map-groups">
+          <div class="landhub-map-group">
+            <div class="landhub-map-bar">설계 도면 자동화 — 도면에서 부품표 데이터로</div>
+            <div class="landhub-map-cols landhub-map-cols--flow">
+              <details class="landhub-map-col">
+                <summary>
+                  <span class="landhub-map-step">STEP 01</span>
+                  <span class="landhub-map-name"><i class="fa-solid fa-upload"></i>도면 올리기</span>
+                  <span class="landhub-map-menu"><span>이미지(JPG · PNG)</span><span>PDF 도면</span><span>스캔한 종이 도면</span></span>
+                  <span class="landhub-map-more">설명 보기</span>
+                </summary>
+                <div class="landhub-map-detail">
+                  <p>원본 도면을 이미지나 PDF로 올립니다. 도면의 크기나 화질에 크게 좌우되지 않습니다.</p>
+                  <a href="officegpt.html">도면 BOM 추출 소개 <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </details>
+
+              <details class="landhub-map-col">
+                <summary>
+                  <span class="landhub-map-step">STEP 02</span>
+                  <span class="landhub-map-name"><i class="fa-solid fa-crop-simple"></i>영역 찾기</span>
+                  <span class="landhub-map-menu"><span>부품표 영역 탐지</span><span>필요한 부분만 잘라 내기</span><span>설계 기호 · 주석 간섭 줄이기</span></span>
+                  <span class="landhub-map-more">설명 보기</span>
+                </summary>
+                <div class="landhub-map-detail">
+                  <p>도면 전체가 아니라 부품표가 있는 영역을 AI가 스스로 찾아 잘라 내, 읽는 속도와 정확도를 함께 높입니다.</p>
+                  <a href="officepage.html">주요 기능 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </details>
+
+              <details class="landhub-map-col">
+                <summary>
+                  <span class="landhub-map-step">STEP 03</span>
+                  <span class="landhub-map-name"><i class="fa-solid fa-table"></i>읽고 분류하기</span>
+                  <span class="landhub-map-menu"><span>표 구조 해석</span><span>품번 · 품명 · 수량 구분</span><span>비슷한 코드 구별</span></span>
+                  <span class="landhub-map-more">설명 보기</span>
+                </summary>
+                <div class="landhub-map-detail">
+                  <p>표 안의 글자와 구조를 함께 읽고, 비슷한 형식의 코드도 문맥으로 품번인지 도면번호인지 가려 정형 데이터로 바꿉니다.</p>
+                  <a href="officepage.html">주요 기능 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </details>
+
+              <details class="landhub-map-col">
+                <summary>
+                  <span class="landhub-map-step">STEP 04</span>
+                  <span class="landhub-map-name"><i class="fa-solid fa-circle-check"></i>확인하고 보내기</span>
+                  <span class="landhub-map-menu"><span>사람이 결과 확인</span><span>엑셀 · 표로 정리</span><span>ERP 등 사내 시스템 연계</span></span>
+                  <span class="landhub-map-more">설명 보기</span>
+                </summary>
+                <div class="landhub-map-detail">
+                  <p>사용자가 결과를 확인한 뒤 자산으로 남깁니다. 사내 ERP 등 다른 시스템으로 보내는 연계는 회사 환경에 맞춰 개발합니다.</p>
+                  <a href="docsview.html">활용 사례 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="landhub-map-group landhub-map-group--alt">
+            <div class="landhub-map-bar">문서 자동화 — 대용량 문서에서 구조화 리포트로</div>
+            <div class="landhub-map-cols landhub-map-cols--flow">
+              <details class="landhub-map-col">
+                <summary>
+                  <span class="landhub-map-step">STEP 01</span>
+                  <span class="landhub-map-name"><i class="fa-solid fa-file-arrow-up"></i>문서 올리기</span>
+                  <span class="landhub-map-menu"><span>보고서 · 계약서 · 제안서</span><span>스캔본</span><span>표 · 도표가 든 문서</span></span>
+                  <span class="landhub-map-more">설명 보기</span>
+                </summary>
+                <div class="landhub-map-detail">
+                  <p>분석할 문서를 올리고, 표준 · 사실 확인 · 상세 · 간략 가운데 필요한 분석 방식을 고릅니다.</p>
+                  <a href="docsgpt.html">문서 요약 소개 <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </details>
+
+              <details class="landhub-map-col">
+                <summary>
+                  <span class="landhub-map-step">STEP 02</span>
+                  <span class="landhub-map-name"><i class="fa-solid fa-layer-group"></i>나눠서 읽기</span>
+                  <span class="landhub-map-menu"><span>분량에 맞는 방식 선택</span><span>섹션 단위로 나누기</span><span>여러 섹션 동시 분석</span></span>
+                  <span class="landhub-map-more">설명 보기</span>
+                </summary>
+                <div class="landhub-map-detail">
+                  <p>문서 분량에 맞춰 분석 방식을 고르고, 큰 문서는 섹션으로 나눠 동시에 읽어 기다리는 시간을 줄입니다.</p>
+                  <a href="docspage.html">주요 기능 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </details>
+
+              <details class="landhub-map-col">
+                <summary>
+                  <span class="landhub-map-step">STEP 03</span>
+                  <span class="landhub-map-name"><i class="fa-solid fa-eye"></i>그림까지 이해</span>
+                  <span class="landhub-map-menu"><span>도표 · 그래프 해석</span><span>수식 · 현장 사진 분석</span><span>문서 전체 맥락 유지</span></span>
+                  <span class="landhub-map-more">설명 보기</span>
+                </summary>
+                <div class="landhub-map-detail">
+                  <p>문서 속 도표와 그래프, 사진까지 비전 AI로 읽어 글과 함께 요약에 반영합니다. 일부만 찾아 읽지 않고 전체를 읽습니다.</p>
+                  <a href="docspage.html">주요 기능 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </details>
+
+              <details class="landhub-map-col">
+                <summary>
+                  <span class="landhub-map-step">STEP 04</span>
+                  <span class="landhub-map-name"><i class="fa-solid fa-chart-column"></i>리포트 받기</span>
+                  <span class="landhub-map-menu"><span>핵심 이슈 · 리스크</span><span>수치 · 일정 정리</span><span>의사결정 포인트</span></span>
+                  <span class="landhub-map-more">설명 보기</span>
+                </summary>
+                <div class="landhub-map-detail">
+                  <p>나눠 읽은 결과를 합치고 중복을 걷어, 표 중심의 구조화된 리포트로 돌려줍니다. 보고서형 요약과 회의용 핵심 문안으로 씁니다.</p>
+                  <a href="docsview2.html">활용 사례 보기 <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <div class="landhub-map-band landhub-map-band--base">
+          <strong>두 흐름이 함께 쓰는 바탕</strong>
+          <span class="landhub-map-chips"><span>사내 서버에서 동작하는 AI</span><span>외부 서비스로 보내지 않는 처리</span><span>글과 그림을 함께 읽는 비전 AI</span><span>사람이 확인한 뒤 반영</span><span>회사 양식 · 용어에 맞춘 설정</span></span>
+        </div>
+
+        <div class="landhub-map-band landhub-map-band--ai">
+          <strong><i class="fa-solid fa-link"></i>함께 쓰면</strong>
+          <span class="landhub-map-ai">
+            <span><b>ERP로 이어지는 부품표</b> 도면에서 뽑은 품목 · 부품표를 우리 회사 ERP로 보내는 연계를 개발합니다.</span>
+            <span><b>산업별 업무에 맞춰</b> 설계사무소처럼 도면이 많은 업계에서는 도면 비교 · 도면 질의까지 함께 씁니다.</span>
+          </span>
+          <a href="ai_industry.html" class="landhub-map-ai-link">산업별 AI 보기 <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <p class="landhub-map-summary">
+        읽고 옮기는 일은 AI가, 확인하고 판단하는 일은 사람이.
+      </p>
+
+      <p class="landhub-foot-note">
+        단계 안의 이름은 세부 페이지에서 소개하는 기능입니다. 사내 시스템 연계는 회사 환경에 맞춰 개발해 붙이는 서비스입니다.
+      </p>
+    </div>
+
+    <!-- 활용 장면 -->
+    <div class="landhub-content-section">
+      <div class="landhub-section-head">
+        <span class="landhub-section-label">Use Cases</span>
+        <h3>이런 일에 씁니다</h3>
+        <p>
+          도면과 문서를 많이 다루는 현장에서 바로 떠올릴 수 있는 장면입니다.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="landhub-feature-box">
+            <div class="landhub-feature-icon"><i class="fa-solid fa-diagram-project"></i></div>
+            <h4>제각각인 협력사 도면 통합</h4>
+            <p>여러 협력사가 다른 양식으로 보낸 도면의 부품표를 하나의 표준 양식으로 모읍니다.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="landhub-feature-box">
+            <div class="landhub-feature-icon"><i class="fa-solid fa-microchip"></i></div>
+            <h4>비슷한 부품번호 가려내기</h4>
+            <p>형식이 비슷한 번호가 많은 정밀 부품 도면에서도 문맥으로 품번을 구별해 옮겨 적는 실수를 줄입니다.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <div class="landhub-feature-box">
+            <div class="landhub-feature-icon"><i class="fa-solid fa-box-archive"></i></div>
+            <h4>과거 종이 도면 자산화</h4>
+            <p>스캔해 둔 과거 도면을 분석해 찾아 쓸 수 있는 데이터로 바꿉니다.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="landhub-feature-box">
+            <div class="landhub-feature-icon"><i class="fa-solid fa-folder-open"></i></div>
+            <h4>부서 보고서 통합 검토</h4>
+            <p>매주 올라오는 부서별 보고서의 핵심을 모아 비교하고, 경영진 보고용 요약 초안을 만듭니다.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="landhub-feature-box">
+            <div class="landhub-feature-icon"><i class="fa-solid fa-book"></i></div>
+            <h4>사내 지식 라이브러리</h4>
+            <p>과거 프로젝트 결과물을 전체 맥락으로 분류하고, 도표와 그림에 설명을 붙여 찾기 쉽게 만듭니다.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <div class="landhub-feature-box">
+            <div class="landhub-feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h4>시장 자료 분석</h4>
+            <p>쌓이는 산업 뉴스와 공시 자료에서 반복되는 흐름과 기회 요인을 요약해 의사결정을 돕습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 도입 방식 ① 구축 방식 -->
+    <div class="landhub-content-section landhub-process-section">
+      <div class="landhub-section-head">
+        <span class="landhub-section-label">Deployment · 도입 방식</span>
+        <h3>회사 안에 설치하고, 우리 양식에 맞춥니다</h3>
+        <p>
+          설계 자산과 문서가 밖으로 나가지 않는 구조로 설치합니다.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="landhub-process-box">
+            <div class="landhub-process-icon"><i class="fa-solid fa-server"></i></div>
+            <h4>사내 서버 설치</h4>
+            <p>사내 서버의 AI로 동작해, 도면 분석과 문서 처리가 회사 네트워크 안에서 끝납니다.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="landhub-process-box">
+            <div class="landhub-process-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+            <h4>우리 도면 · 문서에 맞춤</h4>
+            <p>회사가 쓰는 도면 양식과 코드 체계, 문서 종류에 맞춰 인식과 분석 방식을 조정합니다.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <div class="landhub-process-box">
+            <div class="landhub-process-icon"><i class="fa-solid fa-plug"></i></div>
+            <h4>사내 시스템 연계</h4>
+            <p>뽑아 낸 부품표와 리포트를 ERP 등 사내 시스템으로 보내는 연계를 회사 환경에 맞춰 개발합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 도입 방식 ② 도입 절차 -->
+    <div class="landhub-content-section landhub-process-section">
+      <div class="landhub-section-head">
+        <span class="landhub-section-label">Process</span>
+        <h3>도입 절차</h3>
+        <p>
+          우리 도면과 문서에 맞는지 함께 살펴보며 시작하고, 써 보며 넓혀 갑니다.
+        </p>
+      </div>
+
+      <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-4">
+        <div class="col">
+          <div class="landhub-process-box">
+            <div class="landhub-process-no">01</div>
+            <h4>업무 상담</h4>
+            <p>옮겨 적거나 요약하는 데 시간이 드는 도면 · 문서를 함께 짚고, 상담 단계에서 표본으로 적합성을 함께 확인합니다.</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="landhub-process-box">
+            <div class="landhub-process-no">02</div>
+            <h4>사내 설치</h4>
+            <p>보안 정책에 맞춰 회사 서버에 설치합니다.</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="landhub-process-box">
+            <div class="landhub-process-no">03</div>
+            <h4>양식 맞춤 · 시범 사용</h4>
+            <p>도면 양식과 분석 방식을 맞추고 실무자가 직접 써 봅니다.</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="landhub-process-box">
+            <div class="landhub-process-no">04</div>
+            <h4>연계 · 확대</h4>
+            <p>필요하면 사내 시스템 연계를 더하고 다른 업무로 넓혀 갑니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 자주 묻는 질문 — 답이 먼저 나오는 구조(검색·AI 답변용) · 2026-10-29 -->
+    <div class="landhub-content-section" id="faq">
+      <div class="landhub-section-head">
+        <span class="landhub-section-label">FAQ</span>
+        <h3>자주 묻는 질문</h3>
+        <p>
+          도입 전에 가장 많이 묻는 것을 숫자와 함께 짧게 정리했습니다.
+        </p>
+      </div>
+
+      <div class="geo-faq">
+        <details class="geo-faq-item" open>
+          <summary class="geo-faq-q"><h4>문서·설계 자동화는 무엇을 하나요?</h4></summary>
+          <div class="geo-faq-a"><p>두 가지를 자동화합니다. 도면에서 부품표(BOM) 영역을 찾아 품번 · 품명 · 수량 데이터로 정리하고, 대용량 문서를 끝까지 읽어 핵심 이슈 · 리스크 · 수치를 구조화한 리포트로 돌려줍니다.</p></div>
+        </details>
+        <details class="geo-faq-item">
+          <summary class="geo-faq-q"><h4>어떤 파일을 넣을 수 있나요?</h4></summary>
+          <div class="geo-faq-a"><p>도면은 JPG · PNG 이미지나 PDF로 넣고, 스캔한 종이 도면도 다룹니다. 문서는 보고서 · 계약서 · 제안서 · 스캔본처럼 표와 도표가 든 문서도 넣을 수 있습니다.</p></div>
+        </details>
+        <details class="geo-faq-item">
+          <summary class="geo-faq-q"><h4>큰 문서는 어떻게 분석하나요?</h4></summary>
+          <div class="geo-faq-a"><p>문서 분량에 맞는 분석 방식을 자동으로 고르고, 큰 문서는 섹션으로 나눠 최대 10개 섹션을 동시에 분석한 뒤 합칩니다. 결과는 표준 · 사실 확인 · 상세 · 간략 4가지 방식 가운데 골라 받습니다.</p></div>
+        </details>
+        <details class="geo-faq-item">
+          <summary class="geo-faq-q"><h4>뽑은 데이터를 ERP로 보낼 수 있나요?</h4></summary>
+          <div class="geo-faq-a"><p>사람이 결과를 확인한 뒤 엑셀이나 표로 정리해 씁니다. 사내 ERP 등 다른 시스템으로 보내는 연계는 회사 환경에 맞춰 개발해 붙입니다.</p></div>
+        </details>
+      </div>
+    </div>
+
+    <!-- 세부 페이지 보기 -->
+    <div class="landhub-content-section">
+      <div class="landhub-section-head">
+        <span class="landhub-section-label">Pages</span>
+        <h3>세부 페이지 보기</h3>
+        <p>
+          두 자동화의 기능과 활용 사례를 따로 소개합니다.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="landhub-link-group">
+            <h4>설계 도면 자동화</h4>
+            <ul>
+              <li><a href="officegpt.html">소개 <i class="fa-solid fa-arrow-right"></i></a></li>
+              <li><a href="officepage.html">주요 기능 <i class="fa-solid fa-arrow-right"></i></a></li>
+              <li><a href="docsview.html">활용 사례 <i class="fa-solid fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="landhub-link-group">
+            <h4>문서 자동화</h4>
+            <ul>
+              <li><a href="docsgpt.html">소개 <i class="fa-solid fa-arrow-right"></i></a></li>
+              <li><a href="docspage.html">주요 기능 <i class="fa-solid fa-arrow-right"></i></a></li>
+              <li><a href="docsview2.html">활용 사례 <i class="fa-solid fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- CTA — 메인(index.html)의 공통 상담 블록을 그대로 쓴다 -->
+  <section id="contact" class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-content">
+          <div class="cta-copy">
+            <span class="cta-kicker">Talk with INNOGENT</span>
+            <h2>우리 도면과 문서로,<br>지금 이노젠트와 상담하세요.</h2>
+            <p>
+              자주 다루는 도면이나 문서 표본을 알려 주시면, 어떤 흐름으로 자동화하면 되는지부터 함께 봅니다.
+            </p>
+            <div class="cta-tags" aria-label="상담 안내 항목">
+              <span>업무 상담</span>
+              <span>적합성 확인</span>
+              <span>도입 범위 상담</span>
+            </div>
+          </div>
+          <div class="cta-action">
+            <a href="https://forms.gle/EQoF4aKhrZdGcUrK8" target="_blank"
+              class="cta-primary-link">
+              전문가와 상담하기 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <span class="cta-note">비즈니스 환경에 맞는 맞춤형 상담을 빠르게 연결합니다.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="./js/vendor/bootstrap.bundle.min.js?v=20261029m"></script>
+  <script src="./js/load_includes.js?v=20261029m"></script>
+</body>
+</html>
