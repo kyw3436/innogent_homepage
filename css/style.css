@@ -16679,7 +16679,30 @@ html {
 }
 
 
-/* 산업별 솔루션 히어로 제목(law·medi·archi_solution) — 글자 중간 줄바꿈(«읽/고»·«솔루/션») 막기 (2026-10-30)
-   좁은 PC 폭(992~1366)에서 두 단 구성이라 제목 칸이 400~570px 뿐 — 글자 크기를 폭에 맞춰 줄이고, 단어 단위로 고르게 끊는다 */
-h1.main-title{word-break:keep-all;text-wrap:balance}
-@media (min-width:992px){h1.main-title{font-size:clamp(2.25rem,3.6vw,3.1rem)}}
+/* 산업별 솔루션 히어로(law·medi·archi_solution) — «산업별 AI 한눈에 보기»(ai_industry · landhub-) 와 같은 계열로 (2026-10-30 이사님)
+   제목: 40px · 800 · 자간 기본 · 줄 1.2 · 남색, 강조 줄은 칩과 같은 파랑 / 배지: landhub-section-chip 모양
+   레이아웃(두 단·오른쪽 패널·카드·아래 배지 줄)은 그대로. 이 클래스는 세 장에서만 쓴다.
+   단어 단위로만 끊고(«읽/고» 막기), 두 문장을 각각 고르게 나눈다 */
+h1.main-title{
+  font-size:40px;
+  font-weight:800;
+  letter-spacing:normal;
+  line-height:1.2;
+  color:#184291;
+  margin-bottom:16px;
+  word-break:keep-all;
+  text-wrap:balance;
+}
+h1.main-title .point{display:block;line-height:inherit;color:#1f63d8;text-wrap:balance}
+.title-badge.title-badge{
+  padding:8px 14px;
+  border-radius:999px;
+  background:#e9f2ff;
+  color:#1f63d8;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:normal;
+  margin-bottom:18px;
+}
+@media (max-width:991.98px){h1.main-title{font-size:32px}}
+@media (max-width:575.98px){h1.main-title{font-size:28px}}
