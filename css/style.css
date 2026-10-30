@@ -16677,3 +16677,9 @@ html {
     padding:0 14px 16px 14px;
   }
 }
+
+
+/* 산업별 솔루션 히어로 제목(law·medi·archi_solution) — 글자 중간 줄바꿈(«읽/고»·«솔루/션») 막기 (2026-10-30)
+   좁은 PC 폭(992~1366)에서 두 단 구성이라 제목 칸이 400~570px 뿐 — 글자 크기를 폭에 맞춰 줄이고, 단어 단위로 고르게 끊는다 */
+h1.main-title{word-break:keep-all;text-wrap:balance}
+@media (min-width:992px){h1.main-title{font-size:clamp(2.25rem,3.6vw,3.1rem)}}
