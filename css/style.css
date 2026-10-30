@@ -16557,28 +16557,6 @@ html {
   }
 }
 
-/* 제안 랜딩 2장(law_service · medical_service)은 메인처럼 «나타나기» 스크립트가 없다 —
-   .section-space 의 처음 상태(opacity 0)가 그대로 남아 섹션 대부분이 보이지 않았다(2026-10-29 점검 · 첫 커밋부터).
-   이 두 페이지에서는 처음부터 보이게 한다 */
-.law-page .section-space,
-.hospital-ai-page .section-space {
-  opacity: 1;
-  transform: none;
-}
-
-/* medical_service «해결 방향» 띠 — 다른 페이지의 전역 .highlight-box(밝은 바탕 상자)와 이름이 겹쳐
-   흰 글자가 흰 상자 위에 놓여 읽히지 않았다(2026-10-29 점검). 이 페이지에서는 상자 모양을 걷는다 */
-.hospital-ai-page .highlight-section .highlight-box {
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 /* 자주 묻는 질문(geo-faq) — 총괄 3장 · 회사개요 공용(2026-10-29 SEO·GEO)
    질문은 summary 안의 h4, 답은 2~4문장. 같은 글자가 JSON-LD(FAQPage)로도 나간다 — 고칠 땐 html 만 고치고 다시 굽는다 */
 .geo-faq{

@@ -23,7 +23,7 @@
   <link rel="icon" href="images/favicon.ico" type="image/png">
   <link href="./css/vendor/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
-  <link href="./css/style.css?v=20261030c" rel="stylesheet" />
+  <link href="./css/style.css?v=20261030d" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <!-- 구조화 데이터 (schema.org JSON-LD · 2026-10-29 SEO·GEO — 화면 글자와 같은 사실만) -->
   <script type="application/ld+json">
@@ -109,7 +109,8 @@
               <ul>
                 <li>상담 신청(필수항목): 업체명, 담당자 성명, 연락처, 이메일, 사업장 위치, 사원수, 문의 내용</li>
                 <li>계약 체결 시: 부서명, 직책, 사업자 등록 정보, 요구사항 기록</li>
-                <li>자동수집항목: 서비스 이용 기록, 접속 로그, 쿠키, IP 정보</li>
+                <li>접속 정보: 회사는 홈페이지 접속 기록이나 IP 정보를 따로 수집하지 않습니다. 홈페이지를 여는 과정에서 생기는 접속 정보는 웹 호스팅 사업자와 홈페이지가 불러오는 외부 서비스(글꼴·아이콘 제공, 지도, 채팅 상담 등) 제공자가 처리합니다.</li>
+                <li>채팅 상담 이용 시: 입력한 대화 내용, 이용한 페이지 주소, 방문 식별값(암호화된 값)이 채팅 상담 서비스 제공자의 서버에 기록됩니다. 대화 중 이름·연락처 등을 입력하면 그 내용도 함께 기록되며, 이러한 정보는 필수가 아니므로 입력하지 않아도 됩니다.</li>
               </ul>
             </div>
           </div>
@@ -125,6 +126,7 @@
                 <li><strong>서비스 상담 및 도입 지원:</strong> 구매·도입 상담 및 그에 따른 연락·안내, 데모 제공, 맞춤형 제안서 작성</li>
                 <li><strong>계약의 체결 및 이행:</strong> 서비스 공급 계약 체결, 솔루션 구축, 시스템 연동 및 유지보수</li>
                 <li><strong>고객 지원:</strong> 기술 지원, 사용법 안내, 장애 처리 등 고객 서비스 응대</li>
+                <li><strong>채팅 상담 응대:</strong> 홈페이지 채팅 상담 질문에 대한 답변 제공</li>
                 <li><strong>서비스 개선:</strong> 서비스 개선을 위한 통계 분석 및 만족도 조사</li>
                 <li><strong>신규 솔루션 안내:</strong> 별도의 동의를 받은 경우에 한해 안내합니다</li>
               </ul>
@@ -187,6 +189,9 @@
                 상담 신청 양식을 제출하는 시점에 네트워크를 통해 전송됩니다.
                 이전되는 항목은 제1조의 상담 신청 항목이고, 이용 목적은 상담 신청 양식 제공 및 응답 저장,
                 보유 기간은 제3조의 상담 신청 정보 보유 기간과 같습니다.
+              </p>
+              <p class="mb-0 mt-3">
+                홈페이지의 채팅 상담 기능은 채팅 상담 서비스 제공자의 서버에서 대화 기록을 처리합니다(제1조의 채팅 상담 항목).
                 위탁 내용이 바뀌면 본 개인정보 처리방침을 통해 알려 드립니다.
               </p>
             </div>
@@ -228,8 +233,11 @@
             </div>
             <div class="privacy-card-body">
               <p>
-                회사는 이용자에게 특화된 맞춤서비스를 제공하기 위해서 이용자의 정보를 저장하고 수시로 불러오는 '쿠키(cookie)'를 사용합니다. 
-                이용자는 쿠키 설치에 대한 선택권을 가지고 있으며, 브라우저 환경 설정을 통해 쿠키 저장을 거부할 수 있습니다.
+                회사는 홈페이지에서 자체 쿠키(cookie)를 사용하지 않습니다.
+                화면 이용 편의를 위해 메뉴 펼침 상태와 스크롤 위치만 브라우저 저장소(세션 저장소)에 잠시 저장하며, 이 정보는 개인을 식별하지 않고 브라우저를 닫으면 지워집니다.
+                채팅 상담을 이용하면 대화를 이어가기 위해 대화 세션 식별값(세션 키·토큰·만료 시각)과 채팅 창 열림 상태가 브라우저 저장소에 저장되고,
+                대화 내용이 최대 7일 동안 브라우저에 저장될 수 있습니다.
+                이용자는 브라우저 환경 설정을 통해 저장된 정보를 삭제하거나 저장을 거부할 수 있습니다.
               </p>
             </div>
           </div>
@@ -255,8 +263,8 @@
     </div>
   </section>
   <div id="footer-placeholder"></div>
-  <script src="./js/vendor/bootstrap.bundle.min.js?v=20261030c"></script>
-  <script src="./js/load_includes.js?v=20261030c"></script>
+  <script src="./js/vendor/bootstrap.bundle.min.js?v=20261030d"></script>
+  <script src="./js/load_includes.js?v=20261030d"></script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@ function initIncludes() {
     const openSubmenusKey = "openSubmenus";
     const currentSubmenuKey = "currentOpenSubmenu";
     const mobileNavScrollKey = "mobileNavScrollTop";
-    const includeVersion = "20261030c";
+    const includeVersion = "20261030d";
     const breadcrumbLinkMap = {
         "홈": "index.html",
         "산업별 AI 솔루션": "ai_industry.html",
